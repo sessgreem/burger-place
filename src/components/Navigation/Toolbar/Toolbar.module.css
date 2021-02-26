@@ -1,0 +1,47 @@
+/* display: block;
+    position: fixed;
+    transform: translateY(0px) scale(1);
+    transition: transform 0.3s ease-out 0s;
+    width: 100%;
+    will-change: transform;
+    z-index: 500; */
+
+.Toolbar {
+    display: block;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f5ebdc;
+    z-index: 90;
+    color: rgb(31, 31, 31);
+    height: 78px;
+    margin: 0px auto;
+    padding: 30px;
+}
+
+.Toolbar nav {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Toolbar .NavItems {
+    max-height: 50px;
+    max-width: 40%;
+}
+
+.Logo {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 999600;
+}
+
+@media (max-width: 499px) {
+    .DesktopOnly {
+        display: none;
+    }
+}

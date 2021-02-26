@@ -1,0 +1,53 @@
+.Button {
+    background-color: transparent;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 0.945rem;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    margin: 0px;
+    padding: 0.375rem 1.5rem;
+    transition: all 0.125s ease 0s;
+    display: block;
+    flex-shrink: 0;
+    justify-content: space-between;
+    align-items: center;
+    outline: 0px;
+    border: 0px;
+    border-radius: 9999rem;
+    width: auto;
+    cursor: pointer;
+}
+
+.Primary {
+    color: rgb(245, 235, 220);
+    background-color: rgb(214, 35, 0);
+}
+.Primary:hover {
+    background-color: rgb(167, 27, 0);
+}
+
+.Secondary {
+    color: rgb(214, 35, 0);
+    border: 1px solid rgb(214, 35, 0);
+}
+
+.Hero {
+    color: rgb(214, 35, 0);
+    background-color: #fff;
+    padding: 0.8rem 2.5rem;
+    font-size: 1.4rem;
+    letter-spacing: 0px;
+    font-weight: 700;
+}
+
+.Hero:hover {
+    background-color: rgb(240, 205, 187);
+}
+
+.Button:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}

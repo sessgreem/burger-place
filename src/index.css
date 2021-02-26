@@ -3,3 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: #f5ebdc;
+    font-family: "Cooper Black", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

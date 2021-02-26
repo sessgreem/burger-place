@@ -1,0 +1,15 @@
+.NavItem {
+}
+
+.NavItem a {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: none;
+    position: relative;
+    margin: 0px auto 0px 1.3rem;
+    font-family: Flame, "Cooper Black", "Helvetica Neue", Helvetica, Arial,
+        sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: rgb(80, 35, 20);
+}
