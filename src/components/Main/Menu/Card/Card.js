@@ -5,8 +5,7 @@ const Card = (props) => {
     return (
         <div className={classes.Card}>
             <div className={classes.CardImage}>
-                {/* ! src doesnt work - needs to be resolved (from Menu)*/}
-                <img src="" alt="Item" />
+                <img src={props.img} alt="Item" />
             </div>
             <div className={classes.CardDescription}>
                 <h4>{props.name}</h4>
