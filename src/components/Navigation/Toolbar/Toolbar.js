@@ -2,7 +2,7 @@ import React from "react";
 
 import NavItems from "../NavItems/NavItems";
 import Logo from "../../Logo/Logo";
-import Actions from "../../Actions/Actions";
+import Actions from "../Actions/Actions";
 
 import classes from "./Toolbar.module.css";
 
