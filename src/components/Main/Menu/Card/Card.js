@@ -8,7 +8,7 @@ const Card = (props) => {
                 <img src={props.img} alt="Item" />
             </div>
             <div className={classes.CardDescription}>
-                <h4>{props.name}</h4>
+                <h2>{props.name}</h2>
                 <p>{props.description}</p>
             </div>
         </div>

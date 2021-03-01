@@ -1,0 +1,12 @@
+.MenuCards {
+    display: flex;
+    max-width: 1400px;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+}
+.MenuHeading {
+    text-align: center;
+    margin: 2rem 1rem;
+    font-size: 2rem;
+}
