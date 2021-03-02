@@ -1,0 +1,57 @@
+.MobileApp {
+    display: flex;
+    background-color: rgb(239, 225, 204);
+    position: relative;
+    margin: 10rem auto;
+    justify-content: center;
+}
+
+.MobileImage {
+    display: flex;
+    flex: 50%;
+    order: 0;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.MobileImage img {
+    position: absolute;
+    transform: translateY(-13%);
+    max-width: 480px;
+}
+
+.MobileOffer {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4.75rem 2.625rem 4.75rem 0rem;
+    flex: 50%;
+}
+
+.MobileOffer h2 {
+    font-size: 4rem;
+    color: #502314;
+    font-weight: 700;
+    line-height: 110%;
+}
+.MobileOffer h2:first-of-type {
+    font-size: 2.3rem;
+}
+
+.MobileAppDownload {
+    margin: 2rem 0.2rem;
+}
+
+.MobileLegal {
+    font-size: 0.85rem;
+    max-width: 25rem;
+}
+
+.MobileAppDownload a img {
+    height: 43px;
+}
+
+.MobileAppDownload a img:first-of-type {
+    margin-right: 1rem;
+}
