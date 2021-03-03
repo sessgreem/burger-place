@@ -8,3 +8,12 @@ body {
     background-color: #f5ebdc;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}

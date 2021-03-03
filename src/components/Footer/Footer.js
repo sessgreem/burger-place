@@ -1,7 +1,6 @@
 import classes from "./Footer.module.css";
 import React from "react";
 import { Link } from "react-router-dom";
-import burgerLogo from "../../assets/images/logo/Burger_King_2020.png";
 
 const url = "#";
 
@@ -61,6 +60,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className={classes.FooterColumn}>
+                    <h2>Careers</h2>
                     <ul>
                         <li>
                             <a href={url}>Careers Home</a>
@@ -74,6 +74,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className={classes.FooterColumn}>
+                    <h2>BP Cares</h2>
                     <ul>
                         <li>
                             <a href={url}>Nutrition Explorer</a>
@@ -104,9 +105,29 @@ const Footer = () => {
             <div className={classes.FooterRowContainer}>
                 <div className={classes.FooterWordmarkSocial}>
                     <Link to="/">
-                        <img src={burgerLogo} alt="Logo" />
+                        {/* <img
+                            className={classes.FooterLogo}
+                            src={burgerLogo}
+                            alt="Logo"
+                        /> */}
+                        <h2 className={classes.LogoText}>Burger Place</h2>
                     </Link>
                     <div className={classes.FooterSocials}>
+                        <div className={classes.FooterIcon}>
+                            <a href={url}>
+                                <img src="" alt="Social Icon" />
+                            </a>
+                        </div>
+                        <div className={classes.FooterIcon}>
+                            <a href={url}>
+                                <img src="" alt="Social Icon" />
+                            </a>
+                        </div>
+                        <div className={classes.FooterIcon}>
+                            <a href={url}>
+                                <img src="" alt="Social Icon" />
+                            </a>
+                        </div>
                         <div className={classes.FooterIcon}>
                             <a href={url}>
                                 <img src="" alt="Social Icon" />

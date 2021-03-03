@@ -1,0 +1,88 @@
+footer {
+    padding: 80px 80px 110px;
+    background-color: rgb(43 2 0);
+    color: rgb(187, 163, 145);
+}
+
+.FooterNavColumns {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3rem;
+}
+.FooterColumn {
+    flex-basis: 25%;
+}
+.FooterColumn h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.FooterColumn ul li a:hover {
+    text-decoration: underline;
+}
+.FooterColumn ul li {
+    margin-bottom: 0.2rem;
+}
+
+.FooterRowContainer {
+    margin: auto;
+    border-top: 1px solid #fff;
+    padding-top: 2rem;
+}
+
+.FooterWordmarkSocial {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.FooterSocials {
+    display: flex;
+}
+
+.FooterIcon {
+    margin-right: 0.5rem;
+}
+
+.FooterLogo {
+    max-height: 100px;
+    font-weight: 800;
+}
+
+.FooterHorizontalLinks a {
+    padding-right: 0.5rem;
+    margin-right: 0.5rem;
+    border-right: 1px solid #fff;
+}
+.FooterHorizontalLinks a:last-of-type {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+.FooterHorizontalLinks a:hover {
+    text-transform: underline;
+}
+
+.FooterRowContainer p {
+    margin-top: 0.8rem;
+    font-size: 0.8rem;
+}
+
+.LogoText {
+    color: #fff;
+    text-transform: uppercase;
+}
+@media screen and (min-width: 1200px) {
+    footer {
+        padding: 48px 64px 40px;
+    }
+}
+
+@media screen and (min-width: 813px) {
+    footer {
+        padding: 90px 120px 90px;
+    }
+}
