@@ -1,12 +1,26 @@
 .MenuCards {
-    display: flex;
-    max-width: 1400px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    column-gap: 1rem;
+    justify-items: center;
     margin: auto;
-    flex-wrap: wrap;
+    max-width: 1400px;
 }
 .MenuHeading {
+    font-size: 2rem;
     text-align: center;
     margin: 2rem 1rem;
-    font-size: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .MenuCards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .MenuCards {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
