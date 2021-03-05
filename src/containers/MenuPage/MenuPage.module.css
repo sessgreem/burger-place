@@ -1,0 +1,14 @@
+.MenuPage {
+    padding-top: 78px;
+}
+.MenuPageHeading {
+    background-color: rgb(214, 35, 0);
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.MenuPageHeading h2 {
+    font-weight: 700;
+    font-size: 3rem;
+    color: rgb(245, 235, 220);
+}

@@ -3,7 +3,10 @@ import React from "react";
 
 const Card = (props) => {
     return (
-        <div className={classes.Card}>
+        <div
+            className={classes.Card}
+            onClick={() => props.cardClickedHandler(props.name)}
+        >
             <div className={classes.CardImage}>
                 <img src={props.img} alt="Item" />
             </div>

@@ -8,9 +8,9 @@ const navitems = (props) => {
         <ul className={classes.NavItems}>
             <NavItem link="/">Home</NavItem>
             <NavItem link="/menu" exact>
-                Order
+                Menu
             </NavItem>
-            <NavItem link="/">Careers</NavItem>
+            <NavItem link="/sections">Careers</NavItem>
             <NavItem link="/">About us</NavItem>
             <NavItem link="/">More</NavItem>
         </ul>

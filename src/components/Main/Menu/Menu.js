@@ -10,7 +10,7 @@ import chickenFish from "../../../assets/images/menu/chiken.webp";
 import queenJr from "../../../assets/images/menu/f4dc27eb7337f7cbd12d3ccd840e6a031fcba622-360x270.webp";
 import drinksCoffe from "../../../assets/images/menu/drinksandcoffe.webp";
 
-const Menu = () => {
+const Menu = (props) => {
     const [cardInfo] = useState([
         {
             name: "Family Burgers",
@@ -44,13 +44,23 @@ const Menu = () => {
         },
     ]);
 
+    //! needs to be able to redirect properly
+    const cardClickedHandler = (sectionName) => {
+        // <Redirect to="/sections"></Redirect>;
+        // props.history.push("/sections");
+    };
+
     const cards = cardInfo.map((card) => (
-        <Card name={card.name} description={card.description} img={card.img} />
+        <Card
+            name={card.name}
+            description={card.description}
+            img={card.img}
+            cardClickedHandler={cardClickedHandler}
+        />
     ));
 
     return (
         <section className={classes.Menu}>
-            <h2 className={classes.MenuHeading}>Trending</h2>
             <div className={classes.MenuCards}>{cards}</div>
         </section>
     );

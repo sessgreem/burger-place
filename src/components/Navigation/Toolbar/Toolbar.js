@@ -6,7 +6,7 @@ import Actions from "../Actions/Actions";
 
 import classes from "./Toolbar.module.css";
 
-const toolbar = () => {
+const Toolbar = () => {
     const signUpHandler = () => {
         console.log("signupclicked");
     };
@@ -35,4 +35,4 @@ const toolbar = () => {
     );
 };
 
-export default toolbar;
+export default Toolbar;
