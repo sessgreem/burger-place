@@ -1,0 +1,7 @@
+.Sections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 78px;
+    max-width: 900px;
+    margin: 0rem auto 6rem;
+}

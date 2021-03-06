@@ -1,5 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import SectionItem from "./SectionItem/SectionItem";
+import classes from "./Sections.module.css";
+import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
+import Footer from "../../components/Footer/Footer";
+import SmallSlider from "../../components/SmallSlider/SmallSlider";
+
 const Sections = (props) => {
     const [state] = useState({
         ourFavorites: {
@@ -20,6 +25,25 @@ const Sections = (props) => {
                             optionCalories: "1.980 - 2.807",
                         },
                     ],
+                    itemCalories: "850 - 1,882",
+                },
+                {
+                    itemName: "Whopper",
+                    itemOptions: [
+                        {
+                            optionName: "Small",
+                            optionDescription:
+                                "Small drink and Small Side Included",
+                            optionCalories: "780 - 1.807",
+                        },
+                        {
+                            optionName: "Medium",
+                            optionDescription:
+                                "Medium drink and Medium Side Included",
+                            optionCalories: "1.980 - 2.807",
+                        },
+                    ],
+                    itemCalories: "850 - 1,882",
                 },
                 {
                     itemName: "Mini Shakes Vanilla",
@@ -35,6 +59,7 @@ const Sections = (props) => {
                             optionCalories: "365",
                         },
                     ],
+                    itemCalories: "365 - 403",
                 },
             ],
         },
@@ -67,12 +92,20 @@ const Sections = (props) => {
                 <SectionItem
                     name={sectionItem.itemName}
                     options={sectionItem.itemOptions}
+                    calories={sectionItem.itemCalories}
                 />
             );
         }
     );
 
-    return <div>{sectionItems}</div>;
+    return (
+        <Fragment>
+            <Toolbar />
+            <SmallSlider />
+            <section className={classes.Sections}>{sectionItems}</section>
+            <Footer />
+        </Fragment>
+    );
 };
 
 export default Sections;

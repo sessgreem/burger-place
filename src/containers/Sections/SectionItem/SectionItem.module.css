@@ -1,0 +1,24 @@
+.SectionItem {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    cursor: pointer;
+    height: inherit;
+    min-height: 100%;
+}
+
+.SectionItemImage {
+}
+
+.SectionItemImage img {
+    width: 100%;
+    height: 100%;
+}
+
+.SectionItemDescription {
+    text-align: center;
+    font-size: 1.2rem;
+}
+.SectionItemDescription span {
+    font-size: 0.9rem;
+}
