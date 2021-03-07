@@ -84,8 +84,6 @@ const Sections = (props) => {
         },
     });
 
-    console.log(state["ourFavorites"].sectionItems);
-
     const sectionItems = state[props.sectionName].sectionItems.map(
         (sectionItem) => {
             return (
