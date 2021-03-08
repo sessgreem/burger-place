@@ -1,0 +1,25 @@
+.Customization {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.CustomizationBackground {
+    position: relative;
+    background-color: orange;
+    padding-top: 4rem;
+}
+.CustomizationBackground img {
+    position: absolute;
+    bottom: -5;
+    transform: translateY(50%);
+}
+
+.CustomizationHeading h3 {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    font-weight: 600;
+}
+
+.CustomizationHeading p {
+    font-weight: 600;
+}

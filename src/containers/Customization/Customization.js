@@ -3,8 +3,14 @@ import SmallSlider from "../../components/SmallSlider/SmallSlider";
 import Toolbar from "../../components/Toolbar/Toolbar";
 import classes from "./Customization.module.css";
 import burger from "../../assets/images/burgers/whopper";
+import CustomizationOption from "../../components/CustomizationOption/CustomizationOption";
+import Button from "../../UI/Button/Button";
 
 const Customization = (props) => {
+    const customizationOptions = props.itemOptions.map((option) => {
+        return <CustomizationOption {...option} />;
+    });
+
     return (
         <Fragment>
             <Toolbar />
@@ -17,8 +23,32 @@ const Customization = (props) => {
                     <h3>{props.name}</h3>
                     <p>{props.description}</p>
                 </div>
-                <div className={classes.CustomizationContainer}>
-                    {/* <CustomizationOption/> */}
+                <div className={classes.CustomizationOptionsContainer}>
+                    <h4>Combo size</h4>
+                    {customizationOptions}
+                </div>
+                <div className={classes.CustomizationOrderButton}>
+                    <Button btnType="order">Add to order</Button>
+                </div>
+                <div className={classes.CustomizationNutritionInfomartion}>
+                    <p>Item availability varies by location.</p>
+                    <p>
+                        Calories will vary based on modifications made to item.
+                        Product availability, prices, offers and discounts may
+                        vary from in-restaurant. BK printed coupons not valid on
+                        online orders.
+                    </p>
+                    <p>
+                        2,000 calories a day is used for general nutrition
+                        advice, but calorie needs vary. For additional nutrition
+                        information click here.
+                    </p>
+                    <p>
+                        Warning: indicates that sodium (salt) content of this
+                        item is higher than the total daily recommended limit
+                        (2,300mg). High Sodium intake can increase blood
+                        pressure and risk of heart disease and stroke.
+                    </p>
                 </div>
             </main>
         </Fragment>
