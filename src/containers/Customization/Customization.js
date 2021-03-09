@@ -1,16 +1,17 @@
 import React, { Fragment } from "react";
 import SmallSlider from "../../components/SmallSlider/SmallSlider";
-import Toolbar from "../../components/Toolbar/Toolbar";
+import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
 import classes from "./Customization.module.css";
-import burger from "../../assets/images/burgers/whopper";
-import CustomizationOption from "../../components/CustomizationOption/CustomizationOption";
-import Button from "../../UI/Button/Button";
-
+import burger from "../../assets/images/burgers/whopper-cheeseburger.png";
+// import CustomizationOption from "../../components/UI/CustomizationOption/CustomizationOption";
+import Button from "../../components/UI/Button/Button";
 const Customization = (props) => {
-    const customizationOptions = props.itemOptions.map((option) => {
-        return <CustomizationOption {...option} />;
-    });
+    // ! we need redux to get the itemOptions - we can get the section and item name from the url
 
+    // const customizationOptions = props.options.map((option) => {
+    //     return <CustomizationOption {...option} />;
+    // });
+    // console.log(customizationOptions);
     return (
         <Fragment>
             <Toolbar />
@@ -25,7 +26,7 @@ const Customization = (props) => {
                 </div>
                 <div className={classes.CustomizationOptionsContainer}>
                     <h4>Combo size</h4>
-                    {customizationOptions}
+                    {/* {customizationOptions} */}
                 </div>
                 <div className={classes.CustomizationOrderButton}>
                     <Button btnType="order">Add to order</Button>

@@ -10,7 +10,11 @@ import chickenFish from "../../../assets/images/menu/chiken.webp";
 import queenJr from "../../../assets/images/menu/f4dc27eb7337f7cbd12d3ccd840e6a031fcba622-360x270.webp";
 import drinksCoffe from "../../../assets/images/menu/drinksandcoffe.webp";
 
+// import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 const Menu = (props) => {
+    let history = useHistory();
+
     const [cardInfo] = useState([
         {
             name: "Family Burgers",
@@ -44,10 +48,14 @@ const Menu = (props) => {
         },
     ]);
 
-    //! needs to be able to redirect properly
+    // ? Route names need to be adjusted - maybe with function like this
+    // const transformIntoPath = (string) => {
+    //     const result = string.replace(' ', '-');
+    //     return result.toLowerCase();
+    // };
+
     const cardClickedHandler = (sectionName) => {
-        // <Redirect to="/sections"></Redirect>;
-        // props.history.push("/sections");
+        history.push({ pathname: `/sections/${sectionName}` });
     };
 
     const cards = cardInfo.map((card) => (
@@ -56,6 +64,7 @@ const Menu = (props) => {
             description={card.description}
             img={card.img}
             cardClickedHandler={cardClickedHandler}
+            key={card.name}
         />
     ));
 
