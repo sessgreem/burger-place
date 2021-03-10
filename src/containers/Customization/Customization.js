@@ -3,15 +3,27 @@ import SmallSlider from "../../components/SmallSlider/SmallSlider";
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
 import classes from "./Customization.module.css";
 import burger from "../../assets/images/burgers/whopper-cheeseburger.png";
-// import CustomizationOption from "../../components/UI/CustomizationOption/CustomizationOption";
+import CustomizationOption from "../../components/UI/CustomizationOption/CustomizationOption";
 import Button from "../../components/UI/Button/Button";
-const Customization = (props) => {
-    // ! we need redux to get the itemOptions - we can get the section and item name from the url
+import { connect } from "react-redux";
+import { useParams } from "react-router";
 
-    // const customizationOptions = props.options.map((option) => {
-    //     return <CustomizationOption {...option} />;
-    // });
-    // console.log(customizationOptions);
+const Customization = (props) => {
+    const { sectionName, itemName } = useParams();
+
+    const item = props.menu[sectionName].sectionItems.find(
+        (el) => el.itemName === itemName
+    );
+
+    const customizationOptions = item.itemOptions.map((option) => {
+        return (
+            <CustomizationOption
+                name={option.optionName}
+                description={option.optionDescription}
+                calories={option.optionCalories}
+            />
+        );
+    });
     return (
         <Fragment>
             <Toolbar />
@@ -26,7 +38,7 @@ const Customization = (props) => {
                 </div>
                 <div className={classes.CustomizationOptionsContainer}>
                     <h4>Combo size</h4>
-                    {/* {customizationOptions} */}
+                    {customizationOptions}
                 </div>
                 <div className={classes.CustomizationOrderButton}>
                     <Button btnType="order">Add to order</Button>
@@ -56,4 +68,10 @@ const Customization = (props) => {
     );
 };
 
-export default Customization;
+const mapStateToProps = (state) => {
+    return {
+        menu: state,
+    };
+};
+
+export default connect(mapStateToProps)(Customization);
