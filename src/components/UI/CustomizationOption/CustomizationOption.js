@@ -2,11 +2,11 @@ import React from "react";
 import classes from "./CustomizationOption.module.css";
 import smallOption from "../../../assets/images/options/small.webp";
 import mediumOption from "../../../assets/images/options/medium.webp";
-import largeOption from "../../../assets/images/options/medium.webp";
+import largeOption from "../../../assets/images/options/large.webp";
 import aLaCarte from "../../../assets/images/options/alacarte.webp";
 
 const CustomizationOption = (props) => {
-    let description = props.description ? <p>{props.description}</p> : null;
+    const description = props.description ? <p>{props.description}</p> : null;
     let img;
     switch (props.name) {
         case "Small":
@@ -18,7 +18,7 @@ const CustomizationOption = (props) => {
         case "Large":
             img = <img src={largeOption} alt="Large" />;
             break;
-        case "A La Carte":
+        case "À La Carte":
             img = <img src={aLaCarte} alt="A La Carte" />;
             break;
         default:
@@ -28,9 +28,9 @@ const CustomizationOption = (props) => {
         <div className={classes.CustomizationOption}>
             <div className={classes.CustomizationOptionImage}>{img}</div>
             <div className={classes.CustomizationOptionDescription}>
-                <h4>{props.name}</h4>
+                <h3>{props.name}</h3>
                 {description}
-                <span>{props.calories}</span>
+                <span>{props.calories} Cal</span>
             </div>
         </div>
     );

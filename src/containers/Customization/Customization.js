@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
 import SmallSlider from "../../components/SmallSlider/SmallSlider";
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
+import Footer from "../../components/Footer/Footer";
 import classes from "./Customization.module.css";
-import burger from "../../assets/images/burgers/whopper-cheeseburger.png";
+import hero from "../../assets/images/hero.webp";
 import CustomizationOption from "../../components/UI/CustomizationOption/CustomizationOption";
 import Button from "../../components/UI/Button/Button";
 import { connect } from "react-redux";
@@ -15,9 +16,12 @@ const Customization = (props) => {
         (el) => el.itemName === itemName
     );
 
+    const itemDescription = item.itemDescription;
+
     const customizationOptions = item.itemOptions.map((option) => {
         return (
             <CustomizationOption
+                key={option.optionName}
                 name={option.optionName}
                 description={option.optionDescription}
                 calories={option.optionCalories}
@@ -28,42 +32,55 @@ const Customization = (props) => {
         <Fragment>
             <Toolbar />
             <SmallSlider />
-            <main className={classes.Customization}>
+            <main>
                 <div className={classes.CustomizationBackground}>
-                    <img src={burger} alt=""></img>
+                    <div className={classes.CustomizationHero}>
+                        <img src={hero} alt="Hero Item"></img>
+                    </div>
                 </div>
-                <div className={classes.CustomizationHeading}>
-                    <h3>{props.name}</h3>
-                    <p>{props.description}</p>
-                </div>
-                <div className={classes.CustomizationOptionsContainer}>
-                    <h4>Combo size</h4>
-                    {customizationOptions}
-                </div>
-                <div className={classes.CustomizationOrderButton}>
-                    <Button btnType="order">Add to order</Button>
-                </div>
-                <div className={classes.CustomizationNutritionInfomartion}>
-                    <p>Item availability varies by location.</p>
-                    <p>
-                        Calories will vary based on modifications made to item.
-                        Product availability, prices, offers and discounts may
-                        vary from in-restaurant. BK printed coupons not valid on
-                        online orders.
-                    </p>
-                    <p>
-                        2,000 calories a day is used for general nutrition
-                        advice, but calorie needs vary. For additional nutrition
-                        information click here.
-                    </p>
-                    <p>
-                        Warning: indicates that sodium (salt) content of this
-                        item is higher than the total daily recommended limit
-                        (2,300mg). High Sodium intake can increase blood
-                        pressure and risk of heart disease and stroke.
-                    </p>
+                <div className={classes.Customization}>
+                    <div className={classes.CustomizationHeading}>
+                        <h3>{itemName}</h3>
+                        <p>
+                            {itemDescription}
+                            <br /> *Weight based on pre-cooked patty
+                            <br />
+                            Medium Drink and Medium Side Included
+                        </p>
+                    </div>
+                    <div className={classes.CustomizationOptionsContainer}>
+                        <div>
+                            <h4>Combo size</h4>
+                        </div>
+                        {customizationOptions}
+                    </div>
+                    <div className={classes.CustomizationOrderButton}>
+                        <span>Nutritional Information</span>
+                        <Button btnType="Order">Check Availability</Button>
+                    </div>
+                    <div className={classes.CustomizationNutritionInfomartion}>
+                        <p>Item availability varies by location.</p>
+                        <p>
+                            Calories will vary based on modifications made to
+                            item. Product availability, prices, offers and
+                            discounts may vary from in-restaurant. BK printed
+                            coupons not valid on online orders.
+                        </p>
+                        <p>
+                            2,000 calories a day is used for general nutrition
+                            advice, but calorie needs vary. For additional
+                            nutrition information click here.
+                        </p>
+                        <p>
+                            Warning: indicates that sodium (salt) content of
+                            this item is higher than the total daily recommended
+                            limit (2,300mg). High Sodium intake can increase
+                            blood pressure and risk of heart disease and stroke.
+                        </p>
+                    </div>
                 </div>
             </main>
+            <Footer />
         </Fragment>
     );
 };

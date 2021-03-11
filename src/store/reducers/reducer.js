@@ -18,8 +18,21 @@ const initialState = {
                             "Medium drink and Medium Side Included",
                         optionCalories: "1.980 - 2.807",
                     },
+                    {
+                        optionName: "Large",
+                        optionDescription:
+                            "Large drink and Large Side Included",
+                        optionCalories: "780 - 1.807",
+                    },
+                    {
+                        optionName: "À La Carte",
+                        optionDescription: "Entree only ",
+                        optionCalories: "580 - 800",
+                    },
                 ],
                 itemCalories: "850 - 1,882",
+                itemDescription:
+                    "Our Whopper Sandwich is a ¼ lb* of savory flame-grilled beef topped with juicy tomatoes, fresh lettuce, creamy mayonnaise, ketchup, crunchy pickles, and sliced white onions on a soft sesame seed bun.",
             },
             {
                 itemName: "Impossible Whopper",
@@ -34,7 +47,13 @@ const initialState = {
                         optionName: "Medium",
                         optionDescription:
                             "Medium drink and Medium Side Included",
-                        optionCalories: "1.980 - 2.807",
+                        optionCalories: "1.980 - 2.245",
+                    },
+                    {
+                        optionName: "Large",
+                        optionDescription:
+                            "Large drink and Large Side Included",
+                        optionCalories: "1080 - 2.807",
                     },
                 ],
                 itemCalories: "850 - 1,882",
