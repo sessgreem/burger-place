@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import SmallSlider from "../../components/SmallSlider/SmallSlider";
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
 import Footer from "../../components/Footer/Footer";
@@ -11,12 +11,24 @@ import { useParams } from "react-router";
 
 const Customization = (props) => {
     const { sectionName, itemName } = useParams();
+    const [state, setState] = useState({
+        itemName,
+        selectedSize: "Medium",
+        selectedDrink: "Cola",
+    });
 
     const item = props.menu[sectionName].sectionItems.find(
         (el) => el.itemName === itemName
     );
-
     const itemDescription = item.itemDescription;
+
+    const changedSizeHandler = (selectedSize) => {
+        const newState = {
+            ...state,
+            selectedSize,
+        };
+        setState(newState);
+    };
 
     const customizationOptions = item.itemOptions.map((option) => {
         return (
@@ -25,9 +37,12 @@ const Customization = (props) => {
                 name={option.optionName}
                 description={option.optionDescription}
                 calories={option.optionCalories}
+                selected={state.selectedSize}
+                changedSize={changedSizeHandler}
             />
         );
     });
+
     return (
         <Fragment>
             <Toolbar />
@@ -43,6 +58,7 @@ const Customization = (props) => {
                         <h3>{itemName}</h3>
                         <p>
                             {itemDescription}
+                            {/* ? these 2 have to be removed */}
                             <br /> *Weight based on pre-cooked patty
                             <br />
                             Medium Drink and Medium Side Included
@@ -50,7 +66,7 @@ const Customization = (props) => {
                     </div>
                     <div className={classes.CustomizationOptionsContainer}>
                         <div>
-                            <h4>Combo size</h4>
+                            <h4>Combo Size</h4>
                         </div>
                         {customizationOptions}
                     </div>

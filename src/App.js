@@ -6,6 +6,7 @@ import Home from "./containers/Home/Home";
 import MenuPage from "./containers/MenuPage/MenuPage";
 import Sections from "./containers/Sections/Sections";
 import Customization from "./containers/Customization/Customization";
+
 const App = () => {
     let routes = (
         <Switch>

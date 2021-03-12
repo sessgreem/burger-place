@@ -4,13 +4,22 @@
     padding: 0 0.5rem;
     border: 0px;
     border-radius: 10px;
-    transition: border 0.3s ease 0s;
     opacity: 1;
     min-height: 100px;
     align-items: center;
     position: relative;
     text-align: left;
     margin-bottom: 1rem;
+    border: 2px solid transparent;
+    transition: border 0.1s ease 0s;
+    cursor: pointer;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .CustomizationOptionImage {
@@ -48,6 +57,10 @@
     opacity: 0.9;
 }
 
-.CustomizationOption.active {
+.Selected {
     border: 2px solid red;
+}
+
+.CustomizationOption:not(.Selected):hover {
+    border: 2px solid #b6b6b6;
 }

@@ -7,6 +7,7 @@ import aLaCarte from "../../../assets/images/options/alacarte.webp";
 
 const CustomizationOption = (props) => {
     const description = props.description ? <p>{props.description}</p> : null;
+
     let img;
     switch (props.name) {
         case "Small":
@@ -24,15 +25,29 @@ const CustomizationOption = (props) => {
         default:
             img = null;
     }
+
+    const optionClasses = [classes.CustomizationOption];
+
+    const isSelected = props.selected === props.name;
+
+    if (isSelected) {
+        optionClasses.push(classes.Selected);
+    }
+
     return (
-        <div className={classes.CustomizationOption}>
-            <div className={classes.CustomizationOptionImage}>{img}</div>
-            <div className={classes.CustomizationOptionDescription}>
-                <h3>{props.name}</h3>
-                {description}
-                <span>{props.calories} Cal</span>
+        <label>
+            <div
+                onClick={() => props.changedSize(props.name)}
+                className={optionClasses.join(" ")}
+            >
+                <div className={classes.CustomizationOptionImage}>{img}</div>
+                <div className={classes.CustomizationOptionDescription}>
+                    <h3>{props.name}</h3>
+                    {description}
+                    <span>{props.calories} Cal</span>
+                </div>
             </div>
-        </div>
+        </label>
     );
 };
 
