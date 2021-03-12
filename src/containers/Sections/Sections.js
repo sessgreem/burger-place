@@ -22,6 +22,7 @@ const Sections = (props) => {
                     options={sectionItem.itemOptions}
                     calories={sectionItem.itemCalories}
                     section={sectionName}
+                    key={sectionItem.itemName}
                 />
             );
         }

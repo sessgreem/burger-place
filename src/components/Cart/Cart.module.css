@@ -1,0 +1,80 @@
+.Cart {
+    box-shadow: rgb(73 73 73 / 20%) 0px 0px 4px 0px;
+    background: rgb(245, 235, 220);
+    opacity: 1;
+    position: absolute;
+    right: 2rem;
+    top: 4.5rem;
+    transform: translateY(0px);
+    transition: all 200ms ease-out 0s;
+    visibility: visible;
+}
+
+@media screen and (min-width: 813px) {
+    .Cart {
+        border-radius: 10px;
+        max-height: calc(100vh - 10rem);
+        overflow: hidden;
+        z-index: 200;
+    }
+}
+
+.CartItems {
+    background: rgb(245, 235, 220);
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    width: 25.875rem;
+}
+
+@media screen and (min-width: 813px) {
+    .CartItems {
+        max-height: calc((100vh - 10rem) - 203px);
+        overflow-y: auto;
+        position: relative;
+    }
+}
+
+.CartButtonContainer {
+    background-color: rgb(245, 235, 220);
+    bottom: 0px;
+    position: relative;
+    width: 100%;
+}
+
+.CartTotal {
+    padding: 1rem 1.5rem;
+    background: rgb(245, 235, 220);
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    color: rgb(80, 35, 20);
+    margin-bottom: 0.5rem;
+}
+
+/* .CartButtons {
+    display: flex;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    place-content: stretch flex-start;
+    align-self: auto;
+    -webkit-box-pack: start;
+    flex-flow: row nowrap;
+    overflow: visible;
+    position: static;
+    z-index: auto;
+    inset: auto;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    min-width: 0px;
+    min-height: 0px;
+    background: initial;
+    border-width: 0px;
+    border-style: none;
+    border-color: transparent;
+    border-radius: 0px;
+} */
