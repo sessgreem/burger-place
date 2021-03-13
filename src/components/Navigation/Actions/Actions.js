@@ -3,7 +3,7 @@ import Button from "../../UI/Button/Button";
 
 import classes from "./Actions.module.css";
 
-const actions = (props) => {
+const Actions = (props) => {
     return (
         <div className={classes.Actions}>
             <Button btnType="Primary" clicked={props.signUpClicked}>
@@ -16,4 +16,4 @@ const actions = (props) => {
     );
 };
 
-export default actions;
+export default Actions;

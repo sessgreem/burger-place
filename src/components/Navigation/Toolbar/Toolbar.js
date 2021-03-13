@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 
 import NavItems from "../NavItems/NavItems";
 import Logo from "../../Logo/Logo";
@@ -8,12 +8,18 @@ import classes from "./Toolbar.module.css";
 import Cart from "../../Cart/Cart";
 
 const Toolbar = () => {
+    const [cartVisibility, setCartVisibility] = useState(false);
+
     const signUpHandler = () => {
         console.log("signupclicked");
     };
 
     const cartHandler = () => {
-        console.log("carthandler clicked");
+        setCartVisibility(!cartVisibility);
+    };
+
+    const cartClickedOutside = () => {
+        setTimeout(() => setCartVisibility(false), 150);
     };
 
     return (
@@ -31,9 +37,12 @@ const Toolbar = () => {
                             singUpClicked={signUpHandler}
                             cartClicked={cartHandler}
                         />
+                        <Cart
+                            visibility={cartVisibility}
+                            clickedOutside={cartClickedOutside}
+                        />
                     </div>
                 </nav>
-                <Cart />
             </header>
         </Fragment>
     );
