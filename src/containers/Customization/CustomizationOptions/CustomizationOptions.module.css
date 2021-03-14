@@ -1,0 +1,22 @@
+.CustomizationOptions {
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+    border-image: initial;
+    border-top: 1px solid rgb(215, 199, 181);
+    margin: 2rem auto 0px;
+}
+
+.CustomizationOptions div:first-of-type {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 1rem 0px;
+}
+
+.CustomizationOptions h4 {
+    color: rgb(80, 35, 20);
+    font-size: 1.25rem;
+}

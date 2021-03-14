@@ -1,0 +1,13 @@
+.CustomizationHeading h3 {
+    font-size: 2rem;
+    margin: 1.5rem 0 1rem;
+    text-align: center;
+    font-weight: 700;
+    color: rgb(80, 35, 20);
+}
+
+.CustomizationHeading p {
+    font-weight: 500;
+    margin-bottom: 1rem;
+    line-height: 1.45;
+}

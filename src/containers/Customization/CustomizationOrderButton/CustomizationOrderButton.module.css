@@ -1,0 +1,16 @@
+.CustomizationOrderButton {
+    margin: 2rem 0;
+}
+
+.CustomizationOrderButton span {
+    display: block;
+    color: rgb(214, 35, 0);
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: underline;
+    border: none;
+    cursor: pointer;
+    margin: 0px auto 1rem;
+    letter-spacing: -1px;
+    text-align: center;
+}
