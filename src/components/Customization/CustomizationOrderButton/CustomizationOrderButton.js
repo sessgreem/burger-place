@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./CustomizationOrderButton.module.css";
-import Button from "../../../components/UI/Button/Button";
+import Button from "../../UI/Button/Button";
 const CustomizationOrderButton = () => {
     return (
         <div className={classes.CustomizationOrderButton}>

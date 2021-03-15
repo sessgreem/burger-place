@@ -1,29 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import classes from "./Cart.module.css";
 import Button from "../../components/UI/Button/Button";
 import CartItem from "./CartItem/CartItem";
-
-const useOutsideAlerter = (ref, clickedoutSide) => {
-    useEffect(() => {
-        function handleClickOutside(event) {
-            if (ref.current && !ref.current.contains(event.target)) {
-                clickedoutSide();
-            }
-        }
-
-        // Bind the event listener
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            // Unbind the event listener on clean up
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [ref, clickedoutSide]);
-};
+import useClickOutsideAlerter from "../../hooks/useClickOutsideAlerter";
 
 const Cart = (props) => {
     const wrapperRef = useRef(null);
     const { clickedOutside } = props;
-    useOutsideAlerter(wrapperRef, clickedOutside);
+
+    useClickOutsideAlerter(wrapperRef, clickedOutside);
 
     // ? map Cart items <CartItem/>
 

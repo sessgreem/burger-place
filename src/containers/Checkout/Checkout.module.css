@@ -1,0 +1,94 @@
+@media screen and (min-width: 813px)
+<style>
+.fLtFyC {
+    padding: 2rem 3rem;
+    gap: 2rem;
+    grid-template-areas:
+        "details cart"
+        "upsell cart"
+        "payment cart";
+    grid-template-columns: minmax(min-content, 6fr) minmax(min-content, 4fr);
+    grid-template-rows: min-content min-content 1fr;
+}
+<style>
+.fLtFyC {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    padding: 1rem;
+    gap: 1.5rem;
+    grid-template-areas:
+        "details"
+        "upsell"
+        "cart"
+        "payment";
+    grid-template-columns: 100%;
+
+
+
+/* restourant */
+color: rgb(43, 2, 0);
+    font-family: Flame, "Cooper Black", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.25rem;
+    font-weight: normal;
+    margin: 0px 0px 0.625rem;
+    text-transform: none;
+
+
+    /*  change adress */
+    .gHYLA-d {
+    color: rgb(118, 40, 35);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    padding: 10px 0px;
+    margin-left: auto;
+
+
+
+    /* resoutrant box */
+    border-radius: 10px;
+    box-shadow: rgb(73 73 73 / 20%) 0px 0px 4px 0px;
+    display: flex;
+    flex-direction: column;
+    font-style: normal;
+    font-size: 0.9375rem;
+    font-family: "Flame Sans", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+    padding: 0px;
+    background-color: rgb(255, 255, 255);
+
+
+    /*  cart item li */
+    .bDakXA {
+    margin: 0px;
+    background-color: rgb(245, 235, 220);
+    color: rgb(43, 2, 0);
+    border-radius: 10px;
+    display: flex;
+
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 1rem;
+
+
+/* cart item heading */
+
+kYodFw {
+    padding: 0px 0.5rem 1rem;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+
+/* cart item removed */
+iofXLM {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0.25rem;
+    border-top: 1px solid rgb(245, 235, 220);
+    color: rgb(43, 2, 0);

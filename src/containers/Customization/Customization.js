@@ -3,11 +3,12 @@ import classes from "./Customization.module.css";
 import SmallSlider from "../../components/SmallSlider/SmallSlider";
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
 import Footer from "../../components/Footer/Footer";
-import CustomizationNutritionInformation from "./CustomizationNutritionInformation/CustomizationNutritionInformation";
-import CustomizationOrderButton from "./CustomizationOrderButton/CustomizationOrderButton";
-import CustomizationOptions from "./CustomizationOptions/CustomizationOptions";
-import CustomizationHeading from "./CustomizationHeading/CustomizationHeading";
-import CustomizationBackground from "./CustomizationBackground/CustomizationBackground";
+
+import CustomizationNutritionInformation from "../../components/Customization/CustomizationNutritionInformation/CustomizationNutritionInformation";
+import CustomizationOrderButton from "../../components/Customization/CustomizationOrderButton/CustomizationOrderButton";
+import CustomizationOptions from "../../components/Customization/CustomizationOptions/CustomizationOptions";
+import CustomizationHeading from "../../components/Customization/CustomizationHeading/CustomizationHeading";
+import CustomizationBackground from "../../components/Customization/CustomizationBackground/CustomizationBackground";
 import CustomizationOption from "../../components/UI/CustomizationOption/CustomizationOption";
 
 import { connect } from "react-redux";

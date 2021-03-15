@@ -1,5 +1,5 @@
 import React, { useEffect, Fragment } from "react";
-import SectionItem from "./SectionItem/SectionItem";
+import SectionItem from "../../components/Sections/SectionItem/SectionItem";
 import classes from "./Sections.module.css";
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
 import Footer from "../../components/Footer/Footer";
