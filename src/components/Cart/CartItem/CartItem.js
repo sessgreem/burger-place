@@ -10,6 +10,7 @@ const CartItem = () => {
                 <span>{name}</span>
                 <span>{price}</span>
             </div>
+            {/* ? maybe this can be used in incrementor in checkout component  */}
             <div className={classes.CartItemActions}>
                 <p>Remove</p>
                 {/* incrementors */}
