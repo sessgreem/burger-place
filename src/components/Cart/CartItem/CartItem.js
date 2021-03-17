@@ -1,13 +1,20 @@
 import React from "react";
 import classes from "./CartItem.module.css";
 
-const CartItem = () => {
-    const name = "Whopper Meal Medium";
+const CartItem = (props) => {
     const price = "$15.32";
+
+    let mealSize = null;
+    if (props.size !== "À La Carte") {
+        mealSize = `Meal ${props.size}`;
+    }
+
     return (
         <div className={classes.CartItem}>
             <div className={classes.CartItemHeading}>
-                <span>{name}</span>
+                <span>
+                    {props.name} {mealSize}
+                </span>
                 <span>{price}</span>
             </div>
             {/* ? maybe this can be used in incrementor in checkout component  */}

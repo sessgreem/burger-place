@@ -7,10 +7,17 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
 import { Provider } from "react-redux";
-import { createStore } from "redux";
-import reducer from "./store/reducers/reducer";
+import { createStore, combineReducers } from "redux";
 
-const store = createStore(reducer);
+import menuReducer from "./store/reducers/reducer";
+import cartReducer from "./store/reducers/cart";
+
+const rootReducer = combineReducers({
+    menu: menuReducer,
+    cart: cartReducer,
+});
+
+const store = createStore(rootReducer);
 
 const app = (
     <Provider store={store}>

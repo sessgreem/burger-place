@@ -11,26 +11,30 @@ import CustomizationHeading from "../../components/Customization/CustomizationHe
 import CustomizationBackground from "../../components/Customization/CustomizationBackground/CustomizationBackground";
 import CustomizationOption from "../../components/UI/CustomizationOption/CustomizationOption";
 
+import { addToCart } from "../../store/actions/cart";
+
 import { connect } from "react-redux";
 import { useParams } from "react-router";
 
 const Customization = (props) => {
     const { sectionName, itemName } = useParams();
+
     const [state, setState] = useState({
-        itemName,
-        selectedSize: "Medium",
-        selectedDrink: "Cola",
+        name: itemName,
+        size: "Medium",
+        drink: "Cola",
     });
 
     const item = props.menu[sectionName].sectionItems.find(
         (el) => el.itemName === itemName
     );
+
     const itemDescription = item.itemDescription;
 
-    const changedSizeHandler = (selectedSize) => {
+    const changedSizeHandler = (size) => {
         const newState = {
             ...state,
-            selectedSize,
+            size,
         };
         setState(newState);
     };
@@ -42,11 +46,16 @@ const Customization = (props) => {
                 name={option.optionName}
                 description={option.optionDescription}
                 calories={option.optionCalories}
-                selected={state.selectedSize}
+                selected={state.size}
                 changedSize={changedSizeHandler}
             />
         );
     });
+
+    const handleOrderClicked = () => {
+        console.log("order clicked");
+        props.onAddToCart(state);
+    };
 
     return (
         <Fragment>
@@ -60,7 +69,9 @@ const Customization = (props) => {
                         description={itemDescription}
                     />
                     <CustomizationOptions options={customizationOptions} />
-                    <CustomizationOrderButton />
+                    <CustomizationOrderButton
+                        orderClicked={handleOrderClicked}
+                    />
                     <CustomizationNutritionInformation />
                 </div>
             </main>
@@ -69,10 +80,17 @@ const Customization = (props) => {
     );
 };
 
-const mapStateToProps = (menu) => {
+const mapStateToProps = (state) => {
     return {
-        menu,
+        menu: state.menu,
+        cart: state.cart.items,
     };
 };
 
-export default connect(mapStateToProps)(Customization);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onAddToCart: (cartItem) => dispatch(addToCart(cartItem)),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Customization);

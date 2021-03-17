@@ -40,7 +40,7 @@ const Sections = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        menu: state,
+        menu: state.menu,
     };
 };
 

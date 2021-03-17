@@ -4,7 +4,10 @@ import CheckoutCartItem from "../../components/Checkout/CheckoutCartItem/Checkou
 import Button from "../../components/UI/Button/Button";
 import CheckoutExtraItem from "../../components/Checkout/CheckoutExtraItem/CheckoutExtraItem";
 import CheckoutRadioOption from "../../components/Checkout/CheckoutRadioOption/CheckoutRadioOption";
-const Checkout = () => {
+
+import { connect } from "react-redux";
+
+const Checkout = (props) => {
     const [radioOptions, setRadioOptions] = useState([
         {
             header: "Drive Thru",
@@ -28,7 +31,6 @@ const Checkout = () => {
 
         setRadioOptions(newRadioOptions);
     };
-
     const checkoutRadioOptions = radioOptions.map((option) => (
         <CheckoutRadioOption
             checked={option.checked}
@@ -38,8 +40,13 @@ const Checkout = () => {
             key={option.header}
         />
     ));
-
     const selectedRadioOption = radioOptions.find((el) => el.checked === true);
+
+    const checkoutCartItems = props.cart.map((item, index) => {
+        return (
+            <CheckoutCartItem name={item.name} size={item.size} key={index} />
+        );
+    });
 
     return (
         <Fragment>
@@ -74,10 +81,7 @@ const Checkout = () => {
 
                 <div className={classes.CheckoutCart}>
                     <h2>Your Cart</h2>
-                    <ul>
-                        <CheckoutCartItem />
-                        <CheckoutCartItem />
-                    </ul>
+                    <ul>{checkoutCartItems}</ul>
                     <Button btnType="Secondary">Add items</Button>
                     <div className={classes.CheckoutCartTotals}>
                         <div>
@@ -96,7 +100,6 @@ const Checkout = () => {
                     </div>
                 </div>
                 <div className={classes.CheckoutOrderButton}>
-                    {/* order button */}
                     <Button btnType="Order">Continue</Button>
                 </div>
             </div>
@@ -104,4 +107,10 @@ const Checkout = () => {
     );
 };
 
-export default Checkout;
+const mapStateToProps = (state) => {
+    return {
+        cart: state.cart.items,
+    };
+};
+
+export default connect(mapStateToProps)(Checkout);

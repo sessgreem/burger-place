@@ -1,19 +1,18 @@
 import React from "react";
 import classes from "./CheckoutCartItem.module.css";
 
-const CheckoutCartItem = () => {
+const CheckoutCartItem = (props) => {
     return (
         <li className={classes.CheckoutCartItem}>
             <div className={classes.CheckoutCartItemInfo}>
                 <div>
-                    {/* <span>{props.name}</span> */}
-                    <span>Whopper Meal Medium</span>
+                    <span>Whopper Meal {props.size} </span>
                     <p>
-                        Whopper
+                        {props.name}
                         <br />
                         Medium Classic Fries
                         <br />
-                        Combo Medium Coca-Cola
+                        Combo {props.size} Coca-Cola {props.drink}
                     </p>
                 </div>
                 <div>
