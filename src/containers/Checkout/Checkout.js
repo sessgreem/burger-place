@@ -1,11 +1,11 @@
 import React, { Fragment, useState } from "react";
 import classes from "./Checkout.module.css";
-import CheckoutCartItem from "../../components/Checkout/CheckoutCartItem/CheckoutCartItem";
 import Button from "../../components/UI/Button/Button";
 import CheckoutExtraItem from "../../components/Checkout/CheckoutExtraItem/CheckoutExtraItem";
 import CheckoutRadioOption from "../../components/Checkout/CheckoutRadioOption/CheckoutRadioOption";
-// import CartItem from "../../components/Cart/CartItem/CartItem";
+import CartItem from "../../components/Cart/CartItem/CartItem";
 import { connect } from "react-redux";
+import { removeFromCart } from "../../store/actions/cart";
 
 const Checkout = (props) => {
     const [radioOptions, setRadioOptions] = useState([
@@ -21,6 +21,7 @@ const Checkout = (props) => {
             checked: false,
         },
     ]);
+
     const radioChangeHandler = (header) => {
         const newRadioOptions = radioOptions.map((option) => {
             if (option.header === header) {
@@ -31,6 +32,7 @@ const Checkout = (props) => {
 
         setRadioOptions(newRadioOptions);
     };
+
     const checkoutRadioOptions = radioOptions.map((option) => (
         <CheckoutRadioOption
             checked={option.checked}
@@ -40,25 +42,26 @@ const Checkout = (props) => {
             key={option.header}
         />
     ));
+
     const selectedRadioOption = radioOptions.find((el) => el.checked === true);
 
-    // ! CartItem and CartItemCheckout are virtually the same components, need to remove CartItemCheckout and use only CartItem
-
-    // const handleRemoveItem = (itemId) => {
-    //     console.log(itemId);
-    //     // props.onRemoveItem(itemId);
-    // };
+    // CartItem functionality
+    const handleRemoveItem = (itemId) => {
+        props.onRemoveItem(itemId);
+    };
 
     const checkoutCartItems = props.cart.map((item) => {
         return (
-            <CheckoutCartItem name={item.name} size={item.size} key={item.id} />
-            // <CartItem
-            //     key={item.id}
-            //     id={item.id}
-            //     name={item.name}
-            //     size={item.size}
-            //     removeClicked={handleRemoveItem}
-            // />
+            <li key={item.id}>
+                <CartItem
+                    id={item.id}
+                    name={item.name}
+                    size={item.size}
+                    removeClicked={handleRemoveItem}
+                    hasDescription={true}
+                    price={item.price}
+                />
+            </li>
         );
     });
 
@@ -100,7 +103,7 @@ const Checkout = (props) => {
                     <div className={classes.CheckoutCartTotals}>
                         <div>
                             <span>Subtotal </span>
-                            <span>${props.itemsPrice}</span>
+                            <span>${props.itemsPrice.toFixed(2)}</span>
                         </div>
                         <div>
                             <span>Tax</span>
@@ -140,4 +143,10 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(Checkout);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onRemoveItem: (itemId) => dispatch(removeFromCart(itemId)),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout);

@@ -15,6 +15,7 @@
     display: flex;
     justify-content: space-between;
 }
+
 .CheckoutCartItemInfo p {
     color: rgb(43, 2, 0);
     font-size: 0.8rem;
@@ -23,15 +24,15 @@
 }
 
 .CheckoutCartItemInfo span {
-    color: rgb(80, 35, 20);
     display: flex;
-    font-weight: 700;
     letter-spacing: normal;
     line-height: 1.25rem;
+    font-weight: 700;
     font-size: 1.25rem;
     font-stretch: condensed;
     text-transform: none;
     margin: 0.5rem 0px;
+    color: rgb(80, 35, 20);
 }
 
 /* this needs to be a component */

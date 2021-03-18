@@ -118,6 +118,14 @@ div > h2 {
     grid-area: cart / cart / cart / cart;
 }
 
+.CheckoutCart li {
+    margin-top: 1rem;
+}
+
+.CheckoutCart li:first-of-type {
+    margin: 0;
+}
+
 .CheckoutCart button {
     margin: 1rem auto;
 }

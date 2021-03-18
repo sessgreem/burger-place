@@ -39,7 +39,6 @@ const Customization = (props) => {
             size,
             price: newPrice,
         };
-        console.log(newState);
         setState(newState);
     };
 

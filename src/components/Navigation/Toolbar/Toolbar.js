@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 
 import NavItems from "../NavItems/NavItems";
 import Logo from "../../Logo/Logo";
@@ -18,8 +18,16 @@ const Toolbar = () => {
         setCartVisibility(!cartVisibility);
     };
 
+    // small technical workaround
+    let timeout;
+
+    useEffect(() => {
+        return () => clearTimeout(timeout);
+    });
+
+    // TODO https://www.npmjs.com/package/react-onclickoutside
     const cartClickedOutside = () => {
-        setTimeout(() => setCartVisibility(false), 150);
+        timeout = setTimeout(() => setCartVisibility(false), 150);
     };
 
     return (
