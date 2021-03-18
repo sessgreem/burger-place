@@ -14,19 +14,18 @@ const Sections = (props) => {
         window.scrollTo(0, 0);
     }, []);
 
-    const sectionItems = props.menu[sectionName].sectionItems.map(
-        (sectionItem) => {
-            return (
-                <SectionItem
-                    name={sectionItem.itemName}
-                    options={sectionItem.itemOptions}
-                    calories={sectionItem.itemCalories}
-                    section={sectionName}
-                    key={sectionItem.itemName}
-                />
-            );
-        }
-    );
+    const sections = props.menu[sectionName].sectionItems;
+    const sectionItems = Object.keys(sections).map((section) => {
+        return (
+            <SectionItem
+                name={section}
+                options={sections[section].itemOptions}
+                calories={sections[section].itemCalories}
+                section={sectionName}
+                key={section}
+            />
+        );
+    });
 
     return (
         <Fragment>

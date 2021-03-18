@@ -6,7 +6,7 @@ const CustomizationOrderButton = (props) => {
         <div className={classes.CustomizationOrderButton}>
             <span>Nutritional Information</span>
             <Button clicked={props.orderClicked} btnType="Order">
-                Check Availability
+                Add to order
             </Button>
         </div>
     );

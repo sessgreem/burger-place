@@ -2,8 +2,6 @@ import React from "react";
 import classes from "./CartItem.module.css";
 
 const CartItem = (props) => {
-    const price = "$15.32";
-
     let mealSize = null;
     if (props.size !== "À La Carte") {
         mealSize = `Meal ${props.size}`;
@@ -15,11 +13,17 @@ const CartItem = (props) => {
                 <span>
                     {props.name} {mealSize}
                 </span>
-                <span>{price}</span>
+                {/* <p>
+                    {props.name}
+                    <br />
+                    Medium Classic Fries
+                    <br />
+                    Combo {props.size} Coca-Cola {props.drink}
+                </p> */}
+                <span>${props.price.toFixed(2)}</span>
             </div>
-            {/* ? maybe this can be used in incrementor in checkout component  */}
             <div className={classes.CartItemActions}>
-                <p>Remove</p>
+                <p onClick={() => props.removeClicked(props.id)}>Remove</p>
                 {/* incrementors */}
             </div>
         </div>

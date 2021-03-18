@@ -5,6 +5,7 @@ import CartItem from "./CartItem/CartItem";
 import useClickOutsideAlerter from "../../hooks/useClickOutsideAlerter";
 
 import { connect } from "react-redux";
+import { removeFromCart } from "../../store/actions/cart";
 
 const Cart = (props) => {
     const wrapperRef = useRef(null);
@@ -12,8 +13,21 @@ const Cart = (props) => {
 
     useClickOutsideAlerter(wrapperRef, clickedOutside);
 
-    const cartItems = props.cart.map((item, index) => {
-        return <CartItem key={index} name={item.name} size={item.size} />;
+    const handleRemoveItem = (itemId) => {
+        props.onRemoveItem(itemId);
+    };
+
+    const cartItems = props.cart.map((item) => {
+        return (
+            <CartItem
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                size={item.size}
+                removeClicked={handleRemoveItem}
+                price={item.price}
+            />
+        );
     });
 
     return props.visibility ? (
@@ -22,7 +36,7 @@ const Cart = (props) => {
             <div className={classes.CartButtonContainer}>
                 <div className={classes.CartTotal}>
                     <b>Total*</b>
-                    <span>$15.52</span>
+                    <span>${props.itemsPrice.toFixed(2)}</span>
                 </div>
                 <div className={classes.CartButton}>
                     <Button btnType="Cart">Checkout</Button>
@@ -35,7 +49,16 @@ const Cart = (props) => {
 const mapStateToProps = (state) => {
     return {
         cart: state.cart.items,
+        itemsPrice: state.cart.price,
     };
 };
 
-export default connect(mapStateToProps)(Cart);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onRemoveItem: (itemId) => dispatch(removeFromCart(itemId)),
+    };
+};
+
+// onAddToCart: (cartItem) => dispatch(addToCart(cartItem)),
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

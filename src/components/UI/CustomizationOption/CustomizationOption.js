@@ -19,7 +19,7 @@ const CustomizationOption = (props) => {
         case "Large":
             img = <img src={largeOption} alt="Large" />;
             break;
-        case "À La Carte":
+        case "A La Carte":
             img = <img src={aLaCarte} alt="A La Carte" />;
             break;
         default:

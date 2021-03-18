@@ -1,8 +1,7 @@
 import React from "react";
 import Button from "../../UI/Button/Button";
-
 import classes from "./Actions.module.css";
-
+import { connect } from "react-redux";
 const Actions = (props) => {
     return (
         <div className={classes.Actions}>
@@ -10,10 +9,16 @@ const Actions = (props) => {
                 Sign Up
             </Button>
             <Button btnType="Secondary" clicked={props.cartClicked}>
-                0.00$
+                ${props.itemsPrice.toFixed(2)}
             </Button>
         </div>
     );
 };
 
-export default Actions;
+const mapStateToProps = (state) => {
+    return {
+        itemsPrice: state.cart.price,
+    };
+};
+
+export default connect(mapStateToProps)(Actions);

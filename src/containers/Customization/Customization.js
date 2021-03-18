@@ -19,33 +19,37 @@ import { useParams } from "react-router";
 const Customization = (props) => {
     const { sectionName, itemName } = useParams();
 
+    const item = props.menu[sectionName].sectionItems[itemName];
+
+    const itemOptions = item.itemOptions;
+
+    const itemPrice = itemOptions[item.itemDefaultOptionName].optionPrice;
+
     const [state, setState] = useState({
         name: itemName,
-        size: "Medium",
+        size: item.itemDefaultOptionName,
         drink: "Cola",
+        price: itemPrice,
     });
 
-    const item = props.menu[sectionName].sectionItems.find(
-        (el) => el.itemName === itemName
-    );
-
-    const itemDescription = item.itemDescription;
-
     const changedSizeHandler = (size) => {
+        const newPrice = itemOptions[size].optionPrice;
         const newState = {
             ...state,
             size,
+            price: newPrice,
         };
+        console.log(newState);
         setState(newState);
     };
 
-    const customizationOptions = item.itemOptions.map((option) => {
+    const customizationOptions = Object.keys(itemOptions).map((optionName) => {
         return (
             <CustomizationOption
-                key={option.optionName}
-                name={option.optionName}
-                description={option.optionDescription}
-                calories={option.optionCalories}
+                key={optionName}
+                name={optionName}
+                description={itemOptions[optionName].optionDescription}
+                calories={itemOptions[optionName].optionCalories}
                 selected={state.size}
                 changedSize={changedSizeHandler}
             />
@@ -53,9 +57,10 @@ const Customization = (props) => {
     });
 
     const handleOrderClicked = () => {
-        console.log("order clicked");
         props.onAddToCart(state);
     };
+
+    const itemDescription = item.itemDescription;
 
     return (
         <Fragment>

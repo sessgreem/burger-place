@@ -4,7 +4,7 @@ import CheckoutCartItem from "../../components/Checkout/CheckoutCartItem/Checkou
 import Button from "../../components/UI/Button/Button";
 import CheckoutExtraItem from "../../components/Checkout/CheckoutExtraItem/CheckoutExtraItem";
 import CheckoutRadioOption from "../../components/Checkout/CheckoutRadioOption/CheckoutRadioOption";
-
+// import CartItem from "../../components/Cart/CartItem/CartItem";
 import { connect } from "react-redux";
 
 const Checkout = (props) => {
@@ -42,9 +42,23 @@ const Checkout = (props) => {
     ));
     const selectedRadioOption = radioOptions.find((el) => el.checked === true);
 
-    const checkoutCartItems = props.cart.map((item, index) => {
+    // ! CartItem and CartItemCheckout are virtually the same components, need to remove CartItemCheckout and use only CartItem
+
+    // const handleRemoveItem = (itemId) => {
+    //     console.log(itemId);
+    //     // props.onRemoveItem(itemId);
+    // };
+
+    const checkoutCartItems = props.cart.map((item) => {
         return (
-            <CheckoutCartItem name={item.name} size={item.size} key={index} />
+            <CheckoutCartItem name={item.name} size={item.size} key={item.id} />
+            // <CartItem
+            //     key={item.id}
+            //     id={item.id}
+            //     name={item.name}
+            //     size={item.size}
+            //     removeClicked={handleRemoveItem}
+            // />
         );
     });
 
@@ -86,16 +100,28 @@ const Checkout = (props) => {
                     <div className={classes.CheckoutCartTotals}>
                         <div>
                             <span>Subtotal </span>
-                            <span>$28.54</span>
+                            <span>${props.itemsPrice}</span>
                         </div>
                         <div>
                             <span>Tax</span>
-                            <span>$2.24</span>
+                            <span>
+                                $
+                                {(
+                                    (7.46666666 * props.itemsPrice) /
+                                    100
+                                ).toFixed(2)}
+                            </span>
                         </div>
                         <hr />
                         <div>
                             <span>Total*</span>
-                            <span>$30.83</span>
+                            <span>
+                                $
+                                {(
+                                    (7.46666666 * props.itemsPrice) / 100 +
+                                    props.itemsPrice
+                                ).toFixed(2)}
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -110,6 +136,7 @@ const Checkout = (props) => {
 const mapStateToProps = (state) => {
     return {
         cart: state.cart.items,
+        itemsPrice: state.cart.price,
     };
 };
 
