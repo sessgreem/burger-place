@@ -10,6 +10,7 @@ import CustomizationOptions from "../../components/Customization/CustomizationOp
 import CustomizationHeading from "../../components/Customization/CustomizationHeading/CustomizationHeading";
 import CustomizationBackground from "../../components/Customization/CustomizationBackground/CustomizationBackground";
 import CustomizationOption from "../../components/UI/CustomizationOption/CustomizationOption";
+import CustomizationFaceOption from "../../components/UI/CustomizationFaceOption/CustomizationFaceOption";
 
 import { addToCart } from "../../store/actions/cart";
 
@@ -20,14 +21,13 @@ const Customization = (props) => {
     const { sectionName, itemName } = useParams();
 
     const item = props.menu[sectionName].sectionItems[itemName];
-
     const itemOptions = item.itemOptions;
-
     const itemPrice = itemOptions[item.itemDefaultOptionName].optionPrice;
 
     const [state, setState] = useState({
         name: itemName,
         size: item.itemDefaultOptionName,
+        side: item.itemDefaultSideName,
         drink: "Cola",
         price: itemPrice,
     });
@@ -55,6 +55,28 @@ const Customization = (props) => {
         );
     });
 
+    const changeSideHandler = (sideName) => {
+        const newState = {
+            ...state,
+            side: sideName,
+        };
+        setState(newState);
+    };
+
+    const itemSides = item.itemSides;
+    const customizationFaceOptions = Object.keys(itemSides).map((sideName) => {
+        return (
+            <CustomizationFaceOption
+                key={sideName}
+                name={sideName}
+                calories={itemSides[sideName].optionCalories}
+                selected={state.side}
+                size={state.size}
+                changedSide={changeSideHandler}
+            />
+        );
+    });
+
     const handleOrderClicked = () => {
         props.onAddToCart(state);
     };
@@ -71,8 +93,14 @@ const Customization = (props) => {
                     <CustomizationHeading
                         name={itemName}
                         description={itemDescription}
+                        selectedSize={state.size}
+                        price={state.price}
                     />
-                    <CustomizationOptions options={customizationOptions} />
+                    <CustomizationOptions
+                        sizes={customizationOptions}
+                        selectedSize={state.size}
+                        sides={customizationFaceOptions}
+                    />
                     <CustomizationOrderButton
                         orderClicked={handleOrderClicked}
                     />

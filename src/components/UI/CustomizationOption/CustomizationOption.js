@@ -35,19 +35,17 @@ const CustomizationOption = (props) => {
     }
 
     return (
-        <label>
-            <div
-                onClick={() => props.changedSize(props.name)}
-                className={optionClasses.join(" ")}
-            >
-                <div className={classes.CustomizationOptionImage}>{img}</div>
-                <div className={classes.CustomizationOptionDescription}>
-                    <h3>{props.name}</h3>
-                    {description}
-                    <span>{props.calories} Cal</span>
-                </div>
+        <div
+            onClick={() => props.changedSize(props.name)}
+            className={optionClasses.join(" ")}
+        >
+            <div className={classes.CustomizationOptionImage}>{img}</div>
+            <div className={classes.CustomizationOptionDescription}>
+                <h3>{props.name}</h3>
+                {description}
+                <span>{props.calories} Cal</span>
             </div>
-        </label>
+        </div>
     );
 };
 

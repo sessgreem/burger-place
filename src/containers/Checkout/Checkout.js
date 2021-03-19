@@ -57,6 +57,7 @@ const Checkout = (props) => {
                     id={item.id}
                     name={item.name}
                     size={item.size}
+                    side={item.side}
                     removeClicked={handleRemoveItem}
                     hasDescription={true}
                     price={item.price}

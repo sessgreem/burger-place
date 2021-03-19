@@ -7,7 +7,7 @@
     margin: 2rem auto 0px;
 }
 
-.CustomizationOptions div:first-of-type {
+.CustomizationOptionsHeading {
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
@@ -16,7 +16,23 @@
     margin: 1rem 0px;
 }
 
-.CustomizationOptions h4 {
+.CustomizationOptionsHeading div {
+    align-items: center;
+    background-color: rgb(214, 35, 0);
+    border-radius: 10px;
+    color: rgb(245, 235, 220);
+    display: flex;
+    font-size: 0.8rem;
+    height: 20px;
+    justify-content: center;
+    width: 70px;
+}
+
+.CustomizationOptionsHeading h4 {
     color: rgb(80, 35, 20);
     font-size: 1.25rem;
+}
+
+.CustomizationSides {
+    display: flex;
 }

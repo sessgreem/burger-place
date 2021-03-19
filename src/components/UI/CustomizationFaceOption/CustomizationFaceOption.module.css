@@ -1,0 +1,66 @@
+.CustomizationFaceOption {
+    color: rgb(80, 35, 20);
+    outline: rgb(80, 35, 20);
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    padding: 0.3rem;
+    overflow: hidden;
+    width: 167px;
+    cursor: pointer;
+}
+
+.CustomizationFaceOptionImage {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 167px;
+    background-color: rgb(255, 255, 255);
+    border: 2.5px solid transparent;
+    border-radius: 10px;
+    transition: border 0.2s ease 0s;
+}
+.Selected {
+    border: 2.5px solid rgb(214, 35, 0);
+}
+
+.CustomizationFaceOptionImage:not(.Selected):hover {
+    border: 2px solid #b6b6b6;
+}
+
+.CustomizationFaceOptionImage img {
+    height: 91px;
+}
+
+.CustomizationFaceOptionDescription {
+    border-radius: 10px;
+    display: flex;
+    flex: 9 1 0%;
+    flex-direction: column;
+    justify-content: center;
+    /* margin: 0px; */
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.CustomizationFaceOptionDescription h4 {
+    padding: 0px;
+    font-weight: 600;
+    letter-spacing: -0.23px;
+    line-height: 1.07;
+}
+
+.CustomizationFaceOptionDescription h5 {
+    padding: 5px 0px 0px;
+    font-weight: 600;
+    letter-spacing: -0.23px;
+    line-height: 1.07;
+}
+
+@media screen and (min-width: 813px) {
+    .CustomizationFaceOption {
+        flex-basis: 33%;
+    }
+}

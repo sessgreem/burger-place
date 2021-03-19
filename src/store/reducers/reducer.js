@@ -28,10 +28,19 @@ const initialState = {
                         optionPrice: 8.99,
                     },
                 },
+                itemSides: {
+                    "Classic Fries": {
+                        optionCalories: "383",
+                    },
+                    "Onion Rings": {
+                        optionCalories: "564",
+                    },
+                },
                 itemCalories: "850 - 1,882",
                 itemDescription:
                     "Our Whopper Sandwich is a ¼ lb* of savory flame-grilled beef topped with juicy tomatoes, fresh lettuce, creamy mayonnaise, ketchup, crunchy pickles, and sliced white onions on a soft sesame seed bun.",
                 itemDefaultOptionName: "Medium",
+                itemDefaultSideName: "Classic Fries",
             },
         },
     },
