@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./CheckoutExtraItem.module.css";
-import burger from "../../../assets/images/burgers/whopper-cheeseburger.png";
+import burger from "../../../../assets/images/burgers/whopper-cheeseburger.png";
 const CheckoutExtraItem = () => {
     return (
         <div className={classes.CheckoutExtraItem}>

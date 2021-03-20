@@ -1,0 +1,8 @@
+.CheckoutExtraItems {
+    grid-area: upsell / upsell / upsell / upsell;
+}
+
+.CheckoutExtraItems > div {
+    display: flex;
+    overflow: auto;
+}

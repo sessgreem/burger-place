@@ -1,12 +1,14 @@
 import React, { Fragment, useState } from "react";
 import classes from "./Checkout.module.css";
-import Button from "../../components/UI/Button/Button";
-import CheckoutExtraItem from "../../components/Checkout/CheckoutExtraItem/CheckoutExtraItem";
 import CheckoutRadioOption from "../../components/Checkout/CheckoutRadioOption/CheckoutRadioOption";
 import CartItem from "../../components/Cart/CartItem/CartItem";
 import { connect } from "react-redux";
 import { removeFromCart } from "../../store/actions/cart";
-
+import CheckoutExtraItems from "../../components/Checkout/CheckoutExtraItems/CheckoutExtraItems";
+import CheckoutCart from "../../components/Checkout/CheckoutCart/CheckoutCart";
+import CheckoutOrderButton from "../../components/Checkout/CheckoutOrderButton/CheckoutOrderButton";
+import CheckoutAddress from "../../components/Checkout/CheckoutAddress/CheckoutAddress";
+import CheckoutHeader from "../../components/Checkout/CheckoutHeader/CheckoutHeader";
 const Checkout = (props) => {
     const [radioOptions, setRadioOptions] = useState([
         {
@@ -68,70 +70,15 @@ const Checkout = (props) => {
 
     return (
         <Fragment>
-            <div className={classes.CheckoutHeader}>
-                <div>X</div>
-                <h1>{selectedRadioOption?.header} order</h1>
-            </div>
+            <CheckoutHeader header={selectedRadioOption.header} />
             <div className={classes.Checkout}>
-                <div className={classes.CheckoutAddress}>
-                    <div>
-                        <h2>Restourant Details</h2>
-                        <span>Change Address</span>
-                    </div>
-                    <div className={classes.CheckoutAddressBox}>
-                        <div className={classes.CheckoutAddressBoxDetails}>
-                            <span>6085 Samuell Road</span>
-                            <br />
-                            <p>Garland, TX 75012</p>
-                        </div>
-                        <div className={classes.CheckoutAddressBoxOptions}>
-                            {checkoutRadioOptions}
-                        </div>
-                    </div>
-                </div>
-                <div className={classes.CheckoutExtraItems}>
-                    <h2>Add to order</h2>
-                    <div>
-                        <CheckoutExtraItem />
-                        <CheckoutExtraItem />
-                    </div>
-                </div>
-
-                <div className={classes.CheckoutCart}>
-                    <h2>Your Cart</h2>
-                    <ul>{checkoutCartItems}</ul>
-                    <Button btnType="Secondary">Add items</Button>
-                    <div className={classes.CheckoutCartTotals}>
-                        <div>
-                            <span>Subtotal </span>
-                            <span>${props.itemsPrice.toFixed(2)}</span>
-                        </div>
-                        <div>
-                            <span>Tax</span>
-                            <span>
-                                $
-                                {(
-                                    (7.46666666 * props.itemsPrice) /
-                                    100
-                                ).toFixed(2)}
-                            </span>
-                        </div>
-                        <hr />
-                        <div>
-                            <span>Total*</span>
-                            <span>
-                                $
-                                {(
-                                    (7.46666666 * props.itemsPrice) / 100 +
-                                    props.itemsPrice
-                                ).toFixed(2)}
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div className={classes.CheckoutOrderButton}>
-                    <Button btnType="Order">Continue</Button>
-                </div>
+                <CheckoutAddress options={checkoutRadioOptions} />
+                <CheckoutExtraItems />
+                <CheckoutCart
+                    items={checkoutCartItems}
+                    price={props.itemsPrice}
+                />
+                <CheckoutOrderButton />
             </div>
         </Fragment>
     );

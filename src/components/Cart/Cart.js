@@ -6,10 +6,12 @@ import useClickOutsideAlerter from "../../hooks/useClickOutsideAlerter";
 
 import { connect } from "react-redux";
 import { removeFromCart } from "../../store/actions/cart";
+import { useHistory } from "react-router-dom";
 
 const Cart = (props) => {
     const wrapperRef = useRef(null);
     const { clickedOutside } = props;
+    let history = useHistory();
 
     useClickOutsideAlerter(wrapperRef, clickedOutside);
 
@@ -29,7 +31,9 @@ const Cart = (props) => {
             />
         );
     });
-
+    const checkoutButtonHandler = () => {
+        history.push("/checkout");
+    };
     return props.visibility ? (
         <div ref={wrapperRef} className={classes.Cart}>
             <div className={classes.CartItems}>{cartItems}</div>
@@ -39,7 +43,9 @@ const Cart = (props) => {
                     <span>${props.itemsPrice.toFixed(2)}</span>
                 </div>
                 <div className={classes.CartButton}>
-                    <Button btnType="Cart">Checkout</Button>
+                    <Button btnType="Cart" clicked={checkoutButtonHandler}>
+                        Checkout
+                    </Button>
                 </div>
             </div>
         </div>

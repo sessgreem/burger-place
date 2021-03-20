@@ -1,0 +1,3 @@
+.CheckoutOrderButton {
+    grid-area: payment / payment / payment / payment;
+}

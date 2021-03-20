@@ -10,7 +10,7 @@ const navitems = (props) => {
             <NavItem link="/menu" exact>
                 Menu
             </NavItem>
-            <NavItem link="/checkout">checkoutCareers</NavItem>
+            <NavItem link="/checkout">Checkout</NavItem>
             <NavItem link="/">About us</NavItem>
             <NavItem link="/">More</NavItem>
         </ul>

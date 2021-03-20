@@ -3,12 +3,12 @@ import classes from "./CustomizationHeading.module.css";
 const CustomizationHeading = (props) => {
     let additionalInformation =
         props.selectedSize !== "A La Carte" ? (
-            <p>
+            <span>
                 {props.selectedSize} Drink and {props.selectedSize} Side
                 Included
-            </p>
+            </span>
         ) : (
-            <p>Entree only</p>
+            <span>Entree only</span>
         );
 
     let size = null;

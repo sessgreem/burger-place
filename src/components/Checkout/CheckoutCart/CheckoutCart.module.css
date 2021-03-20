@@ -1,0 +1,40 @@
+.CheckoutCart {
+    grid-area: cart / cart / cart / cart;
+}
+
+.CheckoutCart li {
+    margin-top: 1rem;
+}
+
+.CheckoutCart li:first-of-type {
+    margin: 0;
+}
+
+.CheckoutCart button {
+    margin: 1rem auto;
+}
+
+.CheckoutCartTotals {
+    min-height: 108px;
+}
+
+.CheckoutCartTotals div {
+    display: flex;
+}
+.CheckoutCartTotals div > span:first-of-type {
+    flex-grow: 1;
+    line-height: 1.7;
+    color: inherit;
+    font-weight: inherit;
+}
+.CheckoutCartTotals hr {
+    margin: 1rem 0px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-image: initial;
+    border-bottom: 1px solid rgb(105, 63, 52);
+}
+.CheckoutCartTotals div:last-of-type {
+    font-weight: 700;
+}

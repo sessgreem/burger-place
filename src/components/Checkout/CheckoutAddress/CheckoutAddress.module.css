@@ -1,0 +1,51 @@
+/* restourant */
+.CheckoutAddress {
+    grid-area: details / details / details / details;
+}
+.CheckoutAddress > div {
+    display: flex;
+}
+/* .CheckoutAddress h2 {
+    color: rgb(43, 2, 0);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0px 0px 0.625rem;
+    text-transform: none;
+} */
+
+.CheckoutAddress > div > span:first-of-type {
+    color: rgb(118, 40, 35);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    padding: 5px 0px;
+    margin-left: auto;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.CheckoutAddressBox {
+    /* resoutrant box */
+    border-radius: 10px;
+    box-shadow: rgb(73 73 73 / 20%) 0px 0px 4px 0px;
+    display: flex;
+    flex-direction: column;
+    font-style: normal;
+    font-size: 0.9375rem;
+    padding: 0px;
+    background-color: rgb(255, 255, 255);
+}
+.CheckoutAddressBoxDetails {
+    padding: 1.25rem 1.5rem;
+}
+
+.CheckoutAddressBoxDetails span:first-of-type {
+    font-weight: 700;
+}
+.CheckoutAddressBoxOptions {
+    border-top: 1px solid rgb(187, 163, 145);
+    background-color: rgb(255, 255, 255);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    padding: 1.25rem 1.5rem;
+}
