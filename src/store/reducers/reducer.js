@@ -31,9 +31,15 @@ const initialState = {
                 itemSides: {
                     "Classic Fries": {
                         optionCalories: "383",
+                        optionImgURL:
+                            "gs://react-hooks-3f4f4.appspot.com/classic_fries.webp",
+                        optionAlt: "Classic Fries",
                     },
                     "Onion Rings": {
                         optionCalories: "564",
+                        optionImgURL:
+                            "gs://react-hooks-3f4f4.appspot.com/onion_rings.webp",
+                        optionAlt: "Onion Rings",
                     },
                 },
                 itemCalories: "850 - 1,882",

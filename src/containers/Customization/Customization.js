@@ -73,6 +73,8 @@ const Customization = (props) => {
                 selected={state.side}
                 size={state.size}
                 changedSide={changeSideHandler}
+                imgURL={itemSides[sideName].optionImgURL}
+                alt={itemSides[sideName].optionAlt}
             />
         );
     });
