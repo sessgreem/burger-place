@@ -21,6 +21,7 @@ const Customization = (props) => {
     const { sectionName, itemName } = useParams();
 
     const item = props.menu[sectionName].sectionItems[itemName];
+
     const itemOptions = item.itemOptions;
     const itemPrice = itemOptions[item.itemDefaultOptionName].optionPrice;
 
@@ -32,6 +33,7 @@ const Customization = (props) => {
         price: itemPrice,
     });
 
+    // Function prop and CustomizationOption elements mapping
     const changedSizeHandler = (size) => {
         const newPrice = itemOptions[size].optionPrice;
         const newState = {
@@ -55,6 +57,7 @@ const Customization = (props) => {
         );
     });
 
+    // Function prop and CustomizationFaceOption elements mapping
     const changeSideHandler = (sideName) => {
         const newState = {
             ...state,
@@ -84,13 +87,16 @@ const Customization = (props) => {
     };
 
     const itemDescription = item.itemDescription;
-
+    const itemImgURL = item.itemImgURL;
     return (
         <Fragment>
             <Toolbar />
             <SmallSlider />
             <main>
-                <CustomizationBackground />
+                <CustomizationBackground
+                    imgURL={itemImgURL}
+                    imgAlt={itemName}
+                />
                 <div className={classes.Customization}>
                     <CustomizationHeading
                         name={itemName}
