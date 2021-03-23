@@ -23,6 +23,8 @@ const Sections = (props) => {
                 calories={sections[section].itemCalories}
                 section={sectionName}
                 key={section}
+                imgAlt={section}
+                imgURL={sections[section].itemImgURL}
             />
         );
     });

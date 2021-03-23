@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import classes from "./CustomizationFaceOption.module.css";
+import useStorageUrlDownload from "../../../hooks/useStorageUrlDownload";
 
-import { storage } from "./../../../firebase/index";
 const CustomizationFaceOption = (props) => {
-    const [imageUrl, setImageUrl] = useState(null);
+    const imageURL = useStorageUrlDownload(props.imgURL);
 
     const optionClasses = [classes.CustomizationFaceOptionImage];
 
@@ -12,22 +12,13 @@ const CustomizationFaceOption = (props) => {
         optionClasses.push(classes.Selected);
     }
 
-    useEffect(() => {
-        console.log(props.imgURL);
-        const imgRef = storage.refFromURL(props.imgURL);
-        imgRef.getDownloadURL().then((url) => {
-            setImageUrl(url);
-            console.log(url);
-        });
-    }, [props.imgURL]);
-
     return (
         <div
             className={classes.CustomizationFaceOption}
             onClick={() => props.changedSide(props.name)}
         >
             <div className={optionClasses.join(" ")}>
-                <img src={imageUrl} alt={props.alt} />
+                <img src={imageURL} alt={props.alt} />
             </div>
             <div className={classes.CustomizationFaceOptionDescription}>
                 <h4>
