@@ -1,0 +1,66 @@
+.CustomSlide {
+    /* display: inline-block;
+    height: 115px;
+    left: 1134.22px;
+    list-style-type: none;
+    margin: auto 0px;
+    position: absolute;
+    top: 0px;
+    transform: scale(1);
+    transition: transform 0.4s linear 0s;
+    vertical-align: top;
+    width: 141.778px; */
+
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+/* color: rgb(80, 35, 20);
+    font-size: 0.9375rem;
+    text-decoration: none;
+    text-transform: none;
+    position: relative;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-family: Flame, "Cooper Black", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 1.3rem 0px 1rem; */
+
+.CustomSlideImg {
+    border-radius: 10px;
+    margin: 0px auto 0.5rem;
+    width: 80%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.CustomSlideImg > img {
+    height: 45px;
+    display: inline-block !important;
+}
+
+.CustomSlide span {
+    display: inline-block;
+    color: rgb(80, 35, 20);
+    text-decoration: none;
+    text-transform: none;
+    position: relative;
+    margin: 0px auto;
+    font-size: 0.85rem;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+/* before */
+/* content: "";
+    background-color: transparent;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px; */

@@ -1,5 +1,20 @@
-.SmallSlider {
-    margin-top: 7rem;
+/* .SmallSlider {
     height: 115px;
     background-color: #f3f3f3;
+} */
+
+.slides {
+    /* margin: 118px auto; */
+    margin: 9rem auto;
+    max-width: 80vw;
 }
+
+/* 
+position: relative;
+    height: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background-color: rgb(245, 235, 220);
+    padding: 0px 96px;
+    margin-top: 118px; */

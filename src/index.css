@@ -17,3 +17,13 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+.slick-track {
+    display: flex !important;
+}
+
+.slick-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
