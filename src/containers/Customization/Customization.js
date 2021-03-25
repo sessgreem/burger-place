@@ -16,6 +16,7 @@ import { addToCart } from "../../store/actions/cart";
 
 import { connect } from "react-redux";
 import { useParams } from "react-router";
+import ReturnButton from "../../components/UI/ReturnButton/ReturnButton";
 
 const Customization = (props) => {
     const { sectionName, itemName } = useParams();
@@ -93,10 +94,12 @@ const Customization = (props) => {
             <Toolbar />
             <SmallSlider />
             <main>
+                <ReturnButton />
                 <CustomizationBackground
                     imgURL={itemImgURL}
                     imgAlt={itemName}
                 />
+
                 <div className={classes.Customization}>
                     <CustomizationHeading
                         name={itemName}

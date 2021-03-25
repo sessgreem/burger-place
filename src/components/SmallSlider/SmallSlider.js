@@ -11,7 +11,7 @@ function SampleNextArrow(props) {
     return (
         <div
             className={className}
-            style={{ ...style, display: "block", background: "red" }}
+            style={{ ...style, display: "block" }}
             onClick={onClick}
         />
     );
@@ -22,7 +22,7 @@ function SamplePrevArrow(props) {
     return (
         <div
             className={className}
-            style={{ ...style, display: "block", background: "red" }}
+            style={{ ...style, display: "block" }}
             onClick={onClick}
         ></div>
     );
@@ -43,13 +43,13 @@ const SmallSlider = () => {
                     slidesToShow: 6,
                     slidesToScroll: 3,
                     infinite: true,
-                    dots: true,
+                    dots: false,
                 },
             },
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                     slidesToScroll: 2,
                     initialSlide: 2,
                 },
@@ -57,13 +57,13 @@ const SmallSlider = () => {
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                 },
             },
         ],
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
+        nextArrow: <SampleNextArrow className={classes.SliderArrow} />,
+        prevArrow: <SamplePrevArrow className={classes.SliderArrow} />,
     };
 
     return (
