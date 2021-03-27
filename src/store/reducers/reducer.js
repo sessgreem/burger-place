@@ -47,6 +47,7 @@ const initialState = {
                     "Our Whopper Sandwich is a ¼ lb* of savory flame-grilled beef topped with juicy tomatoes, fresh lettuce, creamy mayonnaise, ketchup, crunchy pickles, and sliced white onions on a soft sesame seed bun.",
                 itemDefaultOptionName: "Medium",
                 itemDefaultSideName: "Classic Fries",
+                itemDefaultDrinkName: "Coca-Cola",
                 itemImgURL: "gs://react-hooks-3f4f4.appspot.com/hero.png",
             },
             "Mix n' Match Meals": {
@@ -94,8 +95,8 @@ const initialState = {
                     "Our Super Giga Mix is a ¼ lb* of savory flame-grilled beef topped with juicy tomatoes, fresh lettuce, creamy mayonnaise, ketchup, crunchy pickles, and sliced white onions on a soft sesame seed bun.",
                 itemDefaultOptionName: "Medium",
                 itemDefaultSideName: "Classic Fries",
-                itemImgURL:
-                    "gs://react-hooks-3f4f4.appspot.com/bigmeal.webp",
+                itemDefaultDrinkName: "Coca-Cola",
+                itemImgURL: "gs://react-hooks-3f4f4.appspot.com/bigmeal.webp",
             },
             "Chicken Burger": {
                 itemOptions: {
@@ -142,10 +143,11 @@ const initialState = {
                     "Our Whopper Sandwich is a ¼ lb* of savory flame-grilled beef topped with juicy tomatoes, fresh lettuce, creamy mayonnaise, ketchup, crunchy pickles, and sliced white onions on a soft sesame seed bun.",
                 itemDefaultOptionName: "Medium",
                 itemDefaultSideName: "Classic Fries",
+                itemDefaultDrinkName: "Coca-Cola",
                 itemImgURL:
                     "gs://react-hooks-3f4f4.appspot.com/chicken-burger.webp",
             },
-             "Double Whopper": {
+            "Double Whopper": {
                 itemOptions: {
                     "A La Carte": {
                         optionDescription: "Entree only ",
@@ -190,10 +192,11 @@ const initialState = {
                     "Our Double Whopper Sandwich is a pairing of two ¼ lb* savory flame-grilled beef patties topped with juicy tomatoes, fresh lettuce, creamy mayonnaise, ketchup, crunchy pickles, and sliced white onions on a soft sesame seed bun.",
                 itemDefaultOptionName: "Medium",
                 itemDefaultSideName: "Classic Fries",
+                itemDefaultDrinkName: "Coca-Cola",
                 itemImgURL:
                     "gs://react-hooks-3f4f4.appspot.com/double_whopper.webp",
             },
-                 "Big King XL": {
+            "Big King XL": {
                 itemOptions: {
                     "A La Carte": {
                         optionDescription: "Entree only ",
@@ -238,10 +241,11 @@ const initialState = {
                     "Our Big KING XL is a pairing of two ¼ lb* savory flame-grilled beef patties topped with juicy tomatoes, fresh lettuce, creamy mayonnaise, ketchup, crunchy pickles, and sliced white onions on a soft sesame seed bun.",
                 itemDefaultOptionName: "Medium",
                 itemDefaultSideName: "Classic Fries",
+                itemDefaultDrinkName: "Coca-Cola",
                 itemImgURL:
                     "gs://react-hooks-3f4f4.appspot.com/big_king_xl.webp",
             },
-                 "Bacon King": {
+            "Bacon King": {
                 itemOptions: {
                     "A La Carte": {
                         optionDescription: "Entree only ",
@@ -286,10 +290,11 @@ const initialState = {
                     "Our Bacon King is a pairing of two ¼ lb* savory flame-grilled beef patties topped with juicy tomatoes, fresh lettuce, creamy mayonnaise, ketchup, crunchy pickles, and sliced white onions on a soft sesame seed bun.",
                 itemDefaultOptionName: "Medium",
                 itemDefaultSideName: "Classic Fries",
+                itemDefaultDrinkName: "Coca-Cola",
                 itemImgURL:
                     "gs://react-hooks-3f4f4.appspot.com/bacon_king.webp",
             },
-                 "Single SourDough King": {
+            "Single SourDough King": {
                 itemOptions: {
                     "A La Carte": {
                         optionDescription: "Entree only ",
@@ -334,10 +339,11 @@ const initialState = {
                     "Our Single Sourdough King is a pairing of two ¼ lb* savory flame-grilled beef patties topped with juicy tomatoes, fresh lettuce, creamy mayonnaise, ketchup, crunchy pickles, and sliced white onions on a soft sesame seed bun.",
                 itemDefaultOptionName: "Medium",
                 itemDefaultSideName: "Classic Fries",
+                itemDefaultDrinkName: "Coca-Cola",
                 itemImgURL:
                     "gs://react-hooks-3f4f4.appspot.com/single_sourdough.webp",
             },
-                 "Double Sourdough": {
+            "Double Sourdough": {
                 itemOptions: {
                     "A La Carte": {
                         optionDescription: "Entree only ",
@@ -382,10 +388,11 @@ const initialState = {
                     "Our Double Sourdough King is a pairing of two ¼ lb* savory flame-grilled beef patties topped with juicy tomatoes, fresh lettuce, creamy mayonnaise, ketchup, crunchy pickles, and sliced white onions on a soft sesame seed bun.",
                 itemDefaultOptionName: "Medium",
                 itemDefaultSideName: "Classic Fries",
+                itemDefaultDrinkName: "Coca-Cola",
                 itemImgURL:
                     "gs://react-hooks-3f4f4.appspot.com/double_sourdough.webp",
             },
-                 "Impossible Whopper": {
+            "Impossible Whopper": {
                 itemOptions: {
                     "A La Carte": {
                         optionDescription: "Entree only ",
@@ -430,9 +437,42 @@ const initialState = {
                     "Our Impossible Whopper Sandwich is a pairing of two ¼ lb* savory flame-grilled beef patties topped with juicy tomatoes, fresh lettuce, creamy mayonnaise, ketchup, crunchy pickles, and sliced white onions on a soft sesame seed bun.",
                 itemDefaultOptionName: "Medium",
                 itemDefaultSideName: "Classic Fries",
+                itemDefaultDrinkName: "Coca-Cola",
                 itemImgURL:
                     "gs://react-hooks-3f4f4.appspot.com/impossible_whopper.web.webp",
             },
+        },
+    },
+    Drinks: {
+        "Coca-Cola": {
+            optionCalories: "266",
+            optionImgURL: "gs://react-hooks-3f4f4.appspot.com/cocacola.webp",
+            optionAlt: "Coca-Cola",
+        },
+        "Dr. Pepper": {
+            optionCalories: "240",
+            optionImgURL: "gs://react-hooks-3f4f4.appspot.com/drpepper.webp",
+            optionAlt: "Dr. Pepper",
+        },
+        "Diet Coke": {
+            optionCalories: "1",
+            optionImgURL: "gs://react-hooks-3f4f4.appspot.com/dietcola.webp",
+            optionAlt: "Diet Coke",
+        },
+        Sprite: {
+            optionCalories: "245",
+            optionImgURL: "gs://react-hooks-3f4f4.appspot.com/sprite.webp",
+            optionAlt: "Sprite",
+        },
+        "Mello Yello": {
+            optionCalories: "286",
+            optionImgURL: "gs://react-hooks-3f4f4.appspot.com/melloyello.webp",
+            optionAlt: "Mello Yello",
+        },
+        "Hi-C Fruit Punch": {
+            optionCalories: "6",
+            optionImgURL: "gs://react-hooks-3f4f4.appspot.com/hicfruit.webp",
+            optionAlt: "Hi-C Fruit Punch",
         },
     },
 };

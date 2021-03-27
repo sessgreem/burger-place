@@ -33,6 +33,7 @@
     font-size: 1.25rem;
 }
 
-.CustomizationSides {
+.CustomizationItems {
     display: flex;
+    flex-flow: row wrap;
 }

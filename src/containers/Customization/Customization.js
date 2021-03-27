@@ -30,7 +30,7 @@ const Customization = (props) => {
         name: itemName,
         size: item.itemDefaultOptionName,
         side: item.itemDefaultSideName,
-        drink: "Cola",
+        drink: item.itemDefaultDrinkName,
         price: itemPrice,
     });
 
@@ -68,7 +68,7 @@ const Customization = (props) => {
     };
 
     const itemSides = item.itemSides;
-    const customizationFaceOptions = Object.keys(itemSides).map((sideName) => {
+    const sides = Object.keys(itemSides).map((sideName) => {
         return (
             <CustomizationFaceOption
                 key={sideName}
@@ -79,6 +79,30 @@ const Customization = (props) => {
                 changedSide={changeSideHandler}
                 imgURL={itemSides[sideName].optionImgURL}
                 alt={itemSides[sideName].optionAlt}
+            />
+        );
+    });
+
+    // const item = props.menu[sectionName].sectionItems[itemName];
+    const changeDrinkHandler = (drinkName) => {
+        const newState = {
+            ...state,
+            drink: drinkName,
+        };
+        setState(newState);
+    };
+    const menuDrinks = props.menu.Drinks;
+    const drinks = Object.keys(menuDrinks).map((drinkName) => {
+        return (
+            <CustomizationFaceOption
+                key={drinkName}
+                name={drinkName}
+                calories={menuDrinks[drinkName].optionCalories}
+                selected={state.drink}
+                size={state.size}
+                changedSide={changeDrinkHandler}
+                imgURL={menuDrinks[drinkName].optionImgURL}
+                alt={menuDrinks[drinkName].optionAlt}
             />
         );
     });
@@ -110,7 +134,8 @@ const Customization = (props) => {
                     <CustomizationOptions
                         sizes={customizationOptions}
                         selectedSize={state.size}
-                        sides={customizationFaceOptions}
+                        sides={sides}
+                        drinks={drinks}
                     />
                     <CustomizationOrderButton
                         orderClicked={handleOrderClicked}

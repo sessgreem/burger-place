@@ -15,7 +15,13 @@ const CustomizationOptions = (props) => {
                 <div className={classes.CustomizationOptionsHeading}>
                     <h4>Combo Sides</h4>
                 </div>
-                <div className={classes.CustomizationSides}>{props.sides}</div>
+                <div className={classes.CustomizationItems}>{props.sides}</div>
+            </div>
+            <div className={classes.CustomizationOptions}>
+                <div className={classes.CustomizationOptionsHeading}>
+                    <h4>Combo Drinks</h4>
+                </div>
+                <div className={classes.CustomizationItems}>{props.drinks}</div>
             </div>
         </Fragment>
     );
