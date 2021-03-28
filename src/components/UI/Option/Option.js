@@ -1,11 +1,11 @@
 import React from "react";
-import classes from "./CustomizationOption.module.css";
+import classes from "./Option.module.css";
 import smallOption from "../../../assets/images/options/small.webp";
 import mediumOption from "../../../assets/images/options/medium.webp";
 import largeOption from "../../../assets/images/options/large.webp";
 import aLaCarte from "../../../assets/images/options/alacarte.webp";
 
-const CustomizationOption = (props) => {
+const Option = (props) => {
     const description = props.description ? <p>{props.description}</p> : null;
 
     let img;
@@ -26,7 +26,7 @@ const CustomizationOption = (props) => {
             img = null;
     }
 
-    const optionClasses = [classes.CustomizationOption];
+    const optionClasses = [classes.Option];
 
     const isSelected = props.selected === props.name;
 
@@ -49,4 +49,4 @@ const CustomizationOption = (props) => {
     );
 };
 
-export default CustomizationOption;
+export default Option;

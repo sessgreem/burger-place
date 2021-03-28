@@ -8,7 +8,7 @@ import CustomizationOrderButton from "../../components/Customization/Customizati
 import CustomizationOptions from "../../components/Customization/CustomizationOptions/CustomizationOptions";
 import CustomizationHeading from "../../components/Customization/CustomizationHeading/CustomizationHeading";
 import CustomizationBackground from "../../components/Customization/CustomizationBackground/CustomizationBackground";
-import CustomizationOption from "../../components/UI/CustomizationOption/CustomizationOption";
+import Option from "../../components/UI/Option/Option";
 import CustomizationFaceOption from "../../components/UI/CustomizationFaceOption/CustomizationFaceOption";
 import ReturnButton from "../../components/UI/ReturnButton/ReturnButton";
 import { addToCart } from "../../store/actions/cart";
@@ -34,7 +34,7 @@ const Customization = (props) => {
         price: itemPrice,
     });
 
-    // Click handler and CustomizationOption elements mapping
+    // Click handler and Option elements mapping
     const changedSizeHandler = (size) => {
         const newPrice = itemOptions[size].optionPrice;
         const newState = {
@@ -47,7 +47,7 @@ const Customization = (props) => {
 
     const customizationOptions = Object.keys(itemOptions).map((optionName) => {
         return (
-            <CustomizationOption
+            <Option
                 key={optionName}
                 name={optionName}
                 description={itemOptions[optionName].optionDescription}
