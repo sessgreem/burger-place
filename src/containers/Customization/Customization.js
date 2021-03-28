@@ -3,7 +3,6 @@ import classes from "./Customization.module.css";
 import SmallSlider from "../../components/SmallSlider/SmallSlider";
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
 import Footer from "../../components/Footer/Footer";
-
 import CustomizationNutritionInformation from "../../components/Customization/CustomizationNutritionInformation/CustomizationNutritionInformation";
 import CustomizationOrderButton from "../../components/Customization/CustomizationOrderButton/CustomizationOrderButton";
 import CustomizationOptions from "../../components/Customization/CustomizationOptions/CustomizationOptions";
@@ -11,15 +10,16 @@ import CustomizationHeading from "../../components/Customization/CustomizationHe
 import CustomizationBackground from "../../components/Customization/CustomizationBackground/CustomizationBackground";
 import CustomizationOption from "../../components/UI/CustomizationOption/CustomizationOption";
 import CustomizationFaceOption from "../../components/UI/CustomizationFaceOption/CustomizationFaceOption";
-
+import ReturnButton from "../../components/UI/ReturnButton/ReturnButton";
 import { addToCart } from "../../store/actions/cart";
-
 import { connect } from "react-redux";
 import { useParams } from "react-router";
-import ReturnButton from "../../components/UI/ReturnButton/ReturnButton";
+import { formatFromURL } from "../../shared/formatURL";
 
 const Customization = (props) => {
-    const { sectionName, itemName } = useParams();
+    const { itemName } = useParams();
+    let { sectionName } = useParams();
+    sectionName = formatFromURL(sectionName);
 
     const item = props.menu[sectionName].sectionItems[itemName];
 
@@ -34,7 +34,7 @@ const Customization = (props) => {
         price: itemPrice,
     });
 
-    // Function prop and CustomizationOption elements mapping
+    // Click handler and CustomizationOption elements mapping
     const changedSizeHandler = (size) => {
         const newPrice = itemOptions[size].optionPrice;
         const newState = {
@@ -58,7 +58,7 @@ const Customization = (props) => {
         );
     });
 
-    // Function prop and CustomizationFaceOption elements mapping
+    // Click handler and CustomizationFaceOption elements mapping
     const changeSideHandler = (sideName) => {
         const newState = {
             ...state,
@@ -83,7 +83,7 @@ const Customization = (props) => {
         );
     });
 
-    // const item = props.menu[sectionName].sectionItems[itemName];
+    // Click handler and CustomizationFaceOption elements mapping
     const changeDrinkHandler = (drinkName) => {
         const newState = {
             ...state,

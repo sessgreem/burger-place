@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import classes from "./Menu.module.css";
 import Card from "./Card/Card";
-
 import ourFavorites from "../../../assets/images/menu/our_favorites_section.webp";
-
 import sweets from "../../../assets/images/menu/sweets.webp";
 import familyBundle from "../../../assets/images/menu/familybundle.webp";
 import chickenFish from "../../../assets/images/menu/chiken.webp";
 import queenJr from "../../../assets/images/menu/f4dc27eb7337f7cbd12d3ccd840e6a031fcba622-360x270.webp";
 import drinksCoffe from "../../../assets/images/menu/drinksandcoffe.webp";
+import { formatToURL } from "../../../shared/formatURL";
 
-// import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 const Menu = (props) => {
     let history = useHistory();
@@ -48,14 +46,8 @@ const Menu = (props) => {
         },
     ]);
 
-    // ? Route names need to be adjusted - maybe with function like this
-    // const transformIntoPath = (string) => {
-    //     const result = string.replace(' ', '-');
-    //     return result.toLowerCase();
-    // };
-
     const cardClickedHandler = (sectionName) => {
-        history.push({ pathname: `/sections/${sectionName}` });
+        history.push({ pathname: `/sections/${formatToURL(sectionName)}` });
     };
 
     const cards = cardInfo.map((card) => (

@@ -1,19 +1,36 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import classes from "./CustomSlide.module.css";
-export default class CustomSlide extends Component {
-    render() {
-        const { img, index, sectionName, ...props } = this.props;
-        return (
-            <li {...props} className={classes.CustomSlide}>
+import { NavLink, useHistory } from "react-router-dom";
+import { formatToURL } from "../../../shared/formatURL";
+
+const CustomSlide = (props) => {
+    const url = `/sections/${formatToURL(props.section)}`;
+    const history = useHistory();
+
+    const [mouseMoved, setMouseMoved] = useState(false);
+
+    const handleClick = () => {
+        if (!mouseMoved) {
+            console.log("will route");
+            // history.push(url);
+        }
+    };
+    return (
+        <li
+            {...props}
+            className={classes.CustomSlide}
+            onMouseMove={() => setMouseMoved(true)}
+            onMouseDown={() => setMouseMoved(false)}
+            onMouseUp={() => handleClick()}
+        >
+            <NavLink to={url} activeClassName={classes.active}>
                 <div className={classes.CustomSlideImg}>
-                    <img
-                        src={img}
-                        style={{ maxWidth: "100px" }}
-                        alt="Slider section"
-                    />
+                    <img src={props.img} alt="Slider section" />
                 </div>
-                <span>{sectionName}</span>
-            </li>
-        );
-    }
-}
+                <span>{props.section}</span>
+            </NavLink>
+        </li>
+    );
+};
+
+export default CustomSlide;

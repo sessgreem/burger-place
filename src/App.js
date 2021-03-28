@@ -7,6 +7,7 @@ import MenuPage from "./containers/MenuPage/MenuPage";
 import Sections from "./containers/Sections/Sections";
 import Customization from "./containers/Customization/Customization";
 import Checkout from "./containers/Checkout/Checkout";
+
 const App = () => {
     let routes = (
         <Switch>

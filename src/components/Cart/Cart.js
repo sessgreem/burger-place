@@ -65,6 +65,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-// onAddToCart: (cartItem) => dispatch(addToCart(cartItem)),
-
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

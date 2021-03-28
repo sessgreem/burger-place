@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import CustomSlide from "./CustomSlide/CustomSlide";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import importSectionImages from "./importSectionImages";
+import importSectionImages from "../../shared/importSectionImages";
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -42,39 +42,35 @@ const SmallSlider = () => {
                 key={index}
                 index={index}
                 img={img.default}
-                sectionName={sectionNames[index]}
+                section={sectionNames[index]}
             />
         );
     });
+
     const settings = {
-        accessibility: true,
+        swipeToSlide: true,
         dots: false,
         infinite: true,
         speed: 300,
         slidesToShow: 9,
-        slidesToScroll: 1,
         className: classes.slides,
         responsive: [
             {
                 breakpoint: 1379,
                 settings: {
                     slidesToShow: 6,
-                    slidesToScroll: 3,
                 },
             },
             {
                 breakpoint: 875,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 2,
-                    initialSlide: 2,
                 },
             },
             {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1,
                 },
             },
         ],
