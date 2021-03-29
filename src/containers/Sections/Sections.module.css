@@ -2,6 +2,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 78px;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0rem auto 6rem;
+    gap: 1rem;
+    min-height: 250px;
+    text-decoration: none;
 }

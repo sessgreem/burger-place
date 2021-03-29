@@ -6,9 +6,11 @@ import Footer from "../../components/Footer/Footer";
 import SmallSlider from "../../components/SmallSlider/SmallSlider";
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
-
+import ReturnButton from "../../components/UI/ReturnButton/ReturnButton";
+import { formatFromURL } from "../../shared/formatURL";
 const Sections = (props) => {
-    const { sectionName } = useParams();
+    let { sectionName } = useParams();
+    sectionName = formatFromURL(sectionName);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -33,6 +35,7 @@ const Sections = (props) => {
         <Fragment>
             <Toolbar />
             <SmallSlider />
+            <ReturnButton />
             <section className={classes.Sections}>{sectionItems}</section>
             <Footer />
         </Fragment>

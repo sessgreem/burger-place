@@ -1,22 +1,28 @@
 import React, { Fragment } from "react";
-import classes from "./CustomizationOptions.module.css";
+import CustomizationOption from "./CustomizationOption/CustomizationOption";
 
 const CustomizationOptions = (props) => {
+    //    sizes={customizationOptions}
+    //    selectedSize={state.size}
+    //    sides={sides}
+    //    drinks={drinks}
     return (
         <Fragment>
-            <div className={classes.CustomizationOptions}>
-                <div className={classes.CustomizationOptionsHeading}>
-                    <h4>Combo Size</h4>
-                    <div>Required</div>
-                </div>
-                {props.sizes}
-            </div>
-            <div className={classes.CustomizationOptions}>
-                <div className={classes.CustomizationOptionsHeading}>
-                    <h4>Combo Sides</h4>
-                </div>
-                <div className={classes.CustomizationSides}>{props.sides}</div>
-            </div>
+            <CustomizationOption
+                heading="Combo Size"
+                required={true}
+                options={props.sizes}
+            />
+            <CustomizationOption
+                heading="Combo Sides"
+                required={false}
+                options={props.sides}
+            />
+            <CustomizationOption
+                heading="Combo Drinks"
+                required={false}
+                options={props.drinks}
+            />
         </Fragment>
     );
 };

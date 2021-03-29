@@ -14,9 +14,9 @@
     border-radius: inherit;
     display: block;
     position: absolute;
-    /* inset: 0px; */
-    /* width: 100%; */
-    max-width: 30%;
+    width: 100%;
+    max-width: 400px;
+    /* max-width: 30%; */
     object-fit: cover;
     object-position: center center;
     opacity: 1;

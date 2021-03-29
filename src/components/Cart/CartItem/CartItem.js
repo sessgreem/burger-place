@@ -15,7 +15,7 @@ const CartItem = (props) => {
                 <br />
                 {props.size} {props.side}
                 <br />
-                Combo {props.size} Coca-Cola {props.drink}
+                {props.size} {props.drink}
             </p>
         );
     }

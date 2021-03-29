@@ -1,4 +1,4 @@
-.CustomizationOption {
+.Option {
     display: flex;
     background-color: #fff;
     padding: 0 0.5rem;
@@ -61,6 +61,6 @@
     border: 2px solid red;
 }
 
-.CustomizationOption:not(.Selected):hover {
+.Option:not(.Selected):hover {
     border: 2px solid #b6b6b6;
 }

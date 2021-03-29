@@ -105,11 +105,6 @@ const Footer = () => {
             <div className={classes.FooterRowContainer}>
                 <div className={classes.FooterWordmarkSocial}>
                     <Link to="/">
-                        {/* <img
-                            className={classes.FooterLogo}
-                            src={burgerLogo}
-                            alt="Logo"
-                        /> */}
                         <h2 className={classes.LogoText}>Burger Place</h2>
                     </Link>
                     <div className={classes.FooterSocials}>

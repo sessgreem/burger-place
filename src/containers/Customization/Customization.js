@@ -3,24 +3,26 @@ import classes from "./Customization.module.css";
 import SmallSlider from "../../components/SmallSlider/SmallSlider";
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
 import Footer from "../../components/Footer/Footer";
-
 import CustomizationNutritionInformation from "../../components/Customization/CustomizationNutritionInformation/CustomizationNutritionInformation";
 import CustomizationOrderButton from "../../components/Customization/CustomizationOrderButton/CustomizationOrderButton";
 import CustomizationOptions from "../../components/Customization/CustomizationOptions/CustomizationOptions";
 import CustomizationHeading from "../../components/Customization/CustomizationHeading/CustomizationHeading";
 import CustomizationBackground from "../../components/Customization/CustomizationBackground/CustomizationBackground";
-import CustomizationOption from "../../components/UI/CustomizationOption/CustomizationOption";
+import Option from "../../components/UI/Option/Option";
 import CustomizationFaceOption from "../../components/UI/CustomizationFaceOption/CustomizationFaceOption";
-
+import ReturnButton from "../../components/UI/ReturnButton/ReturnButton";
 import { addToCart } from "../../store/actions/cart";
-
 import { connect } from "react-redux";
 import { useParams } from "react-router";
+import { formatFromURL } from "../../shared/formatURL";
 
 const Customization = (props) => {
-    const { sectionName, itemName } = useParams();
+    const { itemName } = useParams();
+    let { sectionName } = useParams();
+    sectionName = formatFromURL(sectionName);
 
     const item = props.menu[sectionName].sectionItems[itemName];
+
     const itemOptions = item.itemOptions;
     const itemPrice = itemOptions[item.itemDefaultOptionName].optionPrice;
 
@@ -28,10 +30,11 @@ const Customization = (props) => {
         name: itemName,
         size: item.itemDefaultOptionName,
         side: item.itemDefaultSideName,
-        drink: "Cola",
+        drink: item.itemDefaultDrinkName,
         price: itemPrice,
     });
 
+    // Click handler and Option elements mapping
     const changedSizeHandler = (size) => {
         const newPrice = itemOptions[size].optionPrice;
         const newState = {
@@ -44,7 +47,7 @@ const Customization = (props) => {
 
     const customizationOptions = Object.keys(itemOptions).map((optionName) => {
         return (
-            <CustomizationOption
+            <Option
                 key={optionName}
                 name={optionName}
                 description={itemOptions[optionName].optionDescription}
@@ -55,6 +58,7 @@ const Customization = (props) => {
         );
     });
 
+    // Click handler and CustomizationFaceOption elements mapping
     const changeSideHandler = (sideName) => {
         const newState = {
             ...state,
@@ -64,7 +68,7 @@ const Customization = (props) => {
     };
 
     const itemSides = item.itemSides;
-    const customizationFaceOptions = Object.keys(itemSides).map((sideName) => {
+    const sides = Object.keys(itemSides).map((sideName) => {
         return (
             <CustomizationFaceOption
                 key={sideName}
@@ -79,18 +83,47 @@ const Customization = (props) => {
         );
     });
 
+    // Click handler and CustomizationFaceOption elements mapping
+    const changeDrinkHandler = (drinkName) => {
+        const newState = {
+            ...state,
+            drink: drinkName,
+        };
+        setState(newState);
+    };
+    const menuDrinks = props.menu.Drinks;
+    const drinks = Object.keys(menuDrinks).map((drinkName) => {
+        return (
+            <CustomizationFaceOption
+                key={drinkName}
+                name={drinkName}
+                calories={menuDrinks[drinkName].optionCalories}
+                selected={state.drink}
+                size={state.size}
+                changedSide={changeDrinkHandler}
+                imgURL={menuDrinks[drinkName].optionImgURL}
+                alt={menuDrinks[drinkName].optionAlt}
+            />
+        );
+    });
+
     const handleOrderClicked = () => {
         props.onAddToCart(state);
     };
 
     const itemDescription = item.itemDescription;
-
+    const itemImgURL = item.itemImgURL;
     return (
         <Fragment>
             <Toolbar />
             <SmallSlider />
             <main>
-                <CustomizationBackground />
+                <ReturnButton />
+                <CustomizationBackground
+                    imgURL={itemImgURL}
+                    imgAlt={itemName}
+                />
+
                 <div className={classes.Customization}>
                     <CustomizationHeading
                         name={itemName}
@@ -101,7 +134,8 @@ const Customization = (props) => {
                     <CustomizationOptions
                         sizes={customizationOptions}
                         selectedSize={state.size}
-                        sides={customizationFaceOptions}
+                        sides={sides}
+                        drinks={drinks}
                     />
                     <CustomizationOrderButton
                         orderClicked={handleOrderClicked}

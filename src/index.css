@@ -17,3 +17,30 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+.slick-track {
+    display: flex !important;
+}
+
+.slick-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slick-prev {
+    left: -40px !important;
+}
+
+.slick-next {
+    right: -40px !important;
+}
+.slick-prev:before,
+.slick-next:before {
+    font-size: 40px !important;
+    color: red !important;
+}
+
+h3 {
+    letter-spacing: -1px;
+}
