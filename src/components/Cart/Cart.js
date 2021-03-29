@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import classes from "./Cart.module.css";
 import Button from "../../components/UI/Button/Button";
 import CartItem from "./CartItem/CartItem";
-import useClickOutsideAlerter from "../../hooks/useClickOutsideAlerter";
+import useClickOutside from "../../hooks/useClickOutside";
 
 import { connect } from "react-redux";
 import { removeFromCart } from "../../store/actions/cart";
@@ -13,7 +13,7 @@ const Cart = (props) => {
     const { clickedOutside } = props;
     let history = useHistory();
 
-    useClickOutsideAlerter(wrapperRef, clickedOutside);
+    useClickOutside(wrapperRef, clickedOutside);
 
     const handleRemoveItem = (itemId) => {
         props.onRemoveItem(itemId);
