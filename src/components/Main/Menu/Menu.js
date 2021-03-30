@@ -15,7 +15,7 @@ const Menu = (props) => {
 
     const [cardInfo] = useState([
         {
-            name: "Family Burgers",
+            name: "Family Bundles",
             description: "The best food bundles for every family!",
             img: familyBundle,
         },
@@ -30,7 +30,7 @@ const Menu = (props) => {
             img: chickenFish,
         },
         {
-            name: "Queen Jr",
+            name: "King Jr",
             description: "The Queen is waiting for you!",
             img: queenJr,
         },

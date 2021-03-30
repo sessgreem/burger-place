@@ -11,7 +11,7 @@ import { formatFromURL } from "../../shared/formatURL";
 const Sections = (props) => {
     let { sectionName } = useParams();
     sectionName = formatFromURL(sectionName);
-
+    console.log(sectionName);
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -25,8 +25,8 @@ const Sections = (props) => {
                 calories={sections[section].itemCalories}
                 section={sectionName}
                 key={section}
-                imgAlt={section}
                 imgURL={sections[section].itemImgURL}
+                imgAlt={section}
             />
         );
     });

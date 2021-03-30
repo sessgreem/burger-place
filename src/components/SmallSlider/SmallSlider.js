@@ -58,7 +58,7 @@ const SmallSlider = () => {
             {
                 breakpoint: 1379,
                 settings: {
-                    slidesToShow: 6,
+                    slidesToShow: 7,
                 },
             },
             {

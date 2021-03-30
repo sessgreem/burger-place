@@ -1,13 +1,11 @@
 .SectionItem {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     border-radius: 1rem;
     cursor: pointer;
     height: inherit;
     min-height: 100%;
-}
-
-.SectionItemImage {
 }
 
 .SectionItemImage img {
