@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import ReturnButton from "../../components/UI/ReturnButton/ReturnButton";
 import { formatFromURL } from "../../shared/formatURL";
+import Incrementor from "../../components/UI/Incrementor/Incrementor";
 const Sections = (props) => {
     let { sectionName } = useParams();
     sectionName = formatFromURL(sectionName);
@@ -37,6 +38,7 @@ const Sections = (props) => {
             <SmallSlider />
             <ReturnButton />
             <section className={classes.Sections}>{sectionItems}</section>
+            <Incrementor />
             <Footer />
         </Fragment>
     );

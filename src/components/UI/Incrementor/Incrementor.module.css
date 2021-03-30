@@ -1,0 +1,33 @@
+.Incrementor {
+    display: flex;
+    flex: 1 1 0%;
+    align-items: flex-end;
+    font-weight: 600;
+    justify-content: flex-end;
+}
+span {
+    font-size: 1.125rem;
+    padding: 0 5px 0 5px;
+}
+button > svg {
+    height: 26px;
+    width: 24px;
+    display: inline-block;
+    margin: auto;
+    fill: transparent;
+    border: 2px solid rgb(214, 35, 0);
+    border-radius: 100%;
+}
+
+svg > path:last-child {
+    fill: red;
+}
+
+svg[disabled] {
+    pointer-events: none;
+    border: 2px solid rgb(212, 199, 183);
+}
+
+svg[disabled] > path:last-child {
+    fill: rgb(212, 199, 183);
+}

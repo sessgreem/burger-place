@@ -1,4 +1,5 @@
 import React from "react";
+import Incrementor from "../../UI/Incrementor/Incrementor";
 import classes from "./CartItem.module.css";
 
 const CartItem = (props) => {
@@ -34,7 +35,7 @@ const CartItem = (props) => {
             </div>
             <div className={classes.CartItemActions}>
                 <p onClick={() => props.removeClicked(props.id)}>Remove</p>
-                {/* incrementors */}
+                <Incrementor />
             </div>
         </div>
     );

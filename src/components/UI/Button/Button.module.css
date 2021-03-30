@@ -84,3 +84,9 @@
     outline: 0px;
     box-shadow: rgb(237 185 165) 0px 0px 0px 0.25rem;
 }
+
+.Incrementor {
+    width: 36px;
+    height: 26px;
+    padding: 0;
+}
