@@ -1236,7 +1236,7 @@
                 "itemCalories": "266",
                 "itemImgURL": "gs://react-hooks-3f4f4.appspot.com/cocacola.webp"
             },
-            "Dr. Pepper": {
+            "Dr Pepper": {
                 "itemCalories": "240",
                 "itemImgURL": "gs://react-hooks-3f4f4.appspot.com/drpepper.webp"
             },
@@ -1264,7 +1264,7 @@
             "optionImgURL": "gs://react-hooks-3f4f4.appspot.com/cocacola.webp",
             "optionAlt": "Coca-Cola"
         },
-        "Dr. Pepper": {
+        "Dr Pepper": {
             "optionCalories": "240",
             "optionImgURL": "gs://react-hooks-3f4f4.appspot.com/drpepper.webp",
             "optionAlt": "Dr. Pepper"
