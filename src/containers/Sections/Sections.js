@@ -12,7 +12,6 @@ import Incrementor from "../../components/UI/Incrementor/Incrementor";
 const Sections = (props) => {
     let { sectionName } = useParams();
     sectionName = formatFromURL(sectionName);
-    console.log(sectionName);
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);

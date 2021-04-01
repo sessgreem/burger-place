@@ -8,18 +8,16 @@
 
 .CustomizationHeading p {
     font-weight: 500;
-    margin-bottom: 1rem;
     line-height: 1.45;
 }
 
-.price {
+.CustomizationHeadingPrice {
     display: flex;
     flex-direction: row;
-    margin-top: 0.25rem;
     font-size: 0.9375rem;
     color: rgb(27, 135, 55);
     font-weight: 700;
     justify-content: center;
     line-height: 1.1;
-    margin: 0.5rem 0px 1.75rem;
+    margin: 1rem 0px 1.75rem;
 }

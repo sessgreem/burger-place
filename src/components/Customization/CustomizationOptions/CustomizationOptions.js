@@ -2,27 +2,36 @@ import React, { Fragment } from "react";
 import CustomizationOption from "./CustomizationOption/CustomizationOption";
 
 const CustomizationOptions = (props) => {
-    //    sizes={customizationOptions}
-    //    selectedSize={state.size}
-    //    sides={sides}
-    //    drinks={drinks}
+    // Conditional rendering if props are given
+    const sizes = props.sizes ? (
+        <CustomizationOption
+            heading="Combo Size"
+            required={true}
+            options={props.sizes}
+        />
+    ) : null;
+
+    const sides = props.sides ? (
+        <CustomizationOption
+            heading="Combo Sides"
+            required={false}
+            options={props.sides}
+        />
+    ) : null;
+
+    const drinks = props.drinks ? (
+        <CustomizationOption
+            heading="Combo Drinks"
+            required={false}
+            options={props.drinks}
+        />
+    ) : null;
+
     return (
         <Fragment>
-            <CustomizationOption
-                heading="Combo Size"
-                required={true}
-                options={props.sizes}
-            />
-            <CustomizationOption
-                heading="Combo Sides"
-                required={false}
-                options={props.sides}
-            />
-            <CustomizationOption
-                heading="Combo Drinks"
-                required={false}
-                options={props.drinks}
-            />
+            {sizes}
+            {sides}
+            {drinks}
         </Fragment>
     );
 };

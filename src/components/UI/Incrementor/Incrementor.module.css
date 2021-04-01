@@ -5,11 +5,13 @@
     font-weight: 600;
     justify-content: flex-end;
 }
-span {
+
+.IncremetorNumber {
     font-size: 1.125rem;
     padding: 0 5px 0 5px;
 }
-button > svg {
+
+.IncrementorIcon {
     height: 26px;
     width: 24px;
     display: inline-block;
@@ -19,15 +21,15 @@ button > svg {
     border-radius: 100%;
 }
 
-svg > path:last-child {
+.IncrementorIcon > path:last-child {
     fill: red;
 }
 
-svg[disabled] {
+.IncrementorIcon[disabled] {
     pointer-events: none;
     border: 2px solid rgb(212, 199, 183);
 }
 
-svg[disabled] > path:last-child {
+.IncrementorIcon[disabled] > path:last-child {
     fill: rgb(212, 199, 183);
 }

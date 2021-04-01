@@ -10,7 +10,7 @@
     margin: 0;
 }
 
-.CheckoutCart button {
+.CheckoutCart ul + button:first-of-type {
     margin: 1rem auto;
 }
 

@@ -23,89 +23,101 @@ const Customization = (props) => {
 
     const item = props.menu[sectionName].sectionItems[itemName];
 
-    const itemOptions = item.itemOptions;
-    const itemPrice = itemOptions[item.itemDefaultOptionName].optionPrice;
+    const itemSizes = item?.itemSizes;
+
+    let itemPrice = itemSizes
+        ? itemSizes[item.itemDefaultSizeName].optionPrice
+        : item?.itemPrice;
 
     const [state, setState] = useState({
         name: itemName,
-        size: item.itemDefaultOptionName,
-        side: item.itemDefaultSideName,
-        drink: item.itemDefaultDrinkName,
+        size: item?.itemDefaultSizeName,
+        side: item?.itemDefaultSideName,
+        drink: item?.itemDefaultDrinkName,
         price: itemPrice,
     });
 
-    // Click handler and Option elements mapping
-    const changedSizeHandler = (size) => {
-        const newPrice = itemOptions[size].optionPrice;
-        const newState = {
-            ...state,
-            size,
-            price: newPrice,
+    console.log(state);
+    let sizes = null;
+    if (itemSizes) {
+        const changedSizeHandler = (size) => {
+            const newPrice = itemSizes[size].optionPrice;
+            const newState = {
+                ...state,
+                size,
+                price: newPrice,
+            };
+            setState(newState);
         };
-        setState(newState);
-    };
 
-    const customizationOptions = Object.keys(itemOptions).map((optionName) => {
-        return (
-            <Option
-                key={optionName}
-                name={optionName}
-                description={itemOptions[optionName].optionDescription}
-                calories={itemOptions[optionName].optionCalories}
-                selected={state.size}
-                changedSize={changedSizeHandler}
-            />
-        );
-    });
-
-    // Click handler and CustomizationFaceOption elements mapping
-    const changeSideHandler = (sideName) => {
-        const newState = {
-            ...state,
-            side: sideName,
-        };
-        setState(newState);
-    };
+        sizes = Object.keys(itemSizes).map((optionName) => {
+            return (
+                <Option
+                    key={optionName}
+                    name={optionName}
+                    description={itemSizes[optionName].optionDescription}
+                    calories={itemSizes[optionName].optionCalories}
+                    selected={state.size}
+                    changedSize={changedSizeHandler}
+                />
+            );
+        });
+    }
 
     const itemSides = item.itemSides;
-    const sides = Object.keys(itemSides).map((sideName) => {
-        return (
-            <CustomizationFaceOption
-                key={sideName}
-                name={sideName}
-                calories={itemSides[sideName].optionCalories}
-                selected={state.side}
-                size={state.size}
-                changedSide={changeSideHandler}
-                imgURL={itemSides[sideName].optionImgURL}
-                alt={itemSides[sideName].optionAlt}
-            />
-        );
-    });
-
-    // Click handler and CustomizationFaceOption elements mapping
-    const changeDrinkHandler = (drinkName) => {
-        const newState = {
-            ...state,
-            drink: drinkName,
+    let sides = null;
+    if (itemSides) {
+        const changeSideHandler = (sideName) => {
+            const newState = {
+                ...state,
+                side: sideName,
+            };
+            setState(newState);
         };
-        setState(newState);
-    };
-    const menuDrinks = props.menu.Drinks;
-    const drinks = Object.keys(menuDrinks).map((drinkName) => {
-        return (
-            <CustomizationFaceOption
-                key={drinkName}
-                name={drinkName}
-                calories={menuDrinks[drinkName].optionCalories}
-                selected={state.drink}
-                size={state.size}
-                changedSide={changeDrinkHandler}
-                imgURL={menuDrinks[drinkName].optionImgURL}
-                alt={menuDrinks[drinkName].optionAlt}
-            />
-        );
-    });
+
+        sides = Object.keys(itemSides).map((sideName) => {
+            return (
+                <CustomizationFaceOption
+                    key={sideName}
+                    name={sideName}
+                    calories={itemSides[sideName].optionCalories}
+                    selected={state.side}
+                    size={state.size}
+                    changedSide={changeSideHandler}
+                    imgURL={itemSides[sideName].optionImgURL}
+                    alt={itemSides[sideName].optionAlt}
+                />
+            );
+        });
+    }
+
+    const hasDrinks = item.itemHasDrinks;
+    console.log(hasDrinks);
+    let drinks = null;
+    if (hasDrinks) {
+        const changeDrinkHandler = (drinkName) => {
+            const newState = {
+                ...state,
+                drink: drinkName,
+            };
+            setState(newState);
+        };
+        const menuDrinks = props.menu.Drinks;
+        drinks = Object.keys(menuDrinks).map((drinkName) => {
+            return (
+                <CustomizationFaceOption
+                    key={drinkName}
+                    name={drinkName}
+                    calories={menuDrinks[drinkName].optionCalories}
+                    selected={state.drink}
+                    size={state.size}
+                    changedSide={changeDrinkHandler}
+                    imgURL={menuDrinks[drinkName].optionImgURL}
+                    alt={menuDrinks[drinkName].optionAlt}
+                />
+            );
+        });
+    }
 
     const handleOrderClicked = () => {
         props.onAddToCart(state);
@@ -132,8 +144,7 @@ const Customization = (props) => {
                         price={state.price}
                     />
                     <CustomizationOptions
-                        sizes={customizationOptions}
-                        selectedSize={state.size}
+                        sizes={sizes}
                         sides={sides}
                         drinks={drinks}
                     />
