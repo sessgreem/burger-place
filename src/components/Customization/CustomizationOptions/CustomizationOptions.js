@@ -27,11 +27,20 @@ const CustomizationOptions = (props) => {
         />
     ) : null;
 
+    const quantity = props.quantity ? (
+        <CustomizationOption
+            heading="Select Quantity"
+            required={false}
+            options={props.quantity}
+        />
+    ) : null;
+
     return (
         <Fragment>
             {sizes}
             {sides}
             {drinks}
+            {quantity}
         </Fragment>
     );
 };

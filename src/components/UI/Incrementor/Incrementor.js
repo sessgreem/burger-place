@@ -1,10 +1,10 @@
 import React from "react";
 import Button from "../Button/Button";
 import classes from "./Incrementor.module.css";
-const Incrementor = () => {
+const Incrementor = (props) => {
     return (
         <div className={classes.Incrementor}>
-            <Button btnType="Incrementor">
+            <Button clicked={props.decrementClicked} btnType="Incrementor">
                 <svg
                     className={classes.IncrementorIcon}
                     viewBox="0 0 20 20"
@@ -19,9 +19,9 @@ const Incrementor = () => {
                 </svg>
             </Button>
             <div>
-                <span className={classes.IncremetorNumber}> 1 </span>
+                <span className={classes.IncremetorNumber}>{props.number}</span>
             </div>
-            <Button btnType="Incrementor">
+            <Button clicked={props.incrementClicked} btnType="Incrementor">
                 <svg
                     className={classes.IncrementorIcon}
                     viewBox="0 0 20 20"

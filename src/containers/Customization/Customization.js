@@ -15,6 +15,7 @@ import { addToCart } from "../../store/actions/cart";
 import { connect } from "react-redux";
 import { useParams } from "react-router";
 import { formatFromURL } from "../../shared/formatURL";
+import QuantityOption from "../../components/UI/QuantityOption/QuantityOption";
 
 const Customization = (props) => {
     const { itemName } = useParams();
@@ -35,9 +36,8 @@ const Customization = (props) => {
         side: item?.itemDefaultSideName,
         drink: item?.itemDefaultDrinkName,
         price: itemPrice,
+        quantity: 1,
     });
-
-    console.log(state);
     let sizes = null;
     if (itemSizes) {
         const changedSizeHandler = (size) => {
@@ -91,10 +91,8 @@ const Customization = (props) => {
         });
     }
 
-    const hasDrinks = item.itemHasDrinks;
-    console.log(hasDrinks);
     let drinks = null;
-    if (hasDrinks) {
+    if (item.itemHasDrinks) {
         const changeDrinkHandler = (drinkName) => {
             const newState = {
                 ...state,
@@ -123,8 +121,44 @@ const Customization = (props) => {
         props.onAddToCart(state);
     };
 
-    const itemDescription = item.itemDescription;
-    const itemImgURL = item.itemImgURL;
+    // Create and handle QuantityOption
+    const [calculatedPrice, setCalculatedPrice] = useState(state.price);
+
+    const handleIncrement = () => {
+        if (state.quantity + 1 < 10) {
+            const newQuantity = state.quantity + 1;
+
+            const newPrice = newQuantity * state.price;
+            setCalculatedPrice(newPrice);
+
+            setState({
+                ...state,
+                quantity: newQuantity,
+            });
+        }
+    };
+
+    const handleDecrement = () => {
+        if (state.quantity - 1 >= 1) {
+            const newQuantity = state.quantity - 1;
+            const newPrice = newQuantity * state.price;
+            setCalculatedPrice(newPrice);
+
+            setState({
+                ...state,
+                quantity: newQuantity,
+            });
+        }
+    };
+    const quantityOption = item?.itemQuantityOption ? (
+        <QuantityOption
+            incrementClicked={handleIncrement}
+            decrementClicked={handleDecrement}
+            price={calculatedPrice}
+            quantity={state.quantity}
+        />
+    ) : null;
+
     return (
         <Fragment>
             <Toolbar />
@@ -132,21 +166,21 @@ const Customization = (props) => {
             <main>
                 <ReturnButton />
                 <CustomizationBackground
-                    imgURL={itemImgURL}
+                    imgURL={item.itemImgURL}
                     imgAlt={itemName}
                 />
-
                 <div className={classes.Customization}>
                     <CustomizationHeading
                         name={itemName}
-                        description={itemDescription}
+                        description={item.itemDescription}
                         selectedSize={state.size}
-                        price={state.price}
+                        price={calculatedPrice}
                     />
                     <CustomizationOptions
                         sizes={sizes}
                         sides={sides}
                         drinks={drinks}
+                        quantity={quantityOption}
                     />
                     <CustomizationOrderButton
                         orderClicked={handleOrderClicked}

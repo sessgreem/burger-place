@@ -5,7 +5,11 @@ import CartItem from "./CartItem/CartItem";
 import useClickOutside from "../../hooks/useClickOutside";
 
 import { connect } from "react-redux";
-import { removeFromCart } from "../../store/actions/cart";
+import {
+    removeFromCart,
+    incrementItemQuantity,
+    decrementItemQuantity,
+} from "../../store/actions/cart";
 import { useHistory } from "react-router-dom";
 
 const Cart = (props) => {
@@ -18,7 +22,12 @@ const Cart = (props) => {
     const handleRemoveItem = (itemId) => {
         props.onRemoveItem(itemId);
     };
-
+    const handleIncrement = (itemId, quantity) => {
+        props.onIncrement(itemId, quantity);
+    };
+    const handleDecrement = (itemId, quantity) => {
+        props.onDecrement(itemId, quantity);
+    };
     const cartItems = props.cart.map((item) => {
         return (
             <CartItem
@@ -27,7 +36,10 @@ const Cart = (props) => {
                 name={item.name}
                 size={item.size}
                 removeClicked={handleRemoveItem}
-                price={item.price}
+                price={item.price * item.quantity}
+                incrementClicked={handleIncrement}
+                decrementClicked={handleDecrement}
+                quantity={item.quantity}
             />
         );
     });
@@ -62,6 +74,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onRemoveItem: (itemId) => dispatch(removeFromCart(itemId)),
+        onIncrement: (itemId, quantity) =>
+            dispatch(incrementItemQuantity(itemId, quantity)),
+        onDecrement: (itemId, quantity) =>
+            dispatch(decrementItemQuantity(itemId, quantity)),
     };
 };
 

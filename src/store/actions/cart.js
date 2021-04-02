@@ -13,3 +13,19 @@ export const removeFromCart = (itemId) => {
         itemId,
     };
 };
+
+export const incrementItemQuantity = (itemId, quantity) => {
+    return {
+        type: actionTypes.INCREMENT_ITEM_QUANTITY,
+        itemId,
+        quantity,
+    };
+};
+
+export const decrementItemQuantity = (itemId, quantity) => {
+    return {
+        type: actionTypes.DECREMENT_ITEM_QUANTITY,
+        itemId,
+        quantity,
+    };
+};
