@@ -2,13 +2,20 @@ import React from "react";
 import Button from "../Button/Button";
 import classes from "./Incrementor.module.css";
 const Incrementor = (props) => {
+    let incrementDisabled = false,
+        decrementDisabled = false;
+
+    if (props.number >= 9) incrementDisabled = true;
+
+    if (props.number <= 1) decrementDisabled = true;
+
     return (
         <div className={classes.Incrementor}>
             <Button clicked={props.decrementClicked} btnType="Incrementor">
                 <svg
                     className={classes.IncrementorIcon}
                     viewBox="0 0 20 20"
-                    disabled={true}
+                    disabled={decrementDisabled}
                 >
                     <title>Circle Minus Icon</title>
                     <path d="M10 0a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 0 10 10 10 0 0 1 10 0z"></path>
@@ -25,7 +32,7 @@ const Incrementor = (props) => {
                 <svg
                     className={classes.IncrementorIcon}
                     viewBox="0 0 20 20"
-                    disabled={false}
+                    disabled={incrementDisabled}
                 >
                     <title>Circle Plus Icon</title>
                     <path d="M10 0a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 0 10 10 10 0 0 1 10 0z"></path>
