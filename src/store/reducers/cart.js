@@ -4,7 +4,7 @@ import { nanoid } from "nanoid";
 
 const initialState = {
     items: [],
-    price: 0,
+    itemsPrice: 0,
 };
 
 const incrementItemQuantity = (state, action) => {
@@ -13,15 +13,15 @@ const incrementItemQuantity = (state, action) => {
     }
     let newPrice = 0;
     const updatedArray = state.items.map((item) => {
-        if (item.id === action.itemId) {
-            const newQuantity = action.quantity + 1;
-            newPrice += item.price * newQuantity;
-            return { ...item, quantity: newQuantity };
+        if (item.id !== action.id) {
+            newPrice += item.price * item.quantity;
+            return item;
         }
-        newPrice += item.price * item.quantity;
-        return item;
+        const newQuantity = action.quantity + 1;
+        newPrice += item.price * newQuantity;
+        return { ...item, quantity: newQuantity };
     });
-    return updateObject(state, { items: updatedArray, price: newPrice });
+    return updateObject(state, { items: updatedArray, itemsPrice: newPrice });
 };
 const decrementItemQuantity = (state, action) => {
     if (action.quantity - 1 < 1) {
@@ -29,15 +29,15 @@ const decrementItemQuantity = (state, action) => {
     }
     let newPrice = 0;
     const updatedArray = state.items.map((item) => {
-        if (item.id === action.itemId) {
-            const newQuantity = action.quantity - 1;
-            newPrice += item.price * newQuantity;
-            return { ...item, quantity: newQuantity };
+        if (item.id !== action.id) {
+            newPrice += item.price * item.quantity;
+            return item;
         }
-        newPrice += item.price * item.quantity;
-        return item;
+        const newQuantity = action.quantity - 1;
+        newPrice += item.price * newQuantity;
+        return { ...item, quantity: newQuantity };
     });
-    return updateObject(state, { items: updatedArray, price: newPrice });
+    return updateObject(state, { items: updatedArray, itemsPrice: newPrice });
 };
 
 const addToCart = (state, action) => {
@@ -45,18 +45,19 @@ const addToCart = (state, action) => {
         return state;
     }
     const updatedArray = state.items.concat({ ...action.item, id: nanoid() });
-    const newPrice = state.price + action.item.price * action.item.quantity;
-    return updateObject(state, { items: updatedArray, price: newPrice });
+    const newPrice =
+        state.itemsPrice + action.item.price * action.item.quantity;
+    return updateObject(state, { items: updatedArray, itemsPrice: newPrice });
 };
 
 const removeFromCart = (state, action) => {
     const updatedArray = state.items.filter(
-        (element) => element.id !== action.itemId
+        (element) => element.id !== action.id
     );
     let newPrice = 0;
     updatedArray.forEach((el) => (newPrice += el.price * el.quantity));
 
-    return updateObject(state, { items: updatedArray, price: newPrice });
+    return updateObject(state, { items: updatedArray, itemsPrice: newPrice });
 };
 
 const reducer = (state = initialState, action) => {

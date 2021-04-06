@@ -7,25 +7,25 @@ export const addToCart = (item) => {
     };
 };
 
-export const removeFromCart = (itemId) => {
+export const removeFromCart = (id) => {
     return {
         type: actionTypes.REMOVE_FROM_CART,
-        itemId,
+        id,
     };
 };
 
-export const incrementItemQuantity = (itemId, quantity) => {
+export const incrementItemQuantity = (id, quantity) => {
     return {
         type: actionTypes.INCREMENT_ITEM_QUANTITY,
-        itemId,
+        id,
         quantity,
     };
 };
 
-export const decrementItemQuantity = (itemId, quantity) => {
+export const decrementItemQuantity = (id, quantity) => {
     return {
         type: actionTypes.DECREMENT_ITEM_QUANTITY,
-        itemId,
+        id,
         quantity,
     };
 };

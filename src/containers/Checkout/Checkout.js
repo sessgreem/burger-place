@@ -1,39 +1,17 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import classes from "./Checkout.module.css";
 import CheckoutRadioOption from "../../components/Checkout/CheckoutRadioOption/CheckoutRadioOption";
 import CartItem from "../../components/Cart/CartItem/CartItem";
-import { connect } from "react-redux";
-import { removeFromCart } from "../../store/actions/cart";
 import CheckoutExtraItems from "../../components/Checkout/CheckoutExtraItems/CheckoutExtraItems";
 import CheckoutCart from "../../components/Checkout/CheckoutCart/CheckoutCart";
 import CheckoutOrderButton from "../../components/Checkout/CheckoutOrderButton/CheckoutOrderButton";
 import CheckoutAddress from "../../components/Checkout/CheckoutAddress/CheckoutAddress";
 import CheckoutHeader from "../../components/Checkout/CheckoutHeader/CheckoutHeader";
+import useCart from "../../hooks/useCart";
+import useRadioOptions from "../../hooks/useRadioOptions";
+
 const Checkout = (props) => {
-    const [radioOptions, setRadioOptions] = useState([
-        {
-            header: "Drive Thru",
-            description: "Drive up and let us know you placed an online order.",
-            checked: true,
-        },
-        {
-            header: "Pick Up",
-            description:
-                "We'll have your order ready at the counter when you arrive.",
-            checked: false,
-        },
-    ]);
-
-    const radioChangeHandler = (header) => {
-        const newRadioOptions = radioOptions.map((option) => {
-            if (option.header === header) {
-                return { ...option, checked: true };
-            }
-            return { ...option, checked: false };
-        });
-
-        setRadioOptions(newRadioOptions);
-    };
+    const [radioOptions, radioChangeHandler] = useRadioOptions();
 
     const checkoutRadioOptions = radioOptions.map((option) => (
         <CheckoutRadioOption
@@ -48,11 +26,9 @@ const Checkout = (props) => {
     const selectedRadioOption = radioOptions.find((el) => el.checked === true);
 
     // CartItem functionality
-    const handleRemoveItem = (itemId) => {
-        props.onRemoveItem(itemId);
-    };
+    const [cartItems, itemsPrice, handlers] = useCart();
 
-    const checkoutCartItems = props.cart.map((item) => {
+    const checkoutCartItems = cartItems.map((item) => {
         return (
             <li key={item.id}>
                 <CartItem
@@ -61,9 +37,12 @@ const Checkout = (props) => {
                     size={item.size}
                     side={item.side}
                     drink={item.drink}
-                    removeClicked={handleRemoveItem}
                     hasDescription={true}
-                    price={item.price}
+                    quantity={item.quantity}
+                    price={item.price * item.quantity}
+                    removeClicked={handlers.handleRemoveItem}
+                    incrementClicked={handlers.handleIncrement}
+                    decrementClicked={handlers.handleDecrement}
                 />
             </li>
         );
@@ -75,27 +54,11 @@ const Checkout = (props) => {
             <div className={classes.Checkout}>
                 <CheckoutAddress options={checkoutRadioOptions} />
                 <CheckoutExtraItems />
-                <CheckoutCart
-                    items={checkoutCartItems}
-                    price={props.itemsPrice}
-                />
+                <CheckoutCart items={checkoutCartItems} price={itemsPrice} />
                 <CheckoutOrderButton />
             </div>
         </Fragment>
     );
 };
 
-const mapStateToProps = (state) => {
-    return {
-        cart: state.cart.items,
-        itemsPrice: state.cart.price,
-    };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onRemoveItem: (itemId) => dispatch(removeFromCart(itemId)),
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Checkout);
+export default Checkout;

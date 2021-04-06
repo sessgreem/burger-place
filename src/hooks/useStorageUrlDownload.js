@@ -6,9 +6,12 @@ const useStorageUrlDownload = (imgRefURL) => {
 
     useEffect(() => {
         const imgRef = storage.refFromURL(imgRefURL);
-        imgRef.getDownloadURL().then((URL) => {
-            setImageURL(URL);
-        });
+        imgRef
+            .getDownloadURL()
+            .then((URL) => {
+                setImageURL(URL);
+            })
+            .catch((error) => console.log(error));
     }, [imgRefURL]);
 
     return imageURL;

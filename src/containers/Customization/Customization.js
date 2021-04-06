@@ -19,6 +19,7 @@ import QuantityOption from "../../components/UI/QuantityOption/QuantityOption";
 
 const Customization = (props) => {
     const { itemName } = useParams();
+
     let { sectionName } = useParams();
     sectionName = formatFromURL(sectionName);
 
@@ -26,11 +27,11 @@ const Customization = (props) => {
 
     const itemSizes = item?.itemSizes;
 
-    let itemPrice = itemSizes
+    const itemPrice = itemSizes
         ? itemSizes[item.itemDefaultSizeName].optionPrice
         : item?.itemPrice;
 
-    const [state, setState] = useState({
+    const [itemState, setItemState] = useState({
         name: itemName,
         size: item?.itemDefaultSizeName,
         side: item?.itemDefaultSideName,
@@ -38,16 +39,17 @@ const Customization = (props) => {
         price: itemPrice,
         quantity: 1,
     });
+
     let sizes = null;
     if (itemSizes) {
         const changedSizeHandler = (size) => {
             const newPrice = itemSizes[size].optionPrice;
             const newState = {
-                ...state,
+                ...itemState,
                 size,
                 price: newPrice,
             };
-            setState(newState);
+            setItemState(newState);
         };
 
         sizes = Object.keys(itemSizes).map((optionName) => {
@@ -57,7 +59,7 @@ const Customization = (props) => {
                     name={optionName}
                     description={itemSizes[optionName].optionDescription}
                     calories={itemSizes[optionName].optionCalories}
-                    selected={state.size}
+                    selected={itemState.size}
                     changedSize={changedSizeHandler}
                 />
             );
@@ -69,10 +71,10 @@ const Customization = (props) => {
     if (itemSides) {
         const changeSideHandler = (sideName) => {
             const newState = {
-                ...state,
+                ...itemState,
                 side: sideName,
             };
-            setState(newState);
+            setItemState(newState);
         };
 
         sides = Object.keys(itemSides).map((sideName) => {
@@ -81,8 +83,8 @@ const Customization = (props) => {
                     key={sideName}
                     name={sideName}
                     calories={itemSides[sideName].optionCalories}
-                    selected={state.side}
-                    size={state.size}
+                    selected={itemState.side}
+                    size={itemState.size}
                     changedSide={changeSideHandler}
                     imgURL={itemSides[sideName].optionImgURL}
                     alt={itemSides[sideName].optionAlt}
@@ -95,10 +97,10 @@ const Customization = (props) => {
     if (item.itemHasDrinks) {
         const changeDrinkHandler = (drinkName) => {
             const newState = {
-                ...state,
+                ...itemState,
                 drink: drinkName,
             };
-            setState(newState);
+            setItemState(newState);
         };
         const menuDrinks = props.menu.Drinks;
         drinks = Object.keys(menuDrinks).map((drinkName) => {
@@ -107,8 +109,8 @@ const Customization = (props) => {
                     key={drinkName}
                     name={drinkName}
                     calories={menuDrinks[drinkName].optionCalories}
-                    selected={state.drink}
-                    size={state.size}
+                    selected={itemState.drink}
+                    size={itemState.size}
                     changedSide={changeDrinkHandler}
                     imgURL={menuDrinks[drinkName].optionImgURL}
                     alt={menuDrinks[drinkName].optionAlt}
@@ -118,34 +120,34 @@ const Customization = (props) => {
     }
 
     const handleOrderClicked = () => {
-        props.onAddToCart(state);
+        props.onAddToCart(itemState);
     };
 
     // Create and handle QuantityOption
-    const [calculatedPrice, setCalculatedPrice] = useState(state.price);
+    const [calculatedPrice, setCalculatedPrice] = useState(itemState.price);
 
     const handleIncrement = () => {
-        if (state.quantity + 1 < 10) {
-            const newQuantity = state.quantity + 1;
+        if (itemState.quantity + 1 < 10) {
+            const newQuantity = itemState.quantity + 1;
 
-            const newPrice = newQuantity * state.price;
+            const newPrice = newQuantity * itemState.price;
             setCalculatedPrice(newPrice);
 
-            setState({
-                ...state,
+            setItemState({
+                ...itemState,
                 quantity: newQuantity,
             });
         }
     };
 
     const handleDecrement = () => {
-        if (state.quantity - 1 >= 1) {
-            const newQuantity = state.quantity - 1;
-            const newPrice = newQuantity * state.price;
+        if (itemState.quantity - 1 >= 1) {
+            const newQuantity = itemState.quantity - 1;
+            const newPrice = newQuantity * itemState.price;
             setCalculatedPrice(newPrice);
 
-            setState({
-                ...state,
+            setItemState({
+                ...itemState,
                 quantity: newQuantity,
             });
         }
@@ -155,7 +157,7 @@ const Customization = (props) => {
             incrementClicked={handleIncrement}
             decrementClicked={handleDecrement}
             price={calculatedPrice}
-            quantity={state.quantity}
+            quantity={itemState.quantity}
         />
     ) : null;
 
@@ -166,14 +168,14 @@ const Customization = (props) => {
             <main>
                 <ReturnButton />
                 <CustomizationBackground
-                    imgURL={item.itemImgURL}
+                    imgURL={item?.itemImgURL}
                     imgAlt={itemName}
                 />
                 <div className={classes.Customization}>
                     <CustomizationHeading
                         name={itemName}
-                        description={item.itemDescription}
-                        selectedSize={state.size}
+                        description={item?.itemDescription}
+                        selectedSize={itemState.size}
                         price={calculatedPrice}
                     />
                     <CustomizationOptions
