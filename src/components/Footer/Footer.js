@@ -46,7 +46,7 @@ const Footer = () => {
                     <h2>MY BP</h2>
                     <ul>
                         <li>
-                            <a href={url}>BK APP</a>
+                            <a href={url}>BP APP</a>
                         </li>
                         <li>
                             <a href={url}>Gift Cards / Crown Cards</a>

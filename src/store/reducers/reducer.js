@@ -1265,7 +1265,7 @@ const initialState = {
     },
     "Family Bundles": {
         sectionItems: {
-            "Mix n' Match Meals": {
+            "Match n' Mix": {
                 itemSizes: {
                     "A La Carte": {
                         optionDescription: "Entree only ",
