@@ -18,17 +18,13 @@ const Toolbar = () => {
         setCartVisibility(!cartVisibility);
     };
 
-    // small technical workaround
     let timeout;
-
+    const cartClickedOutside = () => {
+        timeout = setTimeout(() => setCartVisibility(false), 10);
+    };
     useEffect(() => {
         return () => clearTimeout(timeout);
     });
-
-    // TODO https://www.npmjs.com/package/react-onclickoutside
-    const cartClickedOutside = () => {
-        timeout = setTimeout(() => setCartVisibility(false), 150);
-    };
 
     return (
         <Fragment>

@@ -26,6 +26,7 @@ const Cart = (props) => {
                 removeClicked={handlers.handleRemoveItem}
                 incrementClicked={handlers.handleIncrement}
                 decrementClicked={handlers.handleDecrement}
+                hasDescription={false}
             />
         );
     });

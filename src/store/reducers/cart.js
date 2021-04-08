@@ -41,12 +41,16 @@ const decrementItemQuantity = (state, action) => {
 };
 
 const addToCart = (state, action) => {
-    if (action.item.quantity < 1 && action.item.quantity > 8) {
+    let quantity = action.item.quantity;
+    if (isNaN(quantity) || !quantity) {
+        quantity = 1;
+    }
+    if (quantity < 1 && quantity > 8) {
         return state;
     }
+
     const updatedArray = state.items.concat({ ...action.item, id: nanoid() });
-    const newPrice =
-        state.itemsPrice + action.item.price * action.item.quantity;
+    const newPrice = state.itemsPrice + action.item.price * quantity;
     return updateObject(state, { items: updatedArray, itemsPrice: newPrice });
 };
 

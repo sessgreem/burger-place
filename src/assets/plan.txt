@@ -3,20 +3,27 @@ Deadline 11.04.2021
 
 Pretty satisfied with the project, I learned a lot of about React making it. It was fun and consistent experience. I'm nearly complete with what I wanted to implement with the exception of a few things that I wanna add before the deadline.
 
+Working on 
+- CheckoutExtraItems need to be addable - 90% (rerendering of Checkout causes a problem)
+
 Things to add / change
-- Button links in the front page
-- Svg icon in add to cart Action button
 - Change the logo
 - Change the front page image
-- Implementing react clickoutside
 - Create a small page explaining the project goals
-- Checkout Button in Cart animation
 - Indication when adding items to the Cart
-- CheckoutExtraItems need to be addable
 - Make Responsible 
 
-
 Things to be removed 
-- Change address in Checkout
 - Sing up
-- Social icons in Footer
+
+
+Completed/
+- Svg icon in add to cart Action button
+- Checkout Button in Cart animation
+- Button links in the front page
+- Svg icon in add to cart Action button
+- Checkout Button in Cart animation
+
+
+Not to implement
+- Implementing react clickoutside

@@ -50,7 +50,7 @@ const initialState = {
                 itemImgURL: "gs://react-hooks-3f4f4.appspot.com/hero.png",
                 itemHasDrinks: true,
             },
-            "Mix n' Match Meals": {
+            "Mix n' Match": {
                 itemSizes: {
                     "A La Carte": {
                         optionDescription: "Entree only ",
@@ -1469,7 +1469,7 @@ const initialState = {
                 itemPrice: 2.29,
             },
             "Chicken Fries": {
-                itemCalories: "813 - 1,592 Cal",
+                itemCalories: "813 - 1,592",
                 itemImgURL:
                     "gs://react-hooks-3f4f4.appspot.com/sides/chicken-fries.webp",
                 itemHasDrinks: false,

@@ -7,7 +7,6 @@ const CartItem = (props) => {
     if (props.size !== "A La Carte" && props.size) {
         mealSize = `Meal ${props.size}`;
     }
-
     let bonusDescription = null;
     if (props.hasDescription) {
         bonusDescription = (
