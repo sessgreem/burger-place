@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import classes from "./CheckoutExtraItems.module.css";
 import CheckoutExtraItem from "./CheckoutExtraItem/CheckoutExtraItem";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../../../store/actions/cart";
-
+import useCart from "../../../hooks/useCart";
 function getRandom(arr, n) {
     let result = new Array(n),
         len = arr.length,
@@ -31,45 +31,95 @@ const createArrayWithObjectsFromMenu = (object) => {
     });
     return array;
 };
+
 const CheckoutExtraItems = () => {
     const menu = useSelector((state) => state.menu);
     const dispatch = useDispatch();
 
-    const sweetsMenu = menu?.Sweets?.sectionItems;
-    const sweetsArray = createArrayWithObjectsFromMenu(sweetsMenu);
+    const [cartItems] = useCart();
+    const extraItemsInCart = cartItems.filter((item) => item.isExtra);
 
-    const sidesMenu = menu?.Sides?.sectionItems;
-    const sidesArray = createArrayWithObjectsFromMenu(sidesMenu);
+    const [recommendedItems, setRecommendedItems] = useState(null);
 
-    const joinedItems = sweetsArray.concat(sidesArray);
-    const randomItems =
-        joinedItems.length > 1 ? getRandom(joinedItems, 2) : joinedItems[0];
+    const getTwoRandomItems = useCallback((menu, itemsInCart) => {
+        const sweetsMenu = menu?.Sweets?.sectionItems;
+        const sweetsArray = createArrayWithObjectsFromMenu(sweetsMenu);
 
-    const addToCartHandler = (item) => {
-        const _item = {
-            ...item,
-            hasDescription: false,
-            quantity: 1,
+        const sidesMenu = menu?.Sides?.sectionItems;
+        const sidesArray = createArrayWithObjectsFromMenu(sidesMenu);
+
+        // const joinedItems = sweetsArray.concat(sidesArray);
+        const joinedItems = sweetsArray.concat(sidesArray).filter((item) => {
+            let found = 0;
+            itemsInCart.forEach((itemInCart) => {
+                if (itemInCart.name === item.name) {
+                    found = 1;
+                    return;
+                }
+            });
+            return found ? null : item;
+        });
+
+        return joinedItems.length > 1
+            ? getRandom(joinedItems, 2)
+            : [sidesArray[1], sidesArray[2]];
+    }, []);
+
+    const addToCartHandler = useCallback(
+        (item) => {
+            const _item = {
+                ...item,
+                hasDescription: false,
+                quantity: 1,
+                isExtra: true,
+            };
+            dispatch(addToCart(_item));
+        },
+        [dispatch]
+    );
+
+    useEffect(() => {
+        let itemComponents = recommendedItems;
+
+        const removeFromRecommended = (item) => {
+            const newRecommendedItems = itemComponents.filter(
+                (component) => component.props.name !== item.name
+            );
+            itemComponents = newRecommendedItems;
+            setRecommendedItems(newRecommendedItems);
         };
-        dispatch(addToCart(_item));
-    };
 
-    const extraItems = randomItems.map((item, index) => {
-        return (
-            <CheckoutExtraItem
-                key={index}
-                name={item.name}
-                calories={item.calories}
-                price={item.price}
-                imgURL={item.imgURL}
-                addToCartClicked={addToCartHandler}
-            />
-        );
-    });
+        if (itemComponents === null || !itemComponents.length) {
+            const twoRandomItems = getTwoRandomItems(menu, extraItemsInCart);
+            itemComponents = twoRandomItems.map((item, index) => {
+                return (
+                    <CheckoutExtraItem
+                        key={index}
+                        name={item.name}
+                        calories={item.calories}
+                        price={item.price}
+                        imgURL={item.imgURL}
+                        addToCartClicked={(item) => {
+                            addToCartHandler(item);
+                            removeFromRecommended(item);
+                        }}
+                    />
+                );
+            });
+            setRecommendedItems(itemComponents);
+        }
+    }, [
+        addToCartHandler,
+        extraItemsInCart,
+        getTwoRandomItems,
+        menu,
+        recommendedItems,
+    ]);
+
     return (
         <div className={classes.CheckoutExtraItems}>
             <h2>Add to order</h2>
-            <div>{extraItems}</div>
+            <div>{recommendedItems}</div>
         </div>
     );
 };

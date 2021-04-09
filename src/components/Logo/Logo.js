@@ -1,5 +1,5 @@
 import React from "react";
-import burgerLogo from "../../assets/images/logo/Burger_King_2020.png";
+import burgerLogo from "../../assets/images/logo/burger-place.png";
 import classes from "./Logo.module.css";
 import { Link } from "react-router-dom";
 const Logo = () => {

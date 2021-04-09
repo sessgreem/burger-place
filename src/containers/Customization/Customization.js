@@ -38,6 +38,7 @@ const Customization = (props) => {
         drink: item?.itemDefaultDrinkName,
         price: itemPrice,
         quantity: 1,
+        isExtra: item?.isExtra,
     });
 
     let sizes = null;
