@@ -5,24 +5,11 @@ Pretty satisfied with the project, I learned a lot of about React making it. It 
 
 
 Things to add / change
-- CheckoutExtraItems  and CartItem delay dom init
 - Change the front page image
 - Create a small page explaining the project goals
 - Indication when adding items to the Cart
 - Make Responsible 
 
-Things to be removed 
-- Sing up
-
-
 Completed/
-- Svg icon in add to cart Action button
-- Checkout Button in Cart animation
-- Button links in the front page
-- Svg icon in add to cart Action button
-- Checkout Button in Cart animation
-- CheckoutExtraItems functionality 
-- Change the logo
-
-Not to implement
-- Implementing react clickoutside
+- CheckoutExtraItems  and CartItem delay dom init
+- Make A La Carte size to remove drinks and sides from options

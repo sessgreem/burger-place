@@ -32,7 +32,7 @@ const CustomizationHeading = (props) => {
             <p>{props.description}</p>
             {selected && additionalInformation}
             <div className={classes.CustomizationHeadingPrice}>
-                ${props.price}
+                ${props.price.toFixed(2)}
             </div>
         </div>
     );

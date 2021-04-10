@@ -757,7 +757,7 @@ const initialState = {
     },
     "Chicken & Fish": {
         sectionItems: {
-            "BBQ Bacon Crispy Chiken": {
+            "BBQ Bacon Crispy Chicken": {
                 itemSizes: {
                     "A La Carte": {
                         optionDescription: "Entree only ",
@@ -1457,6 +1457,7 @@ const initialState = {
                 itemHasDrinks: false,
                 itemQuantityOption: true,
                 itemPrice: 3.29,
+                isExtra: true,
             },
             "Classic Fries": {
                 itemCalories: "320",
@@ -1465,6 +1466,7 @@ const initialState = {
                 itemHasDrinks: false,
                 itemQuantityOption: true,
                 itemPrice: 2.24,
+                isExtra: true,
             },
             "Onion Rings": {
                 itemCalories: "479",
@@ -1473,14 +1475,16 @@ const initialState = {
                 itemHasDrinks: false,
                 itemQuantityOption: true,
                 itemPrice: 2.49,
+                isExtra: true,
             },
             "Chicken Fries": {
-                itemCalories: "813 - 1,592",
+                itemCalories: "555 - 624",
                 itemImgURL:
                     "gs://react-hooks-3f4f4.appspot.com/sides/chicken-fries.webp",
                 itemHasDrinks: false,
                 itemQuantityOption: true,
                 itemPrice: 3.19,
+                isExtra: true,
             },
             "10 Pc Nuggets": {
                 itemCalories: "482 - 788",
@@ -1489,6 +1493,7 @@ const initialState = {
                 itemHasDrinks: false,
                 itemQuantityOption: true,
                 itemPrice: 5.12,
+                isExtra: true,
             },
             "4 Pc Nuggets": {
                 itemCalories: "224 - 377",
@@ -1497,6 +1502,7 @@ const initialState = {
                 itemHasDrinks: false,
                 itemQuantityOption: true,
                 itemPrice: 3.13,
+                isExtra: true,
             },
         },
     },
@@ -1508,6 +1514,7 @@ const initialState = {
                 itemHasDrinks: false,
                 itemQuantityOption: true,
                 itemPrice: 2.29,
+                isExtra: true,
             },
             "Dr Pepper": {
                 itemCalories: "240",
@@ -1515,6 +1522,7 @@ const initialState = {
                 itemHasDrinks: false,
                 itemQuantityOption: true,
                 itemPrice: 2.62,
+                isExtra: true,
             },
             "Diet Coke": {
                 itemCalories: "1",
@@ -1522,6 +1530,7 @@ const initialState = {
                 itemHasDrinks: false,
                 itemQuantityOption: true,
                 itemPrice: 2.34,
+                isExtra: true,
             },
             Sprite: {
                 itemCalories: "245",
@@ -1529,6 +1538,7 @@ const initialState = {
                 itemHasDrinks: false,
                 itemQuantityOption: true,
                 itemPrice: 2.21,
+                isExtra: true,
             },
             "Mello Yello": {
                 itemCalories: "286",
@@ -1537,6 +1547,7 @@ const initialState = {
                 itemHasDrinks: false,
                 itemQuantityOption: true,
                 itemPrice: 3.49,
+                isExtra: true,
             },
             Milk: {
                 itemCalories: "1",
@@ -1544,6 +1555,7 @@ const initialState = {
                 itemHasDrinks: false,
                 itemQuantityOption: true,
                 itemPrice: 1.19,
+                isExtra: true,
             },
         },
     },

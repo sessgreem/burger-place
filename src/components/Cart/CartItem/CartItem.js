@@ -8,7 +8,7 @@ const CartItem = (props) => {
         mealSize = `Meal ${props.size}`;
     }
     let bonusDescription = null;
-    if (props.hasDescription) {
+    if (props.hasDescription && props.size !== "A La Carte") {
         bonusDescription = (
             <p>
                 {props.name}

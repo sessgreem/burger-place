@@ -24,6 +24,7 @@
 .Primary {
     color: rgb(245, 235, 220);
     background-color: rgb(214, 35, 0);
+    cursor: not-allowed;
 }
 .Primary:hover {
     background-color: rgb(167, 27, 0);

@@ -7,7 +7,7 @@ const QuantityOption = (props) => {
         <div className={classes.QuantityOption}>
             <div>
                 <span className={classes.QuantityOptionPrice}>
-                    ${props.price}
+                    ${props.price.toFixed(2)}
                 </span>
             </div>
             <Incrementor

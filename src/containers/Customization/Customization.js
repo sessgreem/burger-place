@@ -19,14 +19,11 @@ import QuantityOption from "../../components/UI/QuantityOption/QuantityOption";
 
 const Customization = (props) => {
     const { itemName } = useParams();
-
     let { sectionName } = useParams();
     sectionName = formatFromURL(sectionName);
 
     const item = props.menu[sectionName].sectionItems[itemName];
-
     const itemSizes = item?.itemSizes;
-
     const itemPrice = itemSizes
         ? itemSizes[item.itemDefaultSizeName].optionPrice
         : item?.itemPrice;
@@ -39,7 +36,10 @@ const Customization = (props) => {
         price: itemPrice,
         quantity: 1,
         isExtra: item?.isExtra,
+        hasDescription: item?.isExtra ? false : true,
     });
+
+    const [calculatedPrice, setCalculatedPrice] = useState(itemState.price);
 
     let sizes = null;
     if (itemSizes) {
@@ -51,6 +51,7 @@ const Customization = (props) => {
                 price: newPrice,
             };
             setItemState(newState);
+            setCalculatedPrice(newPrice);
         };
 
         sizes = Object.keys(itemSizes).map((optionName) => {
@@ -69,7 +70,8 @@ const Customization = (props) => {
 
     const itemSides = item.itemSides;
     let sides = null;
-    if (itemSides) {
+
+    if (itemSides && itemState.size !== "A La Carte") {
         const changeSideHandler = (sideName) => {
             const newState = {
                 ...itemState,
@@ -95,7 +97,7 @@ const Customization = (props) => {
     }
 
     let drinks = null;
-    if (item.itemHasDrinks) {
+    if (item.itemHasDrinks && itemState.size !== "A La Carte") {
         const changeDrinkHandler = (drinkName) => {
             const newState = {
                 ...itemState,
@@ -125,7 +127,6 @@ const Customization = (props) => {
     };
 
     // Create and handle QuantityOption
-    const [calculatedPrice, setCalculatedPrice] = useState(itemState.price);
 
     const handleIncrement = () => {
         if (itemState.quantity + 1 < 10) {
@@ -140,7 +141,6 @@ const Customization = (props) => {
             });
         }
     };
-
     const handleDecrement = () => {
         if (itemState.quantity - 1 >= 1) {
             const newQuantity = itemState.quantity - 1;

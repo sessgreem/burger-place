@@ -4,6 +4,7 @@ import CheckoutExtraItem from "./CheckoutExtraItem/CheckoutExtraItem";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../../../store/actions/cart";
 import useCart from "../../../hooks/useCart";
+
 function getRandom(arr, n) {
     let result = new Array(n),
         len = arr.length,
