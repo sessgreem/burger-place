@@ -16,8 +16,10 @@ import { connect } from "react-redux";
 import { useParams } from "react-router";
 import { formatFromURL } from "../../shared/formatURL";
 import QuantityOption from "../../components/UI/QuantityOption/QuantityOption";
+import { useHistory } from "react-router-dom";
 
 const Customization = (props) => {
+    const history = useHistory();
     const { itemName } = useParams();
     let { sectionName } = useParams();
     sectionName = formatFromURL(sectionName);
@@ -124,6 +126,9 @@ const Customization = (props) => {
 
     const handleOrderClicked = () => {
         props.onAddToCart(itemState);
+
+        // ? goBack here should be going to MenuPage instead because there won't be always browser history - will keep like this for functionality sake.
+        history.goBack();
     };
 
     // Create and handle QuantityOption

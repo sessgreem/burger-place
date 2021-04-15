@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import Button from "../Button/Button";
 import classes from "./ReturnButton.module.css";
 const ReturnButton = () => {
-    let history = useHistory();
+    const history = useHistory();
     const handleClicked = () => {
         history.goBack();
     };

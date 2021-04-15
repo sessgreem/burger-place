@@ -1,15 +1,12 @@
 Plan to finish the application. 
-Deadline 11.04.2021
 
-Pretty satisfied with the project, I learned a lot of about React making it. It was fun and consistent experience. I'm nearly complete with what I wanted to implement with the exception of a few things that I wanna add before the deadline.
+Working on
 
 
 Things to add / change
 - Change the front page image
 - Create a small page explaining the project goals
-- Indication when adding items to the Cart
-- Make Responsible 
+- Make Responsible
 
-Completed/
-- CheckoutExtraItems  and CartItem delay dom init
-- Make A La Carte size to remove drinks and sides from options
+Completed /
+- Indication when adding items to the Cart

@@ -11,7 +11,7 @@ import { formatToURL } from "../../../shared/formatURL";
 
 import { useHistory } from "react-router-dom";
 const Menu = (props) => {
-    let history = useHistory();
+    const history = useHistory();
 
     const [cardInfo] = useState([
         {

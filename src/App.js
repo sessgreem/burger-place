@@ -8,6 +8,10 @@ import Sections from "./containers/Sections/Sections";
 import Customization from "./containers/Customization/Customization";
 import Checkout from "./containers/Checkout/Checkout";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Zoom } from "react-toastify";
+
 const App = () => {
     let routes = (
         <Switch>
@@ -21,7 +25,24 @@ const App = () => {
             <Route path="/checkout" component={Checkout} />
         </Switch>
     );
-    return <Fragment>{routes}</Fragment>;
+    return (
+        <Fragment>
+            {routes}
+            <ToastContainer
+                position="bottom-center"
+                autoClose={6000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={true}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable={true}
+                pauseOnHover={true}
+                style={{ width: "100%" }}
+                transition={Zoom}
+            />
+        </Fragment>
+    );
 };
 
 export default App;
