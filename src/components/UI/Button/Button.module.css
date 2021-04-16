@@ -24,6 +24,7 @@
 .Primary {
     color: rgb(245, 235, 220);
     background-color: rgb(214, 35, 0);
+    cursor: not-allowed;
 }
 .Primary:hover {
     background-color: rgb(167, 27, 0);
@@ -75,11 +76,24 @@
     border-radius: 0px;
 }
 
+.Cart:active {
+    transform: scale(0.95);
+    background-color: rgb(80, 35, 20);
+}
+.Cart:focus:active {
+    box-shadow: rgb(237 185 165) 0px 0px 0px 0.25rem;
+}
+
 .Secondary:active {
     background-color: rgb(80, 35, 20);
     border-color: rgb(80, 35, 20);
     color: rgb(245, 235, 220);
 }
+
+.Secondary:active svg {
+    fill: rgb(245, 235, 220);
+}
+
 .Secondary:focus {
     outline: 0px;
     box-shadow: rgb(237 185 165) 0px 0px 0px 0.25rem;

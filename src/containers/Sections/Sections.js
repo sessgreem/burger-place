@@ -8,14 +8,17 @@ import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import ReturnButton from "../../components/UI/ReturnButton/ReturnButton";
 import { formatFromURL } from "../../shared/formatURL";
-import Incrementor from "../../components/UI/Incrementor/Incrementor";
+import { useLocation } from "react-router-dom";
+
 const Sections = (props) => {
     let { sectionName } = useParams();
     sectionName = formatFromURL(sectionName);
-    console.log(sectionName);
+
+    const location = useLocation();
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+        const timeout = setTimeout(() => window.scrollTo(0, 0), 100);
+        return () => clearTimeout(timeout);
+    }, [location]);
 
     const sections = props.menu[sectionName].sectionItems;
     const sectionItems = Object.keys(sections).map((section) => {
@@ -38,7 +41,6 @@ const Sections = (props) => {
             <SmallSlider />
             <ReturnButton />
             <section className={classes.Sections}>{sectionItems}</section>
-            <Incrementor />
             <Footer />
         </Fragment>
     );

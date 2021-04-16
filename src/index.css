@@ -35,6 +35,7 @@ a {
 .slick-next {
     right: -40px !important;
 }
+
 .slick-prev:before,
 .slick-next:before {
     font-size: 40px !important;
@@ -43,4 +44,34 @@ a {
 
 h3 {
     letter-spacing: -1px;
+}
+
+/* Toastify adjustments */
+.Toastify__toast--success {
+    background: #1a8a1d !important;
+}
+
+.Toastify__toast-container--bottom-center {
+    bottom: 0em !important;
+}
+
+.Toastify__toast {
+    margin-bottom: 0 !important;
+    justify-content: center !important;
+}
+
+.Toastify__close-button > svg {
+    width: 30px !important;
+    height: 20px !important;
+    margin-top: 0.8rem;
+}
+
+@media screen and (max-width: 760px) {
+    .slick-prev {
+        left: -25px !important;
+    }
+
+    .slick-next {
+        right: -10px !important;
+    }
 }

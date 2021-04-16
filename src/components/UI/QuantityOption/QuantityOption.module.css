@@ -1,0 +1,16 @@
+.QuantityOption {
+    margin: 0px 0px 0.5rem;
+    padding: 1rem 1.25rem;
+    color: rgb(80, 35, 20);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    outline: rgb(80, 35, 20);
+    font-size: 0.9375rem;
+    line-height: 1.75rem;
+    display: flex;
+    flex: 1 1 0%;
+}
+
+.QuantityOptionPrice {
+    font-weight: 600;
+}

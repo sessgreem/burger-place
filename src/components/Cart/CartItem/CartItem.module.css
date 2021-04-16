@@ -21,7 +21,9 @@
     font-weight: 500;
     margin: 0px;
 }
-
+.CartItemDescription div:first-of-type {
+    max-width: 80%;
+}
 .CartItemDescription {
     display: flex;
     -webkit-box-pack: justify;

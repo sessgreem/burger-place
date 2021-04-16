@@ -5,7 +5,7 @@ import classes from "./CheckoutCart.module.css";
 import { useHistory } from "react-router-dom";
 
 const CheckoutCart = (props) => {
-    let history = useHistory();
+    const history = useHistory();
     const addItemsButtonHandler = () => {
         history.push("/menu");
     };

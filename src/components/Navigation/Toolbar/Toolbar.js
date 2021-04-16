@@ -10,25 +10,21 @@ import Cart from "../../Cart/Cart";
 const Toolbar = () => {
     const [cartVisibility, setCartVisibility] = useState(false);
 
-    const signUpHandler = () => {
+    const signUpClickedHandler = () => {
         console.log("signupclicked");
     };
 
-    const cartHandler = () => {
+    const cartClickedHandler = () => {
         setCartVisibility(!cartVisibility);
     };
 
-    // small technical workaround
     let timeout;
-
+    const cartClickedOutside = () => {
+        timeout = setTimeout(() => setCartVisibility(false), 10);
+    };
     useEffect(() => {
         return () => clearTimeout(timeout);
     });
-
-    // TODO https://www.npmjs.com/package/react-onclickoutside
-    const cartClickedOutside = () => {
-        timeout = setTimeout(() => setCartVisibility(false), 150);
-    };
 
     return (
         <Fragment>
@@ -42,8 +38,8 @@ const Toolbar = () => {
                     </div>
                     <div className={classes.Actions}>
                         <Actions
-                            singUpClicked={signUpHandler}
-                            cartClicked={cartHandler}
+                            singUpClicked={signUpClickedHandler}
+                            cartClicked={cartClickedHandler}
                         />
                         <Cart
                             visibility={cartVisibility}

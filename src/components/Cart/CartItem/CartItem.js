@@ -4,12 +4,11 @@ import classes from "./CartItem.module.css";
 
 const CartItem = (props) => {
     let mealSize = null;
-    if (props.size !== "A La Carte") {
+    if (props.size !== "A La Carte" && props.size) {
         mealSize = `Meal ${props.size}`;
     }
-
     let bonusDescription = null;
-    if (props.hasDescription) {
+    if (props.hasDescription && props.size !== "A La Carte") {
         bonusDescription = (
             <p>
                 {props.name}
@@ -35,7 +34,15 @@ const CartItem = (props) => {
             </div>
             <div className={classes.CartItemActions}>
                 <p onClick={() => props.removeClicked(props.id)}>Remove</p>
-                <Incrementor />
+                <Incrementor
+                    incrementClicked={() =>
+                        props.incrementClicked(props.id, props.quantity)
+                    }
+                    decrementClicked={() =>
+                        props.decrementClicked(props.id, props.quantity)
+                    }
+                    number={props.quantity}
+                />
             </div>
         </div>
     );

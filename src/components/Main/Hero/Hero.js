@@ -1,7 +1,7 @@
 import React from "react";
-
 import classes from "./Hero.module.css";
 import Button from "../../UI/Button/Button";
+import { Link } from "react-router-dom";
 
 const hero = () => {
     return (
@@ -14,8 +14,12 @@ const hero = () => {
                         We got you
                     </h1>
                     <div className={classes.HeroActions}>
-                        <Button btnType="Hero">Order Pickup</Button>
-                        <Button btnType="Hero">Order Delivery</Button>
+                        <Link to="/menu">
+                            <Button btnType="Hero">Order Pickup</Button>
+                        </Link>
+                        <Link to="/menu">
+                            <Button btnType="Hero">Order Delivery</Button>
+                        </Link>
                     </div>
                 </div>
             </div>

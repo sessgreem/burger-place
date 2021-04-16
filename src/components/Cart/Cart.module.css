@@ -27,12 +27,10 @@
     width: 25.875rem;
 }
 
-@media screen and (min-width: 813px) {
-    .CartItems {
-        max-height: calc((100vh - 10rem) - 203px);
-        overflow-y: auto;
-        position: relative;
-    }
+.CartItems {
+    max-height: calc((100vh - 10rem) - 203px);
+    overflow-y: auto;
+    position: relative;
 }
 
 .CartButtonContainer {
@@ -52,29 +50,14 @@
     margin-bottom: 0.5rem;
 }
 
-/* .CartButtons {
-    display: flex;
-    -webkit-box-align: stretch;
-    align-items: stretch;
-    place-content: stretch flex-start;
-    align-self: auto;
-    -webkit-box-pack: start;
-    flex-flow: row nowrap;
-    overflow: visible;
-    position: static;
-    z-index: auto;
-    inset: auto;
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-    height: auto;
-    max-width: none;
-    max-height: none;
-    min-width: 0px;
-    min-height: 0px;
-    background: initial;
-    border-width: 0px;
-    border-style: none;
-    border-color: transparent;
-    border-radius: 0px;
-} */
+@media screen and (max-width: 760px) {
+    .Cart {
+        width: 350px;
+        top: 5rem;
+    }
+
+    .CartItems {
+        padding: 1.25rem;
+        width: 100%;
+    }
+}

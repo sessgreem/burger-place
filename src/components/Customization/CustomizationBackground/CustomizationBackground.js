@@ -12,7 +12,6 @@ const CustomizationBackground = (props) => {
     return (
         <>
             <div className={classes.CustomizationBackground}>
-                {/* <ReturnButton /> */}
                 <div className={classes.CustomizationHero}>{img}</div>
             </div>
         </>

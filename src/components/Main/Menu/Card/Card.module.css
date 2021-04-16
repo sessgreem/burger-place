@@ -38,3 +38,11 @@
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
+@media screen and (max-width: 760px) {
+    .CardImage {
+        height: 200px;
+    }
+    .Card {
+        width: 300px;
+    }
+}

@@ -1,32 +1,39 @@
-import React from "react";
+import React, { Fragment } from "react";
 import classes from "./CustomizationHeading.module.css";
 const CustomizationHeading = (props) => {
-    let additionalInformation =
-        props.selectedSize !== "A La Carte" ? (
-            <span>
-                {props.selectedSize} Drink and {props.selectedSize} Side
-                Included
-            </span>
+    const weight = <p> *Weight based on pre-cooked patty</p>;
+
+    const selected = props.selectedSize;
+    const additionalInformation =
+        selected !== "A La Carte" ? (
+            <Fragment>
+                {weight}
+                <p>
+                    <span>
+                        {props.selectedSize} Drink and {props.selectedSize} Side
+                        Included
+                    </span>
+                </p>
+            </Fragment>
         ) : (
-            <span>Entree only</span>
+            <Fragment>
+                {weight}
+                <p>Entree only</p>
+            </Fragment>
         );
 
-    let size = null;
-    if (props.selectedSize !== "A La Carte") {
-        size = props.selectedSize;
-    }
+    const sizeHeading = selected !== "A La Carte" ? selected : null;
+
     return (
         <div className={classes.CustomizationHeading}>
             <h3>
-                {props.name} {size}
+                {props.name} {sizeHeading}
             </h3>
-            <p>
-                {props.description}
-                <br /> *Weight based on pre-cooked patty
-                <br />
-                {additionalInformation}
-            </p>
-            <div className={classes.price}>${props.price}</div>
+            <p>{props.description}</p>
+            {selected && additionalInformation}
+            <div className={classes.CustomizationHeadingPrice}>
+                ${props.price.toFixed(2)}
+            </div>
         </div>
     );
 };

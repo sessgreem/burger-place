@@ -14,3 +14,9 @@
         flex-flow: row;
     }
 }
+
+@media screen and (max-width: 760px) {
+    .NavItems {
+        display: none;
+    }
+}

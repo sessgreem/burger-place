@@ -46,7 +46,7 @@ const Footer = () => {
                     <h2>MY BP</h2>
                     <ul>
                         <li>
-                            <a href={url}>BK APP</a>
+                            <a href={url}>BP APP</a>
                         </li>
                         <li>
                             <a href={url}>Gift Cards / Crown Cards</a>
@@ -107,7 +107,7 @@ const Footer = () => {
                     <Link to="/">
                         <h2 className={classes.LogoText}>Burger Place</h2>
                     </Link>
-                    <div className={classes.FooterSocials}>
+                    {/* <div className={classes.FooterSocials}>
                         <div className={classes.FooterIcon}>
                             <a href={url}>
                                 <img src="" alt="Social Icon" />
@@ -128,7 +128,7 @@ const Footer = () => {
                                 <img src="" alt="Social Icon" />
                             </a>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className={classes.FooterHorizontalLinks}>
                     <a href={url}>Policies</a>
