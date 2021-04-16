@@ -2,7 +2,10 @@ import * as actionTypes from "./actionTypes";
 import { toast } from "react-toastify";
 
 export const addToCart = (item) => {
-    toast.success(`${item.name} Meal ${item.size} added to your cart.`);
+    let extra = null;
+    if (item.isExtra) extra = { autoClose: 2000 };
+    toast.success(`${item.name} added to your cart.`, extra);
+
     return {
         type: actionTypes.ADD_TO_CART,
         item,

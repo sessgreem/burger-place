@@ -29,10 +29,11 @@ const App = () => {
         <Fragment>
             {routes}
             <ToastContainer
+                limit={2}
                 position="bottom-center"
-                autoClose={6000}
+                autoClose={5000}
                 hideProgressBar={false}
-                newestOnTop={false}
+                newestOnTop={true}
                 closeOnClick={true}
                 rtl={false}
                 pauseOnFocusLoss

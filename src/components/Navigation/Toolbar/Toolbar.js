@@ -10,11 +10,11 @@ import Cart from "../../Cart/Cart";
 const Toolbar = () => {
     const [cartVisibility, setCartVisibility] = useState(false);
 
-    const signUpHandler = () => {
+    const signUpClickedHandler = () => {
         console.log("signupclicked");
     };
 
-    const cartHandler = () => {
+    const cartClickedHandler = () => {
         setCartVisibility(!cartVisibility);
     };
 
@@ -38,8 +38,8 @@ const Toolbar = () => {
                     </div>
                     <div className={classes.Actions}>
                         <Actions
-                            singUpClicked={signUpHandler}
-                            cartClicked={cartHandler}
+                            singUpClicked={signUpClickedHandler}
+                            cartClicked={cartClickedHandler}
                         />
                         <Cart
                             visibility={cartVisibility}

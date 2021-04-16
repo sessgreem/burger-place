@@ -6,7 +6,8 @@ Working on
 Things to add / change
 - Change the front page image
 - Create a small page explaining the project goals
-- Make Responsible
+
 
 Completed /
 - Indication when adding items to the Cart
+- Make Responsible

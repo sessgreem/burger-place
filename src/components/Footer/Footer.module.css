@@ -86,3 +86,32 @@ footer {
         padding: 90px 120px 90px;
     }
 }
+
+@media screen and (max-width: 760px) {
+    footer {
+        padding: 30px 20px 90px;
+    }
+    .FooterNavColumns {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: auto;
+        justify-content: space-between;
+        padding-bottom: 3rem;
+    }
+
+    .FooterColumn {
+        margin-top: 1.5rem;
+    }
+
+    .FooterColumn:first-of-type {
+        margin: 0;
+    }
+    .FooterHorizontalLinks {
+        display: flex;
+        flex-direction: column;
+    }
+    .FooterHorizontalLinks a {
+        border: 0;
+    }
+}

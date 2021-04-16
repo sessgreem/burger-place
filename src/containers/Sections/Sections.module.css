@@ -8,3 +8,15 @@
     min-height: 250px;
     text-decoration: none;
 }
+
+@media screen and (max-width: 760px) {
+    .Sections {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .Sections {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

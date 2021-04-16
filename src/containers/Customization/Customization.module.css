@@ -6,4 +6,5 @@ main {
     max-width: 540px;
     margin: 0 auto;
     padding-bottom: 4rem;
+    padding: 0 5px;
 }

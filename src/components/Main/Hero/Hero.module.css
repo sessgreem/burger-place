@@ -30,3 +30,28 @@
 .HeroActions button:first-of-type {
     margin-right: 1rem;
 }
+
+@media screen and (max-width: 760px) {
+    .HeroHeading h1 {
+        font-size: 4.5rem;
+        letter-spacing: 0px;
+        line-height: 5rem;
+    }
+
+    .HeroActions {
+        flex-direction: column;
+        margin-top: 3rem;
+    }
+    .HeroActions button:last-of-type {
+        margin-top: 1rem;
+    }
+
+    .HeroContent {
+        background-size: 300px;
+        background-position-x: right;
+        background-position-y: 250px;
+    }
+    .HeroHeading {
+        padding: 7rem 3rem 3rem;
+    }
+}

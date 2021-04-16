@@ -55,3 +55,45 @@
 .MobileAppDownload a img:first-of-type {
     margin-right: 1rem;
 }
+
+.MobileAppDownload {
+    display: flex;
+    flex-direction: row;
+}
+@media screen and (max-width: 760px) {
+    .MobileApp {
+        flex-direction: column;
+        margin: 2rem auto 0rem;
+    }
+    .MobileImage > img {
+        display: none;
+    }
+    .MobileOffer {
+        padding: 1.75rem 0rem 2.65rem 0rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .MobileOffer h2:first-of-type {
+        font-size: 1.9rem;
+        text-align: center;
+    }
+
+    .MobileOffer h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    .MobileOffer br {
+        display: none;
+    }
+
+    .MobileAppDownload {
+        margin: 2rem 0.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .MobileLegal {
+        padding: 0 1rem;
+    }
+}

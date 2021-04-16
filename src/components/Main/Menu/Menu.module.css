@@ -27,4 +27,7 @@
     .MenuCards {
         grid-template-columns: repeat(1, 1fr);
     }
+    .Menu {
+        margin: 2rem 0;
+    }
 }
