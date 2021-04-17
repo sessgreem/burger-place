@@ -11,10 +11,10 @@ const CustomSlide = (props) => {
 
     const handleClick = () => {
         if (!mouseMoved) {
-            // console.log("will route");
             history.push(url);
         }
     };
+
     return (
         <li
             {...props}

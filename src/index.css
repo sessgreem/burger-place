@@ -3,10 +3,36 @@
     padding: 0;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: "Flame Sans";
+    src: url("/src/assets/fonts/FlameSans-Regular.woff2") format("woff2"),
+        url("/src/assets/fonts/FlameSans-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Flame";
+    src: url("/src/assets/fonts/Flame-Bold.woff2") format("woff2"),
+        url("/src/assets/fonts/Flame-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Flame";
+    src: url("/src/assets/fonts/Flame-Regular.woff2") format("woff2"),
+        url("/src/assets/fonts/Flame-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 body {
     background-color: #f5ebdc;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Flame";
 }
 
 ul {
@@ -40,10 +66,6 @@ a {
 .slick-next:before {
     font-size: 40px !important;
     color: red !important;
-}
-
-h3 {
-    letter-spacing: -1px;
 }
 
 /* Toastify adjustments */
