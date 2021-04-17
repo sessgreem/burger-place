@@ -1,11 +1,15 @@
+.NavItem a:hover,
+.active {
+    text-decoration: none;
+    color: rgb(214, 35, 0) !important;
+}
+
 .NavItem a {
     display: inline-block;
     text-transform: none;
     position: relative;
     margin: 0px auto 0px 1.3rem;
-    font-family: Flame, "Cooper Black", "Helvetica Neue", Helvetica, Arial,
-        sans-serif;
     font-size: 1.125rem;
-    font-weight: 600;
+    font-weight: 500;
     color: rgb(80, 35, 20);
 }

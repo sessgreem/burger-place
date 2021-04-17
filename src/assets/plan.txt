@@ -4,14 +4,14 @@ Working on
 
 
 Things to add / change
-- Change the front page image
 - Create a small page explaining the project goals
 - Add different titles
-- Add hovers**
 - React project naming convention
 - Disable click while "loading" extra item
 
 
 Completed /
+- Add hovers**
+- Change the front page image
 - Indication when adding items to the Cart
 - Make Responsible

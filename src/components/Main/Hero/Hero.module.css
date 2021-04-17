@@ -4,8 +4,9 @@
 
 .HeroContent {
     position: relative;
-    background: url("../../../assets/images/burgers/whopper-cheeseburger-right10deg.png");
-    background-size: contain;
+    /* background: url("../../../assets/images/burgers/whopper-cheeseburger-right10deg.png"); */
+    background: url("../../../assets/images/hero.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position-x: 90%;
 }
@@ -14,17 +15,18 @@
     justify-content: center;
     padding: 13rem 3rem 3rem;
 }
+
 .HeroHeading h1 {
     font-size: 10rem;
-
-    line-height: 10rem;
+    line-height: 90%;
     color: rgb(245, 235, 220);
     text-align: left;
 }
 
 .HeroActions {
     display: flex;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
+    margin-top: 5rem;
 }
 
 .HeroActions button:first-of-type {
@@ -47,11 +49,15 @@
     }
 
     .HeroContent {
-        background-size: 300px;
-        background-position-x: right;
-        background-position-y: 250px;
+        background: none;
     }
     .HeroHeading {
         padding: 7rem 3rem 3rem;
+    }
+}
+
+@media screen and (min-width: 813px) {
+    .HeroHeading {
+        padding: 15rem 3rem 3rem;
     }
 }

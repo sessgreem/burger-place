@@ -107,28 +107,6 @@ const Footer = () => {
                     <Link to="/">
                         <h2 className={classes.LogoText}>Burger Place</h2>
                     </Link>
-                    {/* <div className={classes.FooterSocials}>
-                        <div className={classes.FooterIcon}>
-                            <a href={url}>
-                                <img src="" alt="Social Icon" />
-                            </a>
-                        </div>
-                        <div className={classes.FooterIcon}>
-                            <a href={url}>
-                                <img src="" alt="Social Icon" />
-                            </a>
-                        </div>
-                        <div className={classes.FooterIcon}>
-                            <a href={url}>
-                                <img src="" alt="Social Icon" />
-                            </a>
-                        </div>
-                        <div className={classes.FooterIcon}>
-                            <a href={url}>
-                                <img src="" alt="Social Icon" />
-                            </a>
-                        </div>
-                    </div> */}
                 </div>
                 <div className={classes.FooterHorizontalLinks}>
                     <a href={url}>Policies</a>
@@ -136,7 +114,7 @@ const Footer = () => {
                     <a href={url}>Accessibility</a>
                     <a href={url}>Contact Us</a>
                 </div>
-                <p>
+                <p className={classes.FooterLegalParagraph}>
                     TM & Copyright 2021 Burger Place Corporation. All Rights
                     Reserved.
                 </p>

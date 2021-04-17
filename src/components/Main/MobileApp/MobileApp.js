@@ -17,11 +17,11 @@ const MobileApp = () => {
                     demand
                 </h2>
                 <div className={classes.MobileAppDownload}>
-                    <a href={appStoreUrl}>
-                        <img src={googlePlay} alt="Google Play" />
-                    </a>
                     <a href={playStoreUrl}>
                         <img src={appStore} alt="App Store" />
+                    </a>
+                    <a href={appStoreUrl}>
+                        <img src={googlePlay} alt="Google Play" />
                     </a>
                 </div>
                 <p className={classes.MobileLegal}>

@@ -13,23 +13,39 @@ footer {
 .FooterColumn {
     flex-basis: 25%;
 }
+
 .FooterColumn h2 {
-    color: #fff;
+    color: rgb(245, 235, 220);
     text-transform: uppercase;
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
+    font-weight: normal;
+}
+
+.FooterColumn ul li a {
+    margin: 0px;
+    color: rgb(187, 163, 145);
+    font-size: 0.9375rem;
+    font-family: "Flame Sans", "Helvetica Neue", Helvetica, Arial, Verdana,
+        sans-serif;
+    text-align: left;
+    text-transform: none;
+    text-decoration: none;
+    line-height: 1.6;
+    cursor: pointer;
 }
 
 .FooterColumn ul li a:hover {
     text-decoration: underline;
 }
+
 .FooterColumn ul li {
     margin-bottom: 0.2rem;
 }
 
 .FooterRowContainer {
     margin: auto;
-    border-top: 1px solid #fff;
+    border-top: 1px solid rgb(245, 235, 220);
     padding-top: 2rem;
 }
 
@@ -55,7 +71,7 @@ footer {
 .FooterHorizontalLinks a {
     padding-right: 0.5rem;
     margin-right: 0.5rem;
-    border-right: 1px solid #fff;
+    border-right: 1px solid rgb(194, 185, 172);
 }
 .FooterHorizontalLinks a:last-of-type {
     border: none;
@@ -63,7 +79,7 @@ footer {
     padding: 0;
 }
 .FooterHorizontalLinks a:hover {
-    text-transform: underline;
+    text-decoration: underline;
 }
 
 .FooterRowContainer p {
@@ -72,9 +88,19 @@ footer {
 }
 
 .LogoText {
-    color: #fff;
+    color: rgb(245, 235, 220);
     text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: normal;
 }
+
+.FooterLegalParagraph {
+    color: rgb(187, 163, 145);
+    font-size: 0.75rem;
+    margin: 0px;
+    padding: 0.5rem 0px;
+}
+
 @media screen and (min-width: 1200px) {
     footer {
         padding: 48px 64px 40px;
@@ -83,7 +109,7 @@ footer {
 
 @media screen and (min-width: 813px) {
     footer {
-        padding: 90px 120px 90px;
+        padding: 90px 120px 40px;
     }
 }
 

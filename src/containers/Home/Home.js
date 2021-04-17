@@ -6,12 +6,13 @@ import Menu from "../../components/Main/Menu/Menu";
 import MobileApp from "../../components/Main/MobileApp/MobileApp";
 import Footer from "../../components/Footer/Footer";
 const Home = (props) => {
-    let menuHeading = (
+    const menuHeading = (
         <h2
             style={{
-                fontSize: "2.5rem",
+                fontSize: "2.25rem",
                 textAlign: "center",
                 marginTop: "3rem",
+                fontWeight: "normal",
             }}
         >
             Trending

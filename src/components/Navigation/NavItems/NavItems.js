@@ -6,13 +6,18 @@ import classes from "./NavItems.module.css";
 const navitems = (props) => {
     return (
         <ul className={classes.NavItems}>
-            <NavItem link="/">Home</NavItem>
+            <NavItem link="/" exact>
+                Home
+            </NavItem>
             <NavItem link="/menu" exact>
                 Menu
             </NavItem>
-            <NavItem link="/checkout">Checkout</NavItem>
-            <NavItem link="/">About us</NavItem>
-            <NavItem link="/">More</NavItem>
+            <NavItem link="/checkout" exact>
+                Checkout
+            </NavItem>
+            <NavItem link="/about" exact>
+                About
+            </NavItem>
         </ul>
     );
 };

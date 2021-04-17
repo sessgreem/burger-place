@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "./CustomizationBackground.module.css";
-// import hero from "../../../assets/images/hero.webp";
 import useStorageUrlDownload from "../../../hooks/useStorageUrlDownload";
 import useProgressiveImage from "../../../hooks/useProgressiveImage";
 // import ReturnButton from "../../UI/ReturnButton/ReturnButton";
