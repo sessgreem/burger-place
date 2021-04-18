@@ -11,6 +11,8 @@ import Checkout from "./containers/Checkout/Checkout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Zoom } from "react-toastify";
+import { HelmetProvider } from "react-helmet-async";
+import About from "./containers/About/About";
 
 const App = () => {
     let routes = (
@@ -22,26 +24,30 @@ const App = () => {
                 path="/sections/:sectionName/:itemName"
                 component={Customization}
             />
-            <Route path="/checkout" component={Checkout} />
+            <Route path="/checkout" exact component={Checkout} />
+            <Route path="/about" exact component={About} />
         </Switch>
     );
+    const helmetContext = {};
     return (
         <Fragment>
-            {routes}
-            <ToastContainer
-                limit={2}
-                position="bottom-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={true}
-                closeOnClick={true}
-                rtl={false}
-                pauseOnFocusLoss
-                draggable={true}
-                pauseOnHover={true}
-                style={{ width: "100%" }}
-                transition={Zoom}
-            />
+            <HelmetProvider context={helmetContext}>
+                {routes}
+                <ToastContainer
+                    limit={2}
+                    position="bottom-center"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={true}
+                    closeOnClick={true}
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable={true}
+                    pauseOnHover={true}
+                    style={{ width: "100%" }}
+                    transition={Zoom}
+                />
+            </HelmetProvider>
         </Fragment>
     );
 };

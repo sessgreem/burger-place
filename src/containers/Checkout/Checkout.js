@@ -9,6 +9,7 @@ import CheckoutAddress from "../../components/Checkout/CheckoutAddress/CheckoutA
 import CheckoutHeader from "../../components/Checkout/CheckoutHeader/CheckoutHeader";
 import useCart from "../../hooks/useCart";
 import useRadioOptions from "../../hooks/useRadioOptions";
+import { Helmet } from "react-helmet-async";
 
 const Checkout = (props) => {
     const [radioOptions, radioChangeHandler] = useRadioOptions();
@@ -50,6 +51,9 @@ const Checkout = (props) => {
 
     return (
         <Fragment>
+            <Helmet>
+                <title>Burger Place - Checkout</title>
+            </Helmet>
             <CheckoutHeader header={selectedRadioOption.header} />
             <div className={classes.Checkout}>
                 <CheckoutAddress options={checkoutRadioOptions} />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import classes from "./Menu.module.css";
 import Card from "./Card/Card";
 import ourFavorites from "../../../assets/images/menu/our_favorites_section.webp";
@@ -67,9 +67,11 @@ const Menu = (props) => {
     ));
 
     return (
-        <section className={classes.Menu}>
-            <div className={classes.MenuCards}>{cards}</div>
-        </section>
+        <Fragment>
+            <section className={classes.Menu}>
+                <div className={classes.MenuCards}>{cards}</div>
+            </section>
+        </Fragment>
     );
 };
 

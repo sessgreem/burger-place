@@ -17,6 +17,7 @@
 }
 
 .CustomizationOptionHeading div {
+    font-family: "Flame Sans";
     align-items: center;
     background-color: rgb(214, 35, 0);
     border-radius: 10px;

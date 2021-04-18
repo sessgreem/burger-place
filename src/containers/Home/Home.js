@@ -5,6 +5,8 @@ import Hero from "../../components/Main/Hero/Hero";
 import Menu from "../../components/Main/Menu/Menu";
 import MobileApp from "../../components/Main/MobileApp/MobileApp";
 import Footer from "../../components/Footer/Footer";
+import { Helmet } from "react-helmet-async";
+
 const Home = (props) => {
     const menuHeading = (
         <h2
@@ -20,6 +22,9 @@ const Home = (props) => {
     );
     return (
         <Fragment>
+            <Helmet>
+                <title>Burger Place - Viktor's React Application</title>
+            </Helmet>
             <Toolbar />
             <Hero />
             {menuHeading}

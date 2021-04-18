@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 import ReturnButton from "../../components/UI/ReturnButton/ReturnButton";
 import { formatFromURL } from "../../shared/formatURL";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Sections = (props) => {
     let { sectionName } = useParams();
@@ -42,6 +43,9 @@ const Sections = (props) => {
 
     return (
         <Fragment>
+            <Helmet>
+                <title>Burger Place - {sectionName}</title>
+            </Helmet>
             <Toolbar />
             <SmallSlider />
             <ReturnButton />

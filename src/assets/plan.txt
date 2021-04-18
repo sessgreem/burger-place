@@ -1,14 +1,13 @@
 Plan to finish the application. 
 
 Working on
+- Create a small page explaining the project goals
 
 
 Things to add / change
-- Create a small page explaining the project goals
-- Add different titles
 - React project naming convention
 - Disable click while "loading" extra item
-
+- 404 route
 
 Completed /p
 - Add hovers**
@@ -18,3 +17,4 @@ Completed /p
 - Fixing fonts
 - useStorageUrlDownload Memory Leak fix
 - Custom blurred images for each section
+- Add different titles
