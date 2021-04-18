@@ -48,15 +48,15 @@
 
 .CustomizationFaceOptionDescription h4 {
     padding: 0px;
-    font-weight: 600;
+    font-weight: normal;
 
     line-height: 1.07;
 }
 
 .CustomizationFaceOptionDescription h5 {
     padding: 5px 0px 0px;
-    font-weight: 600;
-
+    font-family: "Flame Sans";
+    font-weight: normal;
     line-height: 1.07;
 }
 

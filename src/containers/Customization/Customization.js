@@ -167,6 +167,10 @@ const Customization = (props) => {
         />
     ) : null;
 
+    const sectionType = props.menu[sectionName].sectionType
+        ? props.menu[sectionName].sectionType
+        : null;
+
     return (
         <Fragment>
             <Toolbar />
@@ -176,6 +180,7 @@ const Customization = (props) => {
                 <CustomizationBackground
                     imgURL={item?.itemImgURL}
                     imgAlt={itemName}
+                    blurredType={sectionType}
                 />
                 <div className={classes.Customization}>
                     <CustomizationHeading

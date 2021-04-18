@@ -8,7 +8,7 @@
 /* .CheckoutAddress h2 {
     color: rgb(43, 2, 0);
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: normal;
     margin: 0px 0px 0.625rem;
     text-transform: none;
 } */
@@ -16,7 +16,7 @@
 .CheckoutAddress > div > span:first-of-type {
     color: rgb(118, 40, 35);
     font-size: 0.9375rem;
-    font-weight: 500;
+    font-weight: normal;
     padding: 5px 0px;
     margin-left: auto;
     text-decoration: underline;
@@ -39,7 +39,7 @@
 }
 
 .CheckoutAddressBoxDetails span:first-of-type {
-    font-weight: 700;
+    font-weight: bold;
 }
 .CheckoutAddressBoxOptions {
     border-top: 1px solid rgb(187, 163, 145);

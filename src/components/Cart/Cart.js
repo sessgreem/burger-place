@@ -38,7 +38,7 @@ const Cart = (props) => {
             <div className={classes.CartItems}>{items}</div>
             <div className={classes.CartButtonContainer}>
                 <div className={classes.CartTotal}>
-                    <b>Total*</b>
+                    <span>Total*</span>
                     <span>${itemsPrice.toFixed(2)}</span>
                 </div>
                 <div className={classes.CartButton}>

@@ -11,6 +11,7 @@ const CheckoutCart = (props) => {
     };
     return (
         <div className={classes.CheckoutCart}>
+            {/* <h2 className={classes.CheckoutCartHeading}>Your Cart</h2> */}
             <h2>Your Cart</h2>
             <ul>{props.items}</ul>
             <Button btnType="Secondary" clicked={addItemsButtonHandler}>

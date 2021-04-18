@@ -16,9 +16,13 @@ const Sections = (props) => {
 
     const location = useLocation();
     useEffect(() => {
-        const timeout = setTimeout(() => window.scrollTo(0, 0), 100);
+        const timeout = setTimeout(() => window.scrollTo(0, 0), 1);
         return () => clearTimeout(timeout);
     }, [location]);
+
+    const sectionType = props.menu[sectionName].sectionType
+        ? props.menu[sectionName].sectionType
+        : null;
 
     const sections = props.menu[sectionName].sectionItems;
     const sectionItems = Object.keys(sections).map((section) => {
@@ -31,6 +35,7 @@ const Sections = (props) => {
                 key={section}
                 imgURL={sections[section].itemImgURL}
                 imgAlt={section}
+                blurredType={sectionType}
             />
         );
     });

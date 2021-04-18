@@ -19,7 +19,7 @@
 .CheckoutCartItemInfo p {
     color: rgb(43, 2, 0);
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: normal;
     margin: 0px;
 }
 
@@ -27,7 +27,7 @@
     display: flex;
     letter-spacing: normal;
     line-height: 1.25rem;
-    font-weight: 700;
+    font-weight: normal;
     font-size: 1.25rem;
     font-stretch: condensed;
     text-transform: none;
@@ -40,7 +40,7 @@
     color: rgb(214, 35, 0);
     padding: 0.75rem 0;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: normal;
 }
 
 .CartItemActions {

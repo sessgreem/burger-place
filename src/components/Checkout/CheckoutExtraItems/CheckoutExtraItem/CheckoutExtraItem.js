@@ -12,7 +12,7 @@ const CheckoutExtraItem = ({
 }) => {
     const item = { name, calories, price, imgURL };
     const imageURL = useStorageUrlDownload(imgURL);
-    const imageElement = useProgressiveImage(imageURL, name);
+    const imageElement = useProgressiveImage(imageURL, name, "side");
     return (
         <div
             onClick={() => addToCartClicked(item)}

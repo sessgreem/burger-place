@@ -10,7 +10,7 @@ const MenuPage = () => {
             <Toolbar />
             <section className={classes.MenuPage}>
                 <div className={classes.MenuPageHeading}>
-                    <h2>Our menu</h2>
+                    <h2>Our Menu</h2>
                 </div>
                 <Menu />
             </section>

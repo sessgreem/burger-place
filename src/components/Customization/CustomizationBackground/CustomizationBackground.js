@@ -6,7 +6,7 @@ import useProgressiveImage from "../../../hooks/useProgressiveImage";
 
 const CustomizationBackground = (props) => {
     const imageURL = useStorageUrlDownload(props.imgURL);
-    const img = useProgressiveImage(imageURL, props.imgAlt);
+    let img = useProgressiveImage(imageURL, props.imgAlt, props.blurredType);
 
     return (
         <>

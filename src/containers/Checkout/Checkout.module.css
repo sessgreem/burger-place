@@ -1,12 +1,16 @@
-/* div > h2 {
+.Checkout div > h2 {
+    font-family: "Flame";
     color: rgb(43, 2, 0);
     font-size: 1.25rem;
-  font-weight: 700;
     margin: 0px 0px 0.625rem;
     text-transform: none;
-} */
+    font-weight: normal;
+    margin: 0px 0px 0.625rem;
+    text-transform: none;
+}
 
 .Checkout {
+    font-family: "Flame Sans";
     margin: 0px auto;
     padding: 4rem 1rem;
     width: 100%;

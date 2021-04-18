@@ -42,7 +42,7 @@
 .CustomizationOptionDescription h3 {
     font-size: 1.25rem;
     text-transform: none;
-    font-weight: 700;
+    font-weight: normal;
 }
 
 .CustomizationOptionDescription p {
@@ -52,8 +52,10 @@
 .CustomizationOptionDescription span {
     margin-top: 0.25rem;
     font-size: 0.8375rem;
+    color: #414141;
     line-height: 1.1;
     opacity: 0.9;
+    font-family: "Flame Sans";
 }
 
 .Selected {

@@ -450,6 +450,7 @@ const initialState = {
                 itemHasDrinks: true,
             },
         },
+        sectionType: "menu",
     },
     "Flame Grilled Burgers": {
         sectionItems: {
@@ -754,6 +755,7 @@ const initialState = {
                 itemHasDrinks: true,
             },
         },
+        sectionType: "burger",
     },
     "Chicken & Fish": {
         sectionItems: {
@@ -1058,6 +1060,7 @@ const initialState = {
                 itemHasDrinks: true,
             },
         },
+        sectionType: "burger",
     },
     "King Jr": {
         sectionItems: {
@@ -1262,6 +1265,7 @@ const initialState = {
                 itemHasDrinks: true,
             },
         },
+        sectionType: "menuMilk",
     },
     "Family Bundles": {
         sectionItems: {
@@ -1364,6 +1368,7 @@ const initialState = {
                 itemHasDrinks: true,
             },
         },
+        sectionType: "menu",
     },
     "Salads & Veggies": {
         sectionItems: {
@@ -1378,6 +1383,7 @@ const initialState = {
                 itemPrice: 2.29,
             },
         },
+        sectionType: "salad",
     },
     Sweets: {
         sectionItems: {
@@ -1447,6 +1453,7 @@ const initialState = {
                 isExtra: true,
             },
         },
+        sectionType: "sweet",
     },
     Sides: {
         sectionItems: {
@@ -1505,6 +1512,7 @@ const initialState = {
                 isExtra: true,
             },
         },
+        sectionType: "side",
     },
     "Drinks & Coffee": {
         sectionItems: {
@@ -1558,6 +1566,7 @@ const initialState = {
                 isExtra: true,
             },
         },
+        sectionType: "drink",
     },
     Drinks: {
         "Coca-Cola": {

@@ -2,12 +2,12 @@
     font-size: 2rem;
     margin: 1.5rem 0 1rem;
     text-align: center;
-    font-weight: 700;
+    font-weight: normal;
     color: rgb(80, 35, 20);
 }
 
 .CustomizationHeading p {
-    font-weight: 500;
+    font-weight: normal;
     line-height: 1.45;
 }
 
@@ -16,7 +16,7 @@
     flex-direction: row;
     font-size: 0.9375rem;
     color: rgb(27, 135, 55);
-    font-weight: 700;
+    font-weight: normal;
     justify-content: center;
     line-height: 1.1;
     margin: 1rem 0px 1.75rem;

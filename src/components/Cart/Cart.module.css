@@ -41,7 +41,7 @@
 }
 
 .CartTotal {
-    padding: 1rem 1.5rem;
+    padding: 2rem 1.5rem;
     background: rgb(245, 235, 220);
     display: flex;
     -webkit-box-pack: justify;

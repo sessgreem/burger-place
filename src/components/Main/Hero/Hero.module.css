@@ -30,7 +30,7 @@
 }
 
 .HeroActions button:first-of-type {
-    margin-right: 1rem;
+    margin-right: 20px;
 }
 
 @media screen and (max-width: 760px) {

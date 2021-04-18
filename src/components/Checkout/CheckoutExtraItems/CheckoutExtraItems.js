@@ -119,7 +119,7 @@ const CheckoutExtraItems = () => {
 
     return (
         <div className={classes.CheckoutExtraItems}>
-            <h2>Add to order</h2>
+            <h2>Add to Order</h2>
             <div>{recommendedItems}</div>
         </div>
     );

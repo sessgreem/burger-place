@@ -7,7 +7,11 @@ import { formatToURL } from "../../../shared/formatURL";
 
 const SectionItem = (props) => {
     const imageURL = useStorageUrlDownload(props.imgURL);
-    const imageElement = useProgressiveImage(imageURL, props.name);
+    const imageElement = useProgressiveImage(
+        imageURL,
+        props.name,
+        props.blurredType
+    );
     const url = `/sections/${formatToURL(props.section)}/${props.name}`;
 
     return (

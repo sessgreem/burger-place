@@ -20,11 +20,13 @@
 }
 
 .SectionItemDescription h2 {
-    font-weight: 700;
+    font-weight: normal;
 }
 
 .SectionItemDescription span {
-    font-size: 0.9rem;
-    font-weight: 600;
-    font-size: 0.8rem;
+    color: rgb(159, 129, 111);
+    font-family: "Flame Sans", "Helvetica Neue", Helvetica, Arial, Verdana,
+        sans-serif;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
 }

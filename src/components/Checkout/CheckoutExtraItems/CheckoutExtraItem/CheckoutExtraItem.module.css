@@ -15,7 +15,7 @@
     font-weight: normal;
     color: rgb(80, 35, 20);
     line-height: 1.5;
-    font-weight: 600;
+    font-weight: normal;
     font-size: 0.9rem;
 }
 
@@ -44,7 +44,7 @@
 
 /* price and calories */
 .CheckoutExtraItemInfo > div > span:first-of-type {
-    font-weight: 700;
+    font-weight: bold;
 }
 
 /* price and calories dash separator */

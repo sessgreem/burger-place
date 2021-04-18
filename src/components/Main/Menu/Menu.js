@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./Menu.module.css";
 import Card from "./Card/Card";
 import ourFavorites from "../../../assets/images/menu/our_favorites_section.webp";
@@ -8,7 +8,7 @@ import chickenFish from "../../../assets/images/menu/chiken.webp";
 import queenJr from "../../../assets/images/menu/f4dc27eb7337f7cbd12d3ccd840e6a031fcba622-360x270.webp";
 import drinksCoffe from "../../../assets/images/menu/drinksandcoffe.webp";
 import { formatToURL } from "../../../shared/formatURL";
-
+import { useLocation } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 const Menu = (props) => {
     const history = useHistory();
@@ -45,6 +45,12 @@ const Menu = (props) => {
             img: sweets,
         },
     ]);
+
+    const location = useLocation();
+    useEffect(() => {
+        const timeout = setTimeout(() => window.scrollTo(0, 0), 1);
+        return () => clearTimeout(timeout);
+    }, [location]);
 
     const cardClickedHandler = (sectionName) => {
         history.push({ pathname: `/sections/${formatToURL(sectionName)}` });

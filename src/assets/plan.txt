@@ -1,6 +1,7 @@
 Plan to finish the application. 
 
 Working on
+- useStorageUrlDownload Memory Leak fix
 
 
 Things to add / change
@@ -10,8 +11,10 @@ Things to add / change
 - Disable click while "loading" extra item
 
 
-Completed /
+Completed /p
 - Add hovers**
 - Change the front page image
 - Indication when adding items to the Cart
 - Make Responsible
+- Fixing fonts
+- Custom blurred images for each section
