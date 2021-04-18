@@ -1,7 +1,6 @@
 Plan to finish the application. 
 
 Working on
-- useStorageUrlDownload Memory Leak fix
 
 
 Things to add / change
@@ -17,4 +16,5 @@ Completed /p
 - Indication when adding items to the Cart
 - Make Responsible
 - Fixing fonts
+- useStorageUrlDownload Memory Leak fix
 - Custom blurred images for each section
