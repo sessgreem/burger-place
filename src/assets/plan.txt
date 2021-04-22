@@ -1,8 +1,7 @@
 Plan to finish the application. 
 
 Working on
-- Create a small page explaining the project goals
-
+- when buying an item the cart should open
 
 Things to add / change
 - React project naming convention
@@ -18,3 +17,4 @@ Completed /p
 - useStorageUrlDownload Memory Leak fix
 - Custom blurred images for each section
 - Add different titles
+- Create a small page explaining the project goals

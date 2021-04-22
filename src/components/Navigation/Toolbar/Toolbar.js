@@ -10,10 +10,6 @@ import Cart from "../../Cart/Cart";
 const Toolbar = () => {
     const [cartVisibility, setCartVisibility] = useState(false);
 
-    const signUpClickedHandler = () => {
-        console.log("signupclicked");
-    };
-
     const cartClickedHandler = () => {
         setCartVisibility(!cartVisibility);
     };
@@ -26,6 +22,9 @@ const Toolbar = () => {
         return () => clearTimeout(timeout);
     });
 
+    const signUpClickedHandler = () => {
+        console.log("signupclicked");
+    };
     return (
         <Fragment>
             <header className={classes.Toolbar}>

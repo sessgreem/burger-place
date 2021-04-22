@@ -34,7 +34,7 @@ const App = () => {
             <HelmetProvider context={helmetContext}>
                 {routes}
                 <ToastContainer
-                    limit={2}
+                    limit={3}
                     position="bottom-center"
                     autoClose={5000}
                     hideProgressBar={false}
