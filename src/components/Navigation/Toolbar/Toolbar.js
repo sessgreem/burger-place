@@ -1,14 +1,12 @@
 import React, { Fragment, useState, useEffect } from "react";
-
+import classes from "./Toolbar.module.css";
 import NavItems from "../NavItems/NavItems";
 import Logo from "../../Logo/Logo";
 import Actions from "../Actions/Actions";
-
-import classes from "./Toolbar.module.css";
 import Cart from "../../Cart/Cart";
 
-const Toolbar = () => {
-    const [cartVisibility, setCartVisibility] = useState(false);
+const Toolbar = ({ openCart = false }) => {
+    const [cartVisibility, setCartVisibility] = useState(openCart);
 
     const cartClickedHandler = () => {
         setCartVisibility(!cartVisibility);
@@ -22,9 +20,6 @@ const Toolbar = () => {
         return () => clearTimeout(timeout);
     });
 
-    const signUpClickedHandler = () => {
-        console.log("signupclicked");
-    };
     return (
         <Fragment>
             <header className={classes.Toolbar}>
@@ -36,10 +31,7 @@ const Toolbar = () => {
                         <Logo />
                     </div>
                     <div className={classes.Actions}>
-                        <Actions
-                            singUpClicked={signUpClickedHandler}
-                            cartClicked={cartClickedHandler}
-                        />
+                        <Actions cartClicked={cartClickedHandler} />
                         <Cart
                             visibility={cartVisibility}
                             clickedOutside={cartClickedOutside}

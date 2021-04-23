@@ -17,7 +17,7 @@ import { useParams } from "react-router";
 import { formatFromURL } from "../../shared/formatURL";
 import QuantityOption from "../../components/UI/QuantityOption/QuantityOption";
 import { useHistory } from "react-router-dom";
-
+import { formatToURL } from "../../shared/formatURL";
 const Customization = (props) => {
     const history = useHistory();
     const { itemName } = useParams();
@@ -127,8 +127,10 @@ const Customization = (props) => {
     const handleOrderClicked = () => {
         props.onAddToCart(itemState);
 
-        // ? goBack here should be going to MenuPage instead because there won't be always browser history - will keep like this for functionality sake.
-        history.goBack();
+        history.replace({
+            pathname: `/sections/${formatToURL(sectionName)}`,
+            state: { toOpenCart: true },
+        });
     };
 
     // Create and handle QuantityOption

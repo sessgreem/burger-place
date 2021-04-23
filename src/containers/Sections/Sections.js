@@ -10,12 +10,13 @@ import ReturnButton from "../../components/UI/ReturnButton/ReturnButton";
 import { formatFromURL } from "../../shared/formatURL";
 import { useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-
 const Sections = (props) => {
     let { sectionName } = useParams();
     sectionName = formatFromURL(sectionName);
 
     const location = useLocation();
+    const toOpenCart = location.state?.toOpenCart;
+
     useEffect(() => {
         const timeout = setTimeout(() => window.scrollTo(0, 0), 1);
         return () => clearTimeout(timeout);
@@ -46,7 +47,7 @@ const Sections = (props) => {
             <Helmet>
                 <title>Burger Place - {sectionName}</title>
             </Helmet>
-            <Toolbar />
+            <Toolbar openCart={toOpenCart} />
             <SmallSlider />
             <ReturnButton />
             <section className={classes.Sections}>{sectionItems}</section>

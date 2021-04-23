@@ -21,12 +21,10 @@ const useCart = () => {
         dispatch(decrementItemQuantity(id, quantity));
     };
 
-    const handlers = {
-        handleRemoveItem,
-        handleIncrement,
-        handleDecrement,
-    };
-
-    return [cart, itemsPrice, handlers];
+    return [
+        cart,
+        itemsPrice,
+        { handleRemoveItem, handleIncrement, handleDecrement },
+    ];
 };
 export default useCart;
