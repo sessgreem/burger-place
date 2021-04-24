@@ -1,3 +1,10 @@
+.Wrapper {
+    margin: 2rem auto;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
 .AboutPageHeading {
     margin-top: 78px;
     background-color: rgb(214, 35, 0);
@@ -10,11 +17,6 @@
     font-size: 3.5rem;
     margin: auto;
     color: rgb(245, 235, 220);
-}
-.Wrapper {
-    margin: 2rem auto;
-
-    max-width: 1000px;
 }
 
 .AboutMessage {
@@ -57,6 +59,12 @@
 }
 .Tool > span:last-of-type {
     margin-top: 1.5rem;
+}
+/* End of Tools */
+
+.AboutMessage + button {
+    margin: 1.5rem 0;
+    width: 20%;
 }
 
 @media screen and (max-width: 760px) {

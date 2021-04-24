@@ -49,7 +49,6 @@ const CheckoutExtraItems = () => {
         const sidesMenu = menu?.Sides?.sectionItems;
         const sidesArray = createArrayWithObjectsFromMenu(sidesMenu);
 
-        // const joinedItems = sweetsArray.concat(sidesArray);
         const joinedItems = sweetsArray.concat(sidesArray).filter((item) => {
             let found = 0;
             itemsInCart.forEach((itemInCart) => {

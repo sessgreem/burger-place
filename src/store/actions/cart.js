@@ -3,7 +3,10 @@ import { toast } from "react-toastify";
 
 export const addToCart = (item) => {
     let extra = null;
-    if (item.isExtra) extra = { autoClose: 2000 };
+    if (item.isExtra)
+        extra = {
+            autoClose: 2000,
+        };
     toast.success(`${item.name} added to your cart.`, extra);
 
     return {

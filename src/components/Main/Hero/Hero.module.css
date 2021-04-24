@@ -4,8 +4,7 @@
 
 .HeroContent {
     position: relative;
-    /* background: url("../../../assets/images/burgers/whopper-cheeseburger-right10deg.png"); */
-    background: url("../../../assets/images/hero.jpg");
+    background: url("../../../assets/images/main/hero.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: 90%;
@@ -25,7 +24,6 @@
 
 .HeroActions {
     display: flex;
-    /* margin-top: 3rem; */
     margin-top: 5rem;
 }
 

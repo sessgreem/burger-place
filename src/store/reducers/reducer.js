@@ -1,4 +1,4 @@
-const initialState = {
+const menu = {
     "Our Favorites": {
         sectionItems: {
             Whopper: {
@@ -1607,8 +1607,8 @@ const initialState = {
     },
 };
 
-const reducer = (state = initialState, action) => {
+const menuReducer = (state = menu, action) => {
     return state;
 };
 
-export default reducer;
+export default menuReducer;

@@ -1,17 +1,9 @@
-/* restourant */
 .CheckoutAddress {
     grid-area: details / details / details / details;
 }
 .CheckoutAddress > div {
     display: flex;
 }
-/* .CheckoutAddress h2 {
-    color: rgb(43, 2, 0);
-    font-size: 1.25rem;
-    font-weight: normal;
-    margin: 0px 0px 0.625rem;
-    text-transform: none;
-} */
 
 .CheckoutAddress > div > span:first-of-type {
     color: rgb(118, 40, 35);

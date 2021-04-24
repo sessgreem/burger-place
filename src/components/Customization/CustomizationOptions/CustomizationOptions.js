@@ -6,7 +6,7 @@ const CustomizationOptions = (props) => {
     const sizes = props.sizes ? (
         <CustomizationOption
             heading="Combo Size"
-            required={true}
+            required
             options={props.sizes}
         />
     ) : null;

@@ -11,16 +11,16 @@ const Option = (props) => {
     let img;
     switch (props.name) {
         case "Small":
-            img = <img src={smallOption} alt="Small" />;
+            img = <img src={smallOption} alt="" />;
             break;
         case "Medium":
-            img = <img src={mediumOption} alt="Medium" />;
+            img = <img src={mediumOption} alt="" />;
             break;
         case "Large":
-            img = <img src={largeOption} alt="Large" />;
+            img = <img src={largeOption} alt="" />;
             break;
         case "A La Carte":
-            img = <img src={aLaCarte} alt="A La Carte" />;
+            img = <img src={aLaCarte} alt="" />;
             break;
         default:
             img = null;

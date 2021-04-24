@@ -16,7 +16,7 @@ const CustomSlide = (props) => {
     };
 
     return (
-        <li
+        <div
             {...props}
             className={classes.CustomSlide}
             onMouseMove={() => setMouseMoved(true)}
@@ -25,11 +25,11 @@ const CustomSlide = (props) => {
         >
             <NavLink to={url} activeClassName={classes.active}>
                 <div className={classes.CustomSlideImg}>
-                    <img src={props.img} alt="Slider section" />
+                    <img src={props.img} alt={props.section} />
                 </div>
                 <span>{props.section}</span>
             </NavLink>
-        </li>
+        </div>
     );
 };
 

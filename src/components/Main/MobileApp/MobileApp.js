@@ -1,8 +1,8 @@
 import classes from "./MobileApp.module.css";
 import React from "react";
-import mobilePhone from "../../../assets/images/mobilephone.webp";
-import googlePlay from "../../../assets/Google_Play_Store_badge_EN.svg";
-import appStore from "../../../assets/Download_on_the_App_Store_Badge.svg";
+import mobilePhone from "../../../assets/images/main/mobilephone.webp";
+import googlePlay from "../../../assets/images/app-download/Google_Play_Store_badge_EN.svg";
+import appStore from "../../../assets/images/app-download/Download_on_the_App_Store_Badge.svg";
 
 const appStoreUrl = "#";
 const playStoreUrl = "#";
@@ -32,7 +32,7 @@ const MobileApp = () => {
                 </p>
             </div>
             <div className={classes.MobileImage}>
-                <img src={mobilePhone} alt="Mobile Phone" />
+                <img src={mobilePhone} alt="" role="presentation" />
             </div>
         </section>
     );

@@ -8,10 +8,10 @@ import classes from "./CheckoutOrderButton.module.css";
 const CheckoutOrderButton = () => {
     const history = useHistory();
     const orderButtonClickHandler = () => {
-        toast.success(`Yay! Application Completed :)`, {
+        toast.success(`Yay! Application Completed! :)`, {
             position: "top-right",
             style: { height: "80px", width: "293px", float: "right" },
-            autoClose: 2500,
+            autoClose: 2000,
         });
         history.push("/about");
     };

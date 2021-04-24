@@ -63,6 +63,7 @@ a {
     text-decoration: none;
 }
 
+/* Slick adjustments */
 .slick-track {
     display: flex !important;
 }
@@ -86,6 +87,7 @@ a {
     font-size: 40px !important;
     color: red !important;
 }
+/* End of slick adjustments */
 
 /* Toastify adjustments */
 .Toastify__toast--success {
@@ -106,6 +108,11 @@ a {
     height: 20px !important;
     margin-top: 0.8rem;
 }
+
+.Toastify__toast-container--top-right {
+    width: 320px !important;
+}
+/* End of toastify adjustments */
 
 @media screen and (max-width: 760px) {
     .slick-prev {

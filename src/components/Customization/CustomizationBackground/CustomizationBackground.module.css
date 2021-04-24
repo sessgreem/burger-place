@@ -16,7 +16,6 @@
     position: absolute;
     width: 100%;
     max-width: 400px;
-    /* max-width: 30%; */
     object-fit: cover;
     object-position: center center;
     opacity: 1;
@@ -37,8 +36,3 @@
         top: 228px;
     }
 }
-/* @media screen and (min-width: 813px) {
-    .CustomizationBackground {
-        height: 350px;
-    }
-} */

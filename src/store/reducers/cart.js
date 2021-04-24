@@ -2,7 +2,7 @@ import * as actionTypes from "../actions/actionTypes";
 import { updateObject } from "../utility";
 import { nanoid } from "nanoid";
 
-const initialState = {
+const cart = {
     items: [],
     itemsPrice: 0,
 };
@@ -64,7 +64,7 @@ const removeFromCart = (state, action) => {
     return updateObject(state, { items: updatedArray, itemsPrice: newPrice });
 };
 
-const reducer = (state = initialState, action) => {
+const cartReducer = (state = cart, action) => {
     switch (action.type) {
         case actionTypes.ADD_TO_CART:
             return addToCart(state, action);
@@ -79,4 +79,4 @@ const reducer = (state = initialState, action) => {
     }
 };
 
-export default reducer;
+export default cartReducer;

@@ -6,7 +6,7 @@ const Logo = () => {
     return (
         <Link to="/">
             <div className={classes.Logo}>
-                <img src={burgerLogo} alt="Burger Place" />
+                <img src={burgerLogo} alt="Burger Place Logo" />
             </div>
         </Link>
     );

@@ -5,7 +5,6 @@ const CheckoutAddress = (props) => {
         <div className={classes.CheckoutAddress}>
             <div>
                 <h2>Restourant Details</h2>
-                {/* <span>Change Address</span> */}
             </div>
             <div className={classes.CheckoutAddressBox}>
                 <div className={classes.CheckoutAddressBoxDetails}>

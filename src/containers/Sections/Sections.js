@@ -4,12 +4,13 @@ import classes from "./Sections.module.css";
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
 import Footer from "../../components/Footer/Footer";
 import SmallSlider from "../../components/SmallSlider/SmallSlider";
-import { useParams } from "react-router-dom";
-import { connect } from "react-redux";
 import ReturnButton from "../../components/UI/ReturnButton/ReturnButton";
+import { Redirect, useParams } from "react-router-dom";
+import { connect } from "react-redux";
 import { formatFromURL } from "../../shared/formatURL";
 import { useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+
 const Sections = (props) => {
     let { sectionName } = useParams();
     sectionName = formatFromURL(sectionName);
@@ -22,11 +23,15 @@ const Sections = (props) => {
         return () => clearTimeout(timeout);
     }, [location]);
 
+    const sections = props.menu[sectionName]?.sectionItems;
+    if (!sections) {
+        return <Redirect to="/menu"></Redirect>;
+    }
+    // this type is for the blurred image type passed in as a property - src\hooks\useProgressiveImage.js
     const sectionType = props.menu[sectionName].sectionType
         ? props.menu[sectionName].sectionType
         : null;
 
-    const sections = props.menu[sectionName].sectionItems;
     const sectionItems = Object.keys(sections).map((section) => {
         return (
             <SectionItem

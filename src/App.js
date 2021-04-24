@@ -1,18 +1,15 @@
 import React, { Fragment } from "react";
-import "./App.css";
-
-import { Route, Switch } from "react-router-dom";
 import Home from "./containers/Home/Home";
 import MenuPage from "./containers/MenuPage/MenuPage";
 import Sections from "./containers/Sections/Sections";
 import Customization from "./containers/Customization/Customization";
 import Checkout from "./containers/Checkout/Checkout";
-
+import About from "./containers/About/About";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Zoom } from "react-toastify";
 import { HelmetProvider } from "react-helmet-async";
-import About from "./containers/About/About";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 const App = () => {
     let routes = (
@@ -26,6 +23,7 @@ const App = () => {
             />
             <Route path="/checkout" exact component={Checkout} />
             <Route path="/about" exact component={About} />
+            <Redirect to="/" />
         </Switch>
     );
     const helmetContext = {};
@@ -38,14 +36,14 @@ const App = () => {
                     position="bottom-center"
                     autoClose={5000}
                     hideProgressBar={false}
-                    newestOnTop={true}
-                    closeOnClick={true}
+                    newestOnTop
+                    closeOnClick
                     rtl={false}
                     pauseOnFocusLoss
-                    draggable={true}
-                    pauseOnHover={true}
-                    style={{ width: "100%" }}
+                    draggable
+                    pauseOnHover
                     transition={Zoom}
+                    style={{ width: "100%" }}
                 />
             </HelmetProvider>
         </Fragment>

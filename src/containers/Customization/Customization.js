@@ -13,7 +13,7 @@ import CustomizationFaceOption from "../../components/UI/CustomizationFaceOption
 import ReturnButton from "../../components/UI/ReturnButton/ReturnButton";
 import { addToCart } from "../../store/actions/cart";
 import { connect } from "react-redux";
-import { useParams } from "react-router";
+import { Redirect, useParams } from "react-router";
 import { formatFromURL } from "../../shared/formatURL";
 import QuantityOption from "../../components/UI/QuantityOption/QuantityOption";
 import { useHistory } from "react-router-dom";
@@ -25,9 +25,10 @@ const Customization = (props) => {
     sectionName = formatFromURL(sectionName);
 
     const item = props.menu[sectionName].sectionItems[itemName];
+
     const itemSizes = item?.itemSizes;
     const itemPrice = itemSizes
-        ? itemSizes[item.itemDefaultSizeName].optionPrice
+        ? itemSizes[item.itemDefaultSizeName]?.optionPrice
         : item?.itemPrice;
 
     const [itemState, setItemState] = useState({
@@ -43,6 +44,9 @@ const Customization = (props) => {
 
     const [calculatedPrice, setCalculatedPrice] = useState(itemState.price);
 
+    if (!item) {
+        return <Redirect to={"/"}></Redirect>;
+    }
     let sizes = null;
     if (itemSizes) {
         const changedSizeHandler = (size) => {
@@ -70,9 +74,8 @@ const Customization = (props) => {
         });
     }
 
-    const itemSides = item.itemSides;
     let sides = null;
-
+    const itemSides = item?.itemSides;
     if (itemSides && itemState.size !== "A La Carte") {
         const changeSideHandler = (sideName) => {
             const newState = {
@@ -99,7 +102,7 @@ const Customization = (props) => {
     }
 
     let drinks = null;
-    if (item.itemHasDrinks && itemState.size !== "A La Carte") {
+    if (item?.itemHasDrinks && itemState.size !== "A La Carte") {
         const changeDrinkHandler = (drinkName) => {
             const newState = {
                 ...itemState,
@@ -169,6 +172,7 @@ const Customization = (props) => {
         />
     ) : null;
 
+    // this type is for the blurred image type passed in as a property - src\hooks\useProgressiveImage.js
     const sectionType = props.menu[sectionName].sectionType
         ? props.menu[sectionName].sectionType
         : null;

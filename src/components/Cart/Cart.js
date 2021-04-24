@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import classes from "./Cart.module.css";
-import Button from "../../components/UI/Button/Button";
+import Button from "../UI/Button/Button";
 import CartItem from "./CartItem/CartItem";
 import useClickOutside from "../../hooks/useClickOutside";
 import { useHistory } from "react-router-dom";

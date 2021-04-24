@@ -51,6 +51,7 @@
 }
 
 .MobileAppDownload a img {
+    width: unset;
     height: 43px;
 }
 

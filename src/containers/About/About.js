@@ -11,11 +11,14 @@ import vsCodeIcon from "../../assets/images/tools-icons/Visual_Studio_Code_1.35_
 import adobeXdIcon from "../../assets/images/tools-icons/Adobe_XD_CC_icon.svg";
 import adobePhotoshopIcon from "../../assets/images/tools-icons/Adobe_Photoshop_CC_icon.svg";
 
+import Button from "../../components/UI/Button/Button";
+import { useHistory } from "react-router-dom";
+
 const Tool = ({ name, image }) => {
     return (
         <li className={classes.Tool}>
             <div className={classes.ToolImage}>
-                <img src={image} alt={name} />
+                <img src={image} alt="" />
             </div>
             <span>{name}</span>
         </li>
@@ -58,6 +61,10 @@ const About = () => {
         return <Tool key={index} name={tool.name} image={tool.image} />;
     });
 
+    const history = useHistory();
+    const backToHomeClicked = () => {
+        history.push("/");
+    };
     return (
         <Fragment>
             <Helmet>
@@ -90,6 +97,9 @@ const About = () => {
                         Thanks again! - <i>Viktor Ivanov</i>
                     </p>
                 </div>
+                <Button btnType="Secondary" clicked={backToHomeClicked}>
+                    Back to Home
+                </Button>
             </div>
         </Fragment>
     );
