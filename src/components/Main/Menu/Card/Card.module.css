@@ -14,8 +14,7 @@
 }
 
 .CardImage {
-    flex: 72%;
-    height: 300px;
+    height: 280px;
 }
 
 .CardImage img {

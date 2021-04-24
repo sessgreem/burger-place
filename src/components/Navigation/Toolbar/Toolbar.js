@@ -14,7 +14,7 @@ const Toolbar = ({ openCart = false }) => {
 
     let timeout;
     const cartClickedOutside = () => {
-        timeout = setTimeout(() => setCartVisibility(false), 10);
+        timeout = setTimeout(() => setCartVisibility(false), 100);
     };
     useEffect(() => {
         return () => clearTimeout(timeout);

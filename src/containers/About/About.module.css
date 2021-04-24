@@ -80,5 +80,9 @@
 @media screen and (max-width: 1000px) {
     .Wrapper {
         padding: 0.5rem;
+        align-items: center;
+    }
+    .AboutMessage + button {
+        width: 50%;
     }
 }
