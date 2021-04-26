@@ -1,10 +1,11 @@
-## Burger Place
+# Burger Place
 
 Hosted on - https://react-hooks-3f4f4.web.app/
 
 # About
 
 An SPA built with React 17.0.1.
+Front-End clone of a famous food chain organization.
 
 Thank you for visiting my React Project. This was a lot
 of work, but it was really fun to do! The goal of the
