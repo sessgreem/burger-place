@@ -4,6 +4,7 @@ import classes from "./Actions.module.css";
 import { useSelector } from "react-redux";
 const Actions = (props) => {
     const itemsPrice = useSelector((state) => state.cart.itemsPrice);
+
     return (
         <div className={classes.Actions}>
             <Button btnType="Primary" clicked={props.signUpClicked}>

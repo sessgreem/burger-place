@@ -19,15 +19,17 @@ const Sections = (props) => {
     const toOpenCart = location.state?.toOpenCart;
 
     useEffect(() => {
-        const timeout = setTimeout(() => window.scrollTo(0, 0), 1);
-        return () => clearTimeout(timeout);
+        window.scrollTo(0, 0);
+        // const timeout = setTimeout(() => window.scrollTo(0, 0), 1);
+        // return () => clearTimeout(timeout);
     }, [location]);
 
     const sections = props.menu[sectionName]?.sectionItems;
     if (!sections) {
         return <Redirect to="/menu"></Redirect>;
     }
-    // this type is for the blurred image type passed in as a property - src\hooks\useProgressiveImage.js
+
+    // This type is for the blurred image type passed in as a property - src\hooks\useProgressiveImage.js
     const sectionType = props.menu[sectionName].sectionType
         ? props.menu[sectionName].sectionType
         : null;

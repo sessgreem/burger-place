@@ -14,9 +14,11 @@ const useCart = () => {
     const handleRemoveItem = (id) => {
         dispatch(removeFromCart(id));
     };
+
     const handleIncrement = (id, quantity) => {
         dispatch(incrementItemQuantity(id, quantity));
     };
+
     const handleDecrement = (id, quantity) => {
         dispatch(decrementItemQuantity(id, quantity));
     };

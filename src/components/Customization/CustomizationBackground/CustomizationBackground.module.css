@@ -28,10 +28,12 @@
     background-color: rgb(254, 135, 49);
     display: flex;
 }
-@media screen and (max-width: 813px) {
+
+@media screen and (max-width: 990px) {
     .CustomizationHero img {
         width: 85%;
     }
+
     .CustomizationBackground {
         top: 228px;
     }

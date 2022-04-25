@@ -20,6 +20,7 @@ const Home = (props) => {
             Trending
         </h2>
     );
+
     return (
         <Fragment>
             <Helmet>

@@ -11,22 +11,28 @@ const incrementItemQuantity = (state, action) => {
     if (action.quantity + 1 > 9) {
         return state;
     }
+
     let newPrice = 0;
     const updatedArray = state.items.map((item) => {
         if (item.id !== action.id) {
             newPrice += item.price * item.quantity;
             return item;
         }
+
         const newQuantity = action.quantity + 1;
         newPrice += item.price * newQuantity;
+
         return { ...item, quantity: newQuantity };
     });
+
     return updateObject(state, { items: updatedArray, itemsPrice: newPrice });
 };
+
 const decrementItemQuantity = (state, action) => {
     if (action.quantity - 1 < 1) {
         return state;
     }
+
     let newPrice = 0;
     const updatedArray = state.items.map((item) => {
         if (item.id !== action.id) {
@@ -35,22 +41,27 @@ const decrementItemQuantity = (state, action) => {
         }
         const newQuantity = action.quantity - 1;
         newPrice += item.price * newQuantity;
+
         return { ...item, quantity: newQuantity };
     });
+
     return updateObject(state, { items: updatedArray, itemsPrice: newPrice });
 };
 
 const addToCart = (state, action) => {
     let quantity = action.item.quantity;
+
     if (isNaN(quantity) || !quantity) {
         quantity = 1;
     }
+
     if (quantity < 1 && quantity > 8) {
         return state;
     }
 
     const updatedArray = state.items.concat({ ...action.item, id: nanoid() });
     const newPrice = state.itemsPrice + action.item.price * quantity;
+
     return updateObject(state, { items: updatedArray, itemsPrice: newPrice });
 };
 
@@ -58,6 +69,7 @@ const removeFromCart = (state, action) => {
     const updatedArray = state.items.filter(
         (element) => element.id !== action.id
     );
+
     let newPrice = 0;
     updatedArray.forEach((el) => (newPrice += el.price * el.quantity));
 

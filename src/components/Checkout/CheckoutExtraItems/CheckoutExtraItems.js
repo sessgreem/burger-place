@@ -18,6 +18,7 @@ function getRandom(arr, n) {
     }
     return result;
 }
+
 const createArrayWithObjectsFromMenu = (object) => {
     const array = [];
     Object.keys(object).forEach((element) => {

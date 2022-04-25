@@ -18,6 +18,7 @@ import { formatFromURL } from "../../shared/formatURL";
 import QuantityOption from "../../components/UI/QuantityOption/QuantityOption";
 import { useHistory } from "react-router-dom";
 import { formatToURL } from "../../shared/formatURL";
+
 const Customization = (props) => {
     const history = useHistory();
     const { itemName } = useParams();
@@ -137,7 +138,6 @@ const Customization = (props) => {
     };
 
     // Create and handle QuantityOption
-
     const handleIncrement = () => {
         if (itemState.quantity + 1 < 10) {
             const newQuantity = itemState.quantity + 1;

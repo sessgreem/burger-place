@@ -3,7 +3,7 @@ import classes from "./Hero.module.css";
 import Button from "../../UI/Button/Button";
 import { Link } from "react-router-dom";
 
-const hero = () => {
+const Hero = () => {
     return (
         <div className={classes.HeroContainer}>
             <div className={classes.HeroContent}>
@@ -27,4 +27,4 @@ const hero = () => {
     );
 };
 
-export default hero;
+export default Hero;

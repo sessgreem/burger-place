@@ -26,6 +26,7 @@ const App = () => {
             <Redirect to="/" />
         </Switch>
     );
+
     const helmetContext = {};
     return (
         <Fragment>

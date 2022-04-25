@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react";
+
 const useClickOutside = (elRef, callback) => {
     const callbackRef = useRef();
     callbackRef.current = callback;

@@ -42,6 +42,7 @@
         flex-direction: column;
         margin-top: 3rem;
     }
+    
     .HeroActions button:last-of-type {
         margin-top: 1rem;
     }
@@ -49,6 +50,7 @@
     .HeroContent {
         background: none;
     }
+
     .HeroHeading {
         padding: 7rem 3rem 3rem;
     }

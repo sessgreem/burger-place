@@ -37,6 +37,7 @@ const Cart = ({ clickedOutside, visibility }) => {
     const checkoutButtonHandler = () => {
         history.push("/checkout");
     };
+
     return visibility ? (
         <div ref={wrapperRef} className={classes.Cart}>
             <div className={classes.CartItems}>{items}</div>

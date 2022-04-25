@@ -25,7 +25,7 @@
     grid-template-columns: 100%;
 }
 
-@media screen and (min-width: 813px) {
+@media screen and (min-width: 990px) {
     .Checkout {
         padding: 6rem 3rem;
         gap: 2rem;
