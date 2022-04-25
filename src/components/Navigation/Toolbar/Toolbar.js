@@ -4,9 +4,12 @@ import NavItems from "../NavItems/NavItems";
 import Logo from "../../Logo/Logo";
 import Actions from "../Actions/Actions";
 import Cart from "../../Cart/Cart";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
+import barsSolid from "../../../assets/images/burger-nav-menu/bars-solid.svg";
 
 const Toolbar = ({ openCart = false }) => {
     const [cartVisibility, setCartVisibility] = useState(openCart);
+    const [burgerMenu, setBurgerMenu] = useState(false);
 
     const cartClickedHandler = () => {
         setCartVisibility(!cartVisibility);
@@ -22,10 +25,20 @@ const Toolbar = ({ openCart = false }) => {
 
     return (
         <Fragment>
+            <BurgerMenu
+                isOpen={burgerMenu}
+                onCloseBurgerMenu={() => setBurgerMenu(false)}
+            />
             <header className={classes.Toolbar}>
-                <nav className={classes.DesktopOnly}>
+                <nav>
                     <div className={classes.NavItems}>
                         <NavItems />
+                        <img
+                            src={barsSolid}
+                            alt=""
+                            className={classes.BurgerMenuButton}
+                            onClick={() => setBurgerMenu(true)}
+                        />
                     </div>
                     <div className={classes.Logo}>
                         <Logo />

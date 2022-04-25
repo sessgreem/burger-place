@@ -32,14 +32,19 @@
     z-index: 999600;
 }
 
-@media (max-width: 499px) {
-    .DesktopOnly {
-        display: none;
-    }
+.BurgerMenuButton {
+    cursor: pointer;
+    display: none;
+    width: 20px;
+    margin-left: 0.5rem;
 }
 
 @media screen and (max-width: 760px) {
     .Toolbar {
         padding: 10px;
+    }
+
+    .BurgerMenuButton {
+        display: block;
     }
 }

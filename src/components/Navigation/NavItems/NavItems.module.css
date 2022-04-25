@@ -3,20 +3,20 @@
     padding: 0;
     list-style: none;
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     align-items: center;
+    gap: 1rem;
     height: 100%;
     overflow: hidden;
+    width: 100%;
 }
 
-@media (min-width: 500px) {
-    .NavItems {
-        flex-flow: row;
-    }
+.NavItemsBurger {
+    flex-flow: column;
 }
 
 @media screen and (max-width: 760px) {
-    .NavItems {
+    .NavItems:not(.NavItemsBurger) {
         display: none;
     }
 }
