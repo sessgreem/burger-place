@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from "react";
+import React, { Fragment } from "react";
 import SectionItem from "../../components/Sections/SectionItem/SectionItem";
 import classes from "./Sections.module.css";
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { formatFromURL } from "../../shared/formatURL";
 import { useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 const Sections = (props) => {
     let { sectionName } = useParams();
@@ -18,11 +19,7 @@ const Sections = (props) => {
     const location = useLocation();
     const toOpenCart = location.state?.toOpenCart;
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        // const timeout = setTimeout(() => window.scrollTo(0, 0), 1);
-        // return () => clearTimeout(timeout);
-    }, [location]);
+    useScrollToTop();
 
     const sections = props.menu[sectionName]?.sectionItems;
     if (!sections) {

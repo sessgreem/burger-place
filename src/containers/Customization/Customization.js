@@ -18,8 +18,11 @@ import { formatFromURL } from "../../shared/formatURL";
 import QuantityOption from "../../components/UI/QuantityOption/QuantityOption";
 import { useHistory } from "react-router-dom";
 import { formatToURL } from "../../shared/formatURL";
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 const Customization = (props) => {
+    useScrollToTop();
+
     const history = useHistory();
     const { itemName } = useParams();
     let { sectionName } = useParams();
@@ -48,6 +51,7 @@ const Customization = (props) => {
     if (!item) {
         return <Redirect to={"/"}></Redirect>;
     }
+
     let sizes = null;
     if (itemSizes) {
         const changedSizeHandler = (size) => {

@@ -8,16 +8,16 @@ import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import barsSolid from "../../../assets/images/burger-nav-menu/bars-solid.svg";
 
 const Toolbar = ({ openCart = false }) => {
-    const [cartVisibility, setCartVisibility] = useState(openCart);
-    const [burgerMenu, setBurgerMenu] = useState(false);
+    const [cartVisible, setCartVisible] = useState(openCart);
+    const [menuVisible, setMenuVisible] = useState(false);
 
     const cartClickedHandler = () => {
-        setCartVisibility(!cartVisibility);
+        setCartVisible(!cartVisible);
     };
 
     let timeout;
     const cartClickedOutside = () => {
-        timeout = setTimeout(() => setCartVisibility(false), 100);
+        timeout = setTimeout(() => setCartVisible(false), 100);
     };
     useEffect(() => {
         return () => clearTimeout(timeout);
@@ -26,8 +26,8 @@ const Toolbar = ({ openCart = false }) => {
     return (
         <Fragment>
             <BurgerMenu
-                isOpen={burgerMenu}
-                onCloseBurgerMenu={() => setBurgerMenu(false)}
+                isOpen={menuVisible}
+                onCloseBurgerMenu={() => setMenuVisible(false)}
             />
             <header className={classes.Toolbar}>
                 <nav>
@@ -37,7 +37,7 @@ const Toolbar = ({ openCart = false }) => {
                             src={barsSolid}
                             alt=""
                             className={classes.BurgerMenuButton}
-                            onClick={() => setBurgerMenu(true)}
+                            onClick={() => setMenuVisible(true)}
                         />
                     </div>
                     <div className={classes.Logo}>
@@ -46,7 +46,7 @@ const Toolbar = ({ openCart = false }) => {
                     <div className={classes.Actions}>
                         <Actions cartClicked={cartClickedHandler} />
                         <Cart
-                            visibility={cartVisibility}
+                            visibility={cartVisible}
                             clickedOutside={cartClickedOutside}
                         />
                     </div>

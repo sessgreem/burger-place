@@ -6,8 +6,11 @@ import Menu from "../../components/Main/Menu/Menu";
 import MobileApp from "../../components/Main/MobileApp/MobileApp";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet-async";
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 const Home = (props) => {
+    useScrollToTop();
+
     const menuHeading = (
         <h2
             style={{

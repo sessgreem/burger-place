@@ -39,44 +39,11 @@
     flex-flow: row wrap;
 }
 
-/* Tools */
-.Tool {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-.ToolImage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.ToolImage img {
-    width: 100%;
-    height: 100%;
-    max-width: 85px;
-    max-height: 75px;
-}
-.Tool > span:last-of-type {
-    margin-top: 1.5rem;
-}
-/* End of Tools */
-
 .AboutMessage + button {
     margin: 1.5rem 0;
     width: 20%;
 }
 
-@media screen and (max-width: 760px) {
-    .Tool {
-        flex-basis: 50%;
-    }
-    .Tool:nth-of-type(n + 3) {
-        margin-top: 2rem;
-    }
-}
-
-/* End Tools */
 @media screen and (max-width: 1000px) {
     .Wrapper {
         padding: 0.5rem;

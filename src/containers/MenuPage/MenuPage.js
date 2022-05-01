@@ -4,8 +4,11 @@ import Menu from "../../components/Main/Menu/Menu";
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
 import classes from "./MenuPage.module.css";
 import { Helmet } from "react-helmet-async";
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 const MenuPage = () => {
+    useScrollToTop();
+
     return (
         <Fragment>
             <Helmet>

@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import { Helmet } from "react-helmet-async";
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
 import classes from "./About.module.css";
-
 import reactIcon from "../../assets/images/tools-icons/react-icon-v2.svg";
 import reactRouterIcon from "../../assets/images/tools-icons/react-router.svg";
 import reduxIcon from "../../assets/images/tools-icons/redux.svg";
@@ -10,61 +9,55 @@ import firebaseIcon from "../../assets/images/tools-icons/Firebase_Logo_Logomark
 import vsCodeIcon from "../../assets/images/tools-icons/Visual_Studio_Code_1.35_icon.svg";
 import adobeXdIcon from "../../assets/images/tools-icons/Adobe_XD_CC_icon.svg";
 import adobePhotoshopIcon from "../../assets/images/tools-icons/Adobe_Photoshop_CC_icon.svg";
-
 import Button from "../../components/UI/Button/Button";
 import { useHistory } from "react-router-dom";
+import useScrollToTop from "../../hooks/useScrollToTop";
+import Tool from "../../components/UI/Tool/Tool";
 
-const Tool = ({ name, image }) => {
-    return (
-        <li className={classes.Tool}>
-            <div className={classes.ToolImage}>
-                <img src={image} alt="" />
-            </div>
-            <span>{name}</span>
-        </li>
-    );
-};
+const toolsMap = [
+    {
+        name: "React Hooks",
+        image: reactIcon,
+    },
+    {
+        name: "Redux",
+        image: reduxIcon,
+    },
+    {
+        name: "React Router",
+        image: reactRouterIcon,
+    },
+    {
+        name: "Firebase",
+        image: firebaseIcon,
+    },
+    {
+        name: "Code",
+        image: vsCodeIcon,
+    },
+    {
+        name: "Experience Design",
+        image: adobeXdIcon,
+    },
+    {
+        name: "Photoshop CC",
+        image: adobePhotoshopIcon,
+    },
+];
 
 const About = () => {
-    const toolsMap = [
-        {
-            name: "React Hooks",
-            image: reactIcon,
-        },
-        {
-            name: "Redux",
-            image: reduxIcon,
-        },
-        {
-            name: "React Router",
-            image: reactRouterIcon,
-        },
-        {
-            name: "Firebase",
-            image: firebaseIcon,
-        },
-        {
-            name: "Code",
-            image: vsCodeIcon,
-        },
-        {
-            name: "Experience Design",
-            image: adobeXdIcon,
-        },
-        {
-            name: "Photoshop CC",
-            image: adobePhotoshopIcon,
-        },
-    ];
+    const history = useHistory();
+
+    useScrollToTop();
+
+    const backToHomeClicked = () => {
+        history.push("/");
+    };
 
     const tools = toolsMap.map((tool, index) => {
         return <Tool key={index} name={tool.name} image={tool.image} />;
     });
 
-    const history = useHistory();
-    const backToHomeClicked = () => {
-        history.push("/");
-    };
     return (
         <Fragment>
             <Helmet>
