@@ -12,7 +12,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 const App = () => {
-    let routes = (
+    const routes = (
         <Switch>
             <Route path="/" exact component={Home} />;
             <Route path="/menu" exact component={MenuPage} />

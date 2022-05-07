@@ -3,7 +3,7 @@ import classes from "./SectionItem.module.css";
 import { Link } from "react-router-dom";
 import useStorageUrlDownload from "../../../hooks/useStorageUrlDownload";
 import useProgressiveImage from "../../../hooks/useProgressiveImage";
-import { formatToURL } from "../../../shared/formatURL";
+import { formatToURL, formatToURLItems } from "../../../shared/formatURL";
 
 const SectionItem = (props) => {
     const imageURL = useStorageUrlDownload(props.imgURL);
@@ -12,7 +12,9 @@ const SectionItem = (props) => {
         props.name,
         props.blurredType
     );
-    const url = `/sections/${formatToURL(props.section)}/${props.name}`;
+    const url = `/sections/${formatToURL(props.section)}/${formatToURLItems(
+        props.name
+    )}`;
 
     return (
         <Link to={url}>

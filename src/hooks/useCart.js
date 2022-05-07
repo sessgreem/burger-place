@@ -4,12 +4,12 @@ import {
     incrementItemQuantity,
     decrementItemQuantity,
 } from "../store/actions/cart";
+
 const useCart = () => {
-    const cart = useSelector((state) => state.cart.items);
-
-    const itemsPrice = useSelector((state) => state.cart.itemsPrice);
-
     const dispatch = useDispatch();
+
+    const cart = useSelector((state) => state.cart.items);
+    const itemsPrice = useSelector((state) => state.cart.itemsPrice);
 
     const handleRemoveItem = (id) => {
         dispatch(removeFromCart(id));
@@ -29,4 +29,5 @@ const useCart = () => {
         { handleRemoveItem, handleIncrement, handleDecrement },
     ];
 };
+
 export default useCart;

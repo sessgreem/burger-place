@@ -46,7 +46,7 @@ const Toolbar = ({ openCart = false }) => {
                     <div className={classes.Actions}>
                         <Actions cartClicked={cartClickedHandler} />
                         <Cart
-                            visibility={cartVisible}
+                            visible={cartVisible}
                             clickedOutside={cartClickedOutside}
                         />
                     </div>

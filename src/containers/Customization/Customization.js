@@ -14,19 +14,19 @@ import ReturnButton from "../../components/UI/ReturnButton/ReturnButton";
 import { addToCart } from "../../store/actions/cart";
 import { connect } from "react-redux";
 import { Redirect, useParams } from "react-router";
-import { formatFromURL } from "../../shared/formatURL";
+import { formatFromURL, formatFromURLItems } from "../../shared/formatURL";
 import QuantityOption from "../../components/UI/QuantityOption/QuantityOption";
 import { useHistory } from "react-router-dom";
 import { formatToURL } from "../../shared/formatURL";
 import useScrollToTop from "../../hooks/useScrollToTop";
 
 const Customization = (props) => {
-    useScrollToTop();
-
     const history = useHistory();
-    const { itemName } = useParams();
+
+    let { itemName } = useParams();
     let { sectionName } = useParams();
     sectionName = formatFromURL(sectionName);
+    itemName = formatFromURLItems(itemName);
 
     const item = props.menu[sectionName].sectionItems[itemName];
 
@@ -47,6 +47,8 @@ const Customization = (props) => {
     });
 
     const [calculatedPrice, setCalculatedPrice] = useState(itemState.price);
+
+    useScrollToTop();
 
     if (!item) {
         return <Redirect to={"/"}></Redirect>;
