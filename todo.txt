@@ -1,0 +1,9 @@
+Common:
+Add an image in Hero section for mobile portrait view
+Fix the image in Hero section for mobile landscape view
+Fix cart height for mobile landscape view
+
+Sidebar:
+Fix sidebar not to close instantly when navigating
+Add blurred background layout while sidebar is open
+Increase the opening speed of the sidebar
