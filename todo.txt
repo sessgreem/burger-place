@@ -1,3 +1,6 @@
+GitHub:
+Improve landing page & project description
+
 Common:
 Add an image in Hero section for mobile portrait view
 Fix the image in Hero section for mobile landscape view
