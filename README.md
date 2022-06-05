@@ -4,8 +4,10 @@ Hosted on - https://react-hooks-3f4f4.web.app/
 
 # About
 
-An SPA built with React 17.0.1.
-Front-End clone of a famous food chain organization.
+A Single-page application built with React.js.
+Realisation of a performant, responsive &
+interactive user interface with design inspired by
+BK.
 
 Thank you for visiting my React Project. This was a lot
 of work, but it was really fun to do! The goal of the
