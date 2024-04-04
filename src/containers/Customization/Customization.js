@@ -20,11 +20,14 @@ import { useHistory } from "react-router-dom";
 import { formatToURL } from "../../shared/formatURL";
 import useScrollToTop from "../../hooks/useScrollToTop";
 
+const A_LA_CARTE = "A La Carte";
+const MAX_QUANTITY = 10;
+const MIN_QUANTITY = 1;
+
 const Customization = (props) => {
     const history = useHistory();
 
-    let { itemName } = useParams();
-    let { sectionName } = useParams();
+    let { itemName, sectionName } = useParams();
     sectionName = formatFromURL(sectionName);
     itemName = formatFromURLItems(itemName);
 
@@ -83,7 +86,8 @@ const Customization = (props) => {
 
     let sides = null;
     const itemSides = item?.itemSides;
-    if (itemSides && itemState.size !== "A La Carte") {
+    if (itemSides && itemState.size !== A_LA_CARTE) {
+        // Should not check against a specific string that might be returned from the server
         const changeSideHandler = (sideName) => {
             const newState = {
                 ...itemState,
@@ -109,7 +113,8 @@ const Customization = (props) => {
     }
 
     let drinks = null;
-    if (item?.itemHasDrinks && itemState.size !== "A La Carte") {
+    if (item?.itemHasDrinks && itemState.size !== A_LA_CARTE) {
+        // Should not check against a specific string that might be returned from the server
         const changeDrinkHandler = (drinkName) => {
             const newState = {
                 ...itemState,
@@ -145,7 +150,7 @@ const Customization = (props) => {
 
     // Create and handle QuantityOption
     const handleIncrement = () => {
-        if (itemState.quantity + 1 < 10) {
+        if (itemState.quantity + 1 < MAX_QUANTITY) {
             const newQuantity = itemState.quantity + 1;
 
             const newPrice = newQuantity * itemState.price;
@@ -157,8 +162,9 @@ const Customization = (props) => {
             });
         }
     };
+
     const handleDecrement = () => {
-        if (itemState.quantity - 1 >= 1) {
+        if (itemState.quantity - 1 >= MIN_QUANTITY) {
             const newQuantity = itemState.quantity - 1;
             const newPrice = newQuantity * itemState.price;
             setCalculatedPrice(newPrice);
@@ -169,6 +175,7 @@ const Customization = (props) => {
             });
         }
     };
+
     const quantityOption = item?.itemQuantityOption ? (
         <QuantityOption
             incrementClicked={handleIncrement}
@@ -178,7 +185,8 @@ const Customization = (props) => {
         />
     ) : null;
 
-    // this type is for the blurred image type passed in as a property - src\hooks\useProgressiveImage.js
+    //? Lack of type support, hard to understand what properties exist (sectionType?)
+    // this type is for the blurred image type passed in as a property - ./src/hooks/useProgressiveImage.js
     const sectionType = props.menu[sectionName].sectionType
         ? props.menu[sectionName].sectionType
         : null;
