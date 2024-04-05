@@ -3,28 +3,30 @@ import classes from "./CustomizationFaceOption.module.css";
 import useStorageUrlDownload from "../../../hooks/useStorageUrlDownload";
 
 const CustomizationFaceOption = (props) => {
-    const imageURL = useStorageUrlDownload(props.imgURL);
+    const { imgURL, selected, name, alt, size, calories, changedSide } = props;
+    const imageURL = useStorageUrlDownload(imgURL);
 
     const optionClasses = [classes.CustomizationFaceOptionImage];
 
-    const isSelected = props.selected === props.name;
-    if (isSelected) {
+    // Is it selected
+    if (selected === name) {
         optionClasses.push(classes.Selected);
     }
 
     return (
         <div
             className={classes.CustomizationFaceOption}
-            onClick={() => props.changedSide(props.name)}
+            onClick={() => changedSide(name)}
         >
             <div className={optionClasses.join(" ")}>
-                <img src={imageURL} alt={props.alt} />
+                <img src={imageURL} alt={alt} />
             </div>
+
             <div className={classes.CustomizationFaceOptionDescription}>
                 <h4>
-                    {props.size} {props.name}
+                    {size} {name}
                 </h4>
-                <h5>{props.calories} Cal</h5>
+                <h5>{calories} Cal</h5>
             </div>
         </div>
     );
