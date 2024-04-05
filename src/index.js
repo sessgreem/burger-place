@@ -9,7 +9,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore, combineReducers } from "redux";
 
-import menuReducer from "./store/reducers/reducer";
+import menuReducer from "./store/reducers/menu";
 import cartReducer from "./store/reducers/cart";
 
 const rootReducer = combineReducers({
